@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jenga-code.com/schemas/video-studio/settings-v1.json",
+  "title": "Jenga Video Studio settings v1",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "Version": {
+      "type": "integer",
+      "const": 1
+    },
+    "ProjectRoot": {
+      "type": "string"
+    },
+    "OllamaEndpoint": {
+      "type": "string"
+    },
+    "Model": {
+      "type": "string"
+    },
+    "CpuOnly": {
+      "type": "boolean"
+    },
+    "Ffmpeg": {
+      "type": "string"
+    },
+    "Ffprobe": {
+      "type": "string"
+    },
+    "SpeechProvider": {
+      "type": "string",
+      "enum": [
+        "Windows",
+        "Piper"
+      ]
+    },
+    "Python": {
+      "type": "string"
+    },
+    "PiperPython": {
+      "type": "string"
+    },
+    "PiperVoice": {
+      "type": "string"
+    },
+    "WindowsVoice": {
+      "type": "string"
+    },
+    "ComfyEndpoint": {
+      "type": "string"
+    },
+    "EnableImages": {
+      "type": "boolean"
+    },
+    "EnableVideo": {
+      "type": "boolean"
+    },
+    "ImageWorkflow": {
+      "type": "string"
+    },
+    "VideoWorkflow": {
+      "type": "string"
+    },
+    "GoogleClientJson": {
+      "type": "string"
+    },
+    "YouTubeChannelUrl": {
+      "type": "string"
+    },
+    "DefaultPrivacy": {
+      "type": "string",
+      "enum": [
+        "private",
+        "unlisted",
+        "public"
+      ]
+    }
+  },
+  "required": [
+    "Version",
+    "ProjectRoot",
+    "OllamaEndpoint",
+    "Model",
+    "Ffmpeg",
+    "Ffprobe"
+  ]
+}

@@ -1,0 +1,1406 @@
+
+%% L3-project-paper-template.tex
+%% v1.1
+%% Dec, 2022
+%% Craig Stewart
+%% for Durham University, Computer Science Project paper templates
+%% contact craig.d.stewart at durham.ac.uk for support
+%%
+%% Based on IEEE Template: bare_jrnl_compsoc.tex, V1.4b, by Michael Shell
+%%
+%% Notice from original IEEE Template:
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+\documentclass[10pt,journal,compsoc]{IEEEtran}
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+%% ---------------------------------------------- START OF USEFUL PACKAGES ----------------------------------------------
+
+
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+% *** CITATION PACKAGES ***
+%
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+%
+% Note that some packages require special options to format as the Computer
+% Society requires. In particular, Computer Society  papers do not use
+% compressed citation ranges as is done in typical IEEE papers
+% (e.g., [1]-[4]). Instead, they list every citation separately in order
+% (e.g., [1], [2], [3], [4]). To get the latter we need to load the cite
+% package with the nocompress option which is supported by cite.sty v4.0
+% and later. Note also the use of a CLASSOPTION conditional provided by
+% IEEEtran.cls V1.7 and later.
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=footnotesize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a sans serif font rather
+% than the serif font used in traditional IEEE formatting and thus the need
+% to invoke different subfig.sty package options depending on whether
+% compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
+% Axel Sommerfeldt. This package may be useful when used in conjunction with 
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/pkg/endfloat
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+%% ---------------------------------------------- END OF USEFUL PACKAGES ----------------------------------------------
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\usepackage{etoolbox}
+\usepackage{float}
+\patchcmd{\abstract}{\quotation}{\begin{center}\small}{}{}
+\patchcmd{\endabstract}{\endquotation}{\end{center}}{}{}
+\usepackage{ragged2e}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+
+
+
+
+
+\begin{document}
+
+\title{Jenga Video Studio: Master Software Requirements, Architecture, and Build Specification for a Local-First Automated AI Video Production System}
+
+\author{George Miller\\
+Personal Prototype and Future Commercial Product Specification\\
+Windows / C\# / .NET / Visual Studio}
+
+\markboth{JENGA VIDEO STUDIO --- MASTER BUILD SPECIFICATION}%
+{Miller: Local-First Automated AI Video Production System}
+
+\IEEEtitleabstractindextext{%
+\begin{center}
+\begin{abstract}
+\justifying
+This document is both a software requirements specification and a master implementation prompt for the construction of Jenga Video Studio, a Windows desktop application that turns a short user suggestion into a researched, narrated, visually coherent, portrait-first video and can subsequently upload the completed production to a configured YouTube channel. The personal prototype must be local-first: it must not require OpenAI, ChatGPT, or another mandatory paid generative-AI API. A local large language model, local text-to-speech, local image generation, and, where hardware permits, local generative video are orchestrated by a C\#/.NET desktop application. Internet access remains necessary for current research, model acquisition where applicable, and YouTube publication.
+
+The primary user experience is deliberately simple. A user may type a subject, question, idea, or loose suggestion into a prominent prompt box, or ask the application to propose subjects. The user presses \textbf{MAKE VIDEO}. The application then researches the subject from multiple sources, builds an auditable evidence pack, writes a factual but entertaining script, plans a sequence of phone-friendly scenes, generates narration and visual assets, composes a 9:16 video, performs automated quality checks, presents a preview, and, only according to the user's publication settings, uploads the result through the official YouTube API. The difficult internal pipeline must therefore be hidden behind a clear, recoverable and editable interface.
+
+The first release described here is a personal version with no DRM, payment processing, product-key validation, or commercial licensing server. Nevertheless, subsystem boundaries must make a later Demo/Commercial edition straightforward: licensing and entitlement checks must be addable around the application without rewriting the research, generation, rendering, project-storage, or YouTube subsystems. This specification also requires persistent projects, scene-level regeneration, hardware-aware quality presets, modular AI backends, source provenance, responsible handling of copyrighted material, and explicit failure recovery. The product is successful only when it produces a valid, watchable portrait MP4 from a user suggestion and can prepare and upload that video to the user's configured YouTube channel.
+\end{abstract}
+\end{center}
+
+\begin{IEEEkeywords}
+C\#, .NET, Windows desktop, local AI, LLM, video generation, text-to-speech, FFmpeg, ComfyUI, YouTube Data API, automated research, vertical video, generative media
+\end{IEEEkeywords}}
+
+\maketitle
+\IEEEdisplaynontitleabstractindextext
+\IEEEpeerreviewmaketitle
+
+\IEEEraisesectionheading{\section{Purpose and Build Contract}\label{sec:purpose}}
+
+\IEEEPARstart{T}{his} document is not a retrospective university report. It is an implementation contract for an AI coding system. The coding system receiving this document shall treat all requirements labelled \textbf{MUST} as acceptance criteria. It shall not replace required functionality with pseudocode, TODO comments, inert buttons, mock services, fake progress indicators, or hard-coded demonstration output. If an external dependency cannot be automatically installed or redistributed, the application must detect its absence, explain exactly what is missing, and provide a guided setup/download path.
+
+The target is a complete Visual Studio solution for a native-feeling Windows desktop program written primarily in C\# using a current supported .NET release. The recommended presentation technology is WPF with MVVM unless a concrete technical reason justifies WinUI 3. The program must compile in Visual Studio in Release and Debug configurations and must be publishable as a Windows x64 application. Long-running AI and rendering work must never freeze the UI thread.
+
+The personal build shall be usable without a paid AI account. No OpenAI key, ChatGPT subscription, Anthropic key, or equivalent shall be required for core production. The architecture may expose optional provider interfaces for future cloud services, but the default and fully functional path must be local-first.
+
+\section{Product Vision and User Story}
+
+The product is an automated research and miniature-documentary production workstation. It is not merely a slideshow generator and must not be designed around ``LLM writes text, random pictures appear, AI voice reads it.'' Its distinctive behaviour is an AI-directed production pipeline that selects the most appropriate visual treatment for each claim or narrative beat.
+
+The canonical user story is:
+
+\begin{enumerate}
+    \item The user opens Jenga Video Studio.
+    \item The home screen prominently shows a \textbf{Video Idea} prompt box.
+    \item The user types a loose idea such as ``Why did floppy disks survive for so long?'', ``Tell me something strange about Victorian engineering'', or ``Find an interesting technology story from today.'' The prompt may be a topic, question, instruction, theme, or partial idea.
+    \item Alternatively, the user presses \textbf{Suggest Ideas}. The local AI/research subsystem proposes a small set of candidate subjects with one-line rationales. Suggestions must respect enabled/disabled content categories.
+    \item The user chooses optional controls such as target duration, tone, research depth, narrator, visual intensity, and whether the topic may use current news.
+    \item The user presses one primary \textbf{MAKE VIDEO} button.
+    \item The application creates a persistent project immediately so a crash does not lose work.
+    \item The research engine gathers and evaluates sources.
+    \item The AI creates a source-grounded research brief and claim ledger.
+    \item The script writer creates an engaging script while preserving factual provenance.
+    \item The scene director converts the script into a timed vertical-video storyboard.
+    \item Narration, images, graphics and appropriate short generative-video clips are produced.
+    \item FFmpeg or an equivalent local media pipeline renders a final portrait MP4.
+    \item Automated checks detect missing assets, subtitle overflow, silent sections, failed scenes, obvious duration errors and unresolved factual warnings.
+    \item The user can preview the result, edit/regenerate individual scenes, edit title/description, and render again without redoing the entire project.
+    \item The user may upload the approved video to the YouTube channel configured in Settings.
+\end{enumerate}
+
+The interface must make this workflow comprehensible to a non-programmer. Advanced model controls may exist, but they must not be required to make a first video.
+
+\section{Scope}
+
+\subsection{Required Personal Version}
+
+The personal version MUST include:
+\begin{itemize}
+    \item Windows desktop GUI.
+    \item Manual topic prompt.
+    \item AI-generated topic suggestions.
+    \item Automatic-topic mode.
+    \item Local LLM integration.
+    \item GPU acceleration where supported and CPU fallback for text inference.
+    \item Internet research and source provenance.
+    \item Research brief, claim ledger and script generation.
+    \item Scene-by-scene production planning.
+    \item Local TTS narration.
+    \item Local image-generation integration.
+    \item Local video-generation integration where compatible hardware is available.
+    \item Deterministic graphics, captions, quotations, timelines, maps/diagrams where feasible, and pan/zoom treatments.
+    \item FFmpeg-based final assembly.
+    \item 9:16 portrait output with a default final canvas of 1080x1920.
+    \item Persistent projects and resumability.
+    \item Scene-level regeneration.
+    \item Preview before publication.
+    \item YouTube channel URL setting.
+    \item YouTube OAuth connection and upload.
+    \item Generated but editable YouTube title, description and source list.
+    \item Logs, cancellation, retry and useful error messages.
+\end{itemize}
+
+\subsection{Explicitly Deferred from the Personal Version}
+
+The following MUST NOT consume implementation time until the core production pipeline works:
+\begin{itemize}
+    \item payment processing;
+    \item ecommerce storefront;
+    \item licence-key generation;
+    \item DRM or anti-tamper systems;
+    \item trial counters;
+    \item account subscriptions;
+    \item remote entitlement servers.
+\end{itemize}
+
+However, the codebase MUST keep future commercial concerns separable. A future \texttt{ILicenseService} or entitlement layer should be addable at application startup and around premium features without modifying the core media pipeline.
+
+\section{Technology Baseline}
+
+\subsection{Application Layer}
+
+The main application shall be C\#/.NET. Use dependency injection, structured logging, asynchronous programming, cancellation tokens, immutable records where appropriate, nullable reference types, and explicit interfaces around replaceable infrastructure.
+
+Recommended solution projects are:
+\begin{verbatim}
+JengaVideoStudio.sln
+  JengaVideoStudio.App
+  JengaVideoStudio.Core
+  JengaVideoStudio.Research
+  JengaVideoStudio.AI
+  JengaVideoStudio.Audio
+  JengaVideoStudio.Visuals
+  JengaVideoStudio.Rendering
+  JengaVideoStudio.YouTube
+  JengaVideoStudio.Infrastructure
+  JengaVideoStudio.Tests
+\end{verbatim}
+
+Do not create artificial projects solely to increase project count. Dependencies must point inward toward Core contracts and domain models.
+
+\subsection{Local Language Model}
+
+The preferred inference abstraction is a local GGUF-compatible engine, with llama.cpp as the reference backend. The application must not hard-code a single model name. It shall support a model manifest containing model identifier, filename, quantisation, expected RAM/VRAM, context length, licence metadata, source location and capability tags.
+
+The LLM provider must expose structured generation, ideally constrained JSON for internal stages. The system shall use separate prompts/roles for topic discovery, research synthesis, claim checking, script writing, scene planning, metadata writing and quality critique rather than one enormous unconstrained prompt.
+
+CPU inference must remain available. GPU offload should be used automatically when supported. Hardware selection and inference parameters must be visible in an Advanced settings page.
+
+\subsection{Text-to-Speech}
+
+TTS must be abstracted behind \texttt{ITextToSpeechProvider}. A local neural TTS engine such as Piper or a maintained successor may be used, subject to licence review. Voice manifests must record language, display name, model path, sample rate and licence/source information.
+
+Narration generation must support sentence/segment-level caching. Editing one paragraph must not force regeneration of the complete narration unless necessary. The system should normalise numbers, abbreviations and URLs into speakable forms and allow a pronunciation override dictionary.
+
+\subsection{Image and Video Generation}
+
+The application shall use a provider abstraction rather than directly embedding Python model code into the WPF layer. ComfyUI is an acceptable local orchestration backend because workflows can be invoked externally and swapped as models evolve. The application must support at least:
+\begin{itemize}
+    \item text-to-image;
+    \item image-to-image where the configured workflow supports it;
+    \item text-to-video;
+    \item image-to-video;
+    \item polling/progress;
+    \item cancellation where possible;
+    \item output discovery and copying into the current project.
+\end{itemize}
+
+The exact open model used for video must be replaceable. Wan, LTX, Hunyuan or later compatible models may be represented by model/workflow profiles. The code must never assume that ``best model'' is permanent.
+
+Generative video is optional on insufficient hardware. The pipeline MUST degrade gracefully to images, animated crops, diagrams, typography and other deterministic visuals rather than fail the entire video.
+
+\subsection{Media Rendering}
+
+FFmpeg is the reference renderer/encoder. The application must locate a configured FFmpeg executable, validate it at startup/on demand, record its version, and run it as a child process with stdout/stderr captured. Arguments must be generated safely without shell injection.
+
+The renderer must support:
+\begin{itemize}
+    \item 1080x1920 H.264 MP4 default output;
+    \item configurable frame rate, default 30 fps;
+    \item AAC audio;
+    \item narration mixing;
+    \item optional user-provided/licensed background music;
+    \item loudness normalisation;
+    \item hard or soft subtitles according to profile;
+    \item image pan/zoom;
+    \item cropping/letterboxing rules;
+    \item transitions;
+    \item concatenation of generated clips;
+    \item text/graphic overlays;
+    \item thumbnail-frame extraction.
+\end{itemize}
+
+\section{Hardware Detection and Quality Profiles}
+
+At first run and from Settings, the application shall inspect:
+\begin{itemize}
+    \item Windows version;
+    \item CPU model and logical core count;
+    \item total RAM and currently available RAM;
+    \item detected GPU(s);
+    \item VRAM where obtainable;
+    \item supported local acceleration backend(s);
+    \item free disk space.
+\end{itemize}
+
+It shall derive a recommendation rather than refusing to run. At minimum provide:
+\begin{description}
+    \item[Light:] CPU-capable text AI, TTS, research, generated or sourced still images, graphics and FFmpeg; generative video disabled.
+    \item[Balanced:] GPU-assisted text/image generation and occasional short AI video where resources permit.
+    \item[High:] more AI video scenes, higher generation settings and optional multiple candidates.
+    \item[Maximum:] expensive candidate generation/selection and high visual-generation intensity on high-end hardware.
+\end{description}
+
+A user may override recommendations after a warning. The program must estimate required disk space before downloading large model packs.
+
+\section{First-Run Experience}
+
+First run shall be a wizard, not a blank dashboard full of errors. It must:
+\begin{enumerate}
+    \item explain that core AI runs locally and that current web research/YouTube upload require internet;
+    \item detect hardware;
+    \item select/recommend a model pack;
+    \item locate or install/configure FFmpeg according to distribution rights;
+    \item configure a project/output directory;
+    \item optionally configure ComfyUI/local visual generation;
+    \item select a narration voice;
+    \item ask for the user's YouTube channel URL (optional at this stage);
+    \item offer YouTube OAuth connection separately;
+    \item run a self-test and clearly report which capabilities are Ready, Optional, Missing or Unsupported.
+\end{enumerate}
+
+The wizard must be resumable.
+
+\section{Main User Interface}
+
+The main window shall optimise for simplicity. It should contain:
+\begin{itemize}
+    \item a large \textbf{What should the video be about?} prompt box;
+    \item example placeholder text;
+    \item \textbf{Suggest Ideas} button;
+    \item \textbf{Surprise Me} / automatic-topic option;
+    \item target duration control;
+    \item content profile/tone control;
+    \item quality profile;
+    \item prominent \textbf{MAKE VIDEO} button;
+    \item recent projects;
+    \item visible current capability status (e.g. Local AI Ready, Visual Generator Ready, YouTube Connected).
+\end{itemize}
+
+Do not require the user to understand model filenames, quantisation or FFmpeg command lines. Advanced settings belong behind an Advanced section.
+
+\subsection{Idea Suggestions}
+
+\textbf{Suggest Ideas} must produce useful candidates rather than generic random nouns. It should consider:
+\begin{itemize}
+    \item enabled content categories;
+    \item whether current-news research is allowed;
+    \item previously generated topics to reduce repetition;
+    \item target duration;
+    \item visual potential;
+    \item availability of credible source material.
+\end{itemize}
+
+Show approximately 5--10 suggestions with a short description and a \textbf{Use This Idea} action. The user may refresh suggestions.
+
+\section{Content Profiles and User Tweaks}
+
+Users shall be able to save named production profiles. Settings should include:
+\begin{itemize}
+    \item category mix (technology, science, history, computing, general knowledge, news, etc.);
+    \item excluded topics;
+    \item target duration range;
+    \item serious--humorous tone;
+    \item slow--fast pacing;
+    \item narrator voice;
+    \item subtitle style;
+    \item visual-generation intensity;
+    \item maximum percentage of AI-generated video;
+    \item minimum number of research sources;
+    \item source recency preference;
+    \item whether current news is permitted;
+    \item whether politics is permitted;
+    \item whether sensitive/graphic subjects are permitted;
+    \item whether generated assets should be preferred over third-party imagery;
+    \item upload privacy default (private/unlisted/public where API/project status permits);
+    \item auto-upload toggle, default OFF.
+\end{itemize}
+
+The personal version should default to a review-first workflow.
+
+\section{Research Engine}
+
+Research is a core differentiator and must not be implemented as ``download the first search result and summarise it.''
+
+\subsection{Research Stages}
+
+For every project:
+\begin{enumerate}
+    \item Convert the user idea into a research plan and search queries.
+    \item Discover multiple candidate sources.
+    \item Canonicalise URLs and remove duplicates.
+    \item Fetch allowed pages with timeouts, size limits and a descriptive user agent.
+    \item Extract readable article text and metadata.
+    \item Record source title, publisher/domain, URL, retrieval time, publication time where known and extraction status.
+    \item Rank sources using transparent heuristics such as relevance, recency, primary-source status and duplication.
+    \item Produce notes per source.
+    \item Produce a claim ledger where important factual statements reference supporting source IDs.
+    \item Flag unsupported or conflicting claims.
+    \item Produce a research brief that the script writer receives together with source identifiers.
+\end{enumerate}
+
+The program must respect robots/access restrictions and must not attempt to bypass paywalls or authentication. A failed source is logged and replaced where possible.
+
+\subsection{Source Quality}
+
+The system should prefer primary or authoritative material for factual claims when available and use secondary reporting for context. It must distinguish a source supporting a claim from a source merely mentioning the same topic.
+
+For news/current affairs, the script must not present uncertain reports as established facts. The research model should preserve attribution for disputed or developing claims.
+
+\subsection{Research Data Model}
+
+A minimum model is:
+\begin{verbatim}
+ResearchSource
+  Id
+  Url
+  CanonicalUrl
+  Title
+  Publisher
+  PublishedAt
+  RetrievedAt
+  ExtractedTextPath
+  SourceType
+  QualitySignals
+  Status
+
+ResearchClaim
+  Id
+  ClaimText
+  SupportingSourceIds[]
+  ContradictingSourceIds[]
+  Confidence
+  RequiresAttribution
+  Notes
+\end{verbatim}
+
+Do not rely on LLM memory for provenance. Persist the IDs and relationships.
+
+\section{Script Generation}
+
+The script writer receives the user intent, production profile, research brief and claim ledger. It must:
+\begin{itemize}
+    \item open with a strong but non-deceptive hook;
+    \item explain the subject coherently rather than listing facts;
+    \item maintain the requested tone;
+    \item avoid invented quotations;
+    \item avoid claiming certainty not present in sources;
+    \item target the requested spoken duration;
+    \item use narration suitable for speech;
+    \item mark source/claim references internally for later audit;
+    \item separate factual narration from clearly signalled humour/speculation;
+    \item end naturally rather than with generic AI filler.
+\end{itemize}
+
+The application shall show the script in an editor. Users can edit it and press \textbf{Re-plan Scenes} without repeating research.
+
+\section{Scene Director}
+
+The Scene Director is central to output quality. It transforms script segments into a \texttt{ScenePlan}. Each scene shall include:
+\begin{verbatim}
+Scene
+  SceneNumber
+  StartEstimate
+  DurationEstimate
+  NarrationText
+  ClaimIds[]
+  VisualType
+  VisualPrompt
+  NegativePrompt
+  AssetRequirements[]
+  OnScreenText[]
+  Transition
+  MotionTreatment
+  SourceLabel
+  GenerationStatus
+\end{verbatim}
+
+Supported \texttt{VisualType} values should include at least:
+\begin{itemize}
+    \item GeneratedVideo;
+    \item GeneratedImage;
+    \item ImageToVideo;
+    \item LicensedOrPublicAsset;
+    \item Diagram;
+    \item Timeline;
+    \item StatisticCard;
+    \item QuoteCard;
+    \item HeadlineCard;
+    \item MapOrLocationGraphic;
+    \item Typography;
+    \item ImagePanZoom;
+    \item Composite.
+\end{itemize}
+
+The director must choose visual type based on communicative value. It must not request expensive generative video for every sentence. Factual diagrams/statistics should normally be deterministic graphics rather than AI hallucinations.
+
+\section{Portrait and Phone-First Production Rules}
+
+All default productions target a 9:16 canvas. The Scene Director and renderer MUST enforce:
+\begin{itemize}
+    \item 1080x1920 final canvas by default;
+    \item mobile-readable font sizes;
+    \item title-safe and UI-safe margins;
+    \item no critical text at extreme top/bottom edges;
+    \item short subtitle lines;
+    \item no multi-paragraph on-screen text;
+    \item portrait-aware image cropping;
+    \item subject-aware crop when metadata/vision support exists;
+    \item frequent but purposeful visual changes;
+    \item avoidance of identical consecutive visuals;
+    \item consistent typography and brand treatment;
+    \item sufficient contrast;
+    \item captions synchronised to narration;
+    \item graceful treatment of landscape source assets.
+\end{itemize}
+
+The final output should look intentionally designed for a phone, not like a 16:9 video cropped down the middle.
+
+\section{Generative Visual Pipeline}
+
+\subsection{Generated Images}
+
+Generated images should be requested scene-by-scene with a consistent project-level visual style. The prompt builder should include:
+\begin{itemize}
+    \item subject;
+    \item period/location where relevant;
+    \item composition;
+    \item portrait framing;
+    \item camera/viewpoint;
+    \item style;
+    \item exclusions;
+    \item continuity hints where appropriate.
+\end{itemize}
+
+Do not ask image models to render important readable text. Text is added by the deterministic compositor.
+
+\subsection{Generated Video}
+
+Generated video should normally be short clips. Prefer image-to-video when composition consistency matters. The application must allow:
+\begin{itemize}
+    \item model/workflow selection;
+    \item generation resolution;
+    \item clip duration;
+    \item seed;
+    \item prompt/negative prompt;
+    \item image conditioning;
+    \item candidate count;
+    \item timeout;
+    \item retry.
+\end{itemize}
+
+If a video model fails or hardware cannot run it, replace the scene with a lower-cost treatment and mark the fallback in the project log.
+
+\subsection{Candidate Selection}
+
+High/Maximum quality modes may create multiple visual candidates. A local multimodal evaluator may rank candidates for prompt relevance, obvious deformation, vertical composition and continuity. Automatic selection must retain all candidate paths until project cleanup so the user can manually switch.
+
+\section{Third-Party Visual Assets and Copyright}
+
+The system must not indiscriminately scrape copyrighted photographs and republish them. Every imported third-party asset must carry provenance:
+\begin{verbatim}
+AssetRecord
+  LocalPath
+  SourceUrl
+  Provider
+  Creator
+  Licence
+  AttributionText
+  RetrievedAt
+  UsageNotes
+\end{verbatim}
+
+Prefer public-domain, permissively licensed, user-owned or generated assets. If licence/usage status is unknown, do not automatically include the asset in a publishable render. The UI must surface unresolved asset-rights warnings.
+
+\section{Narration and Audio}
+
+Narration generation occurs after script approval/automatic script finalisation. Requirements:
+\begin{itemize}
+    \item split text at sensible boundaries;
+    \item generate segments independently;
+    \item cache segment hashes;
+    \item concatenate without audible gaps/clicks;
+    \item measure actual narration duration;
+    \item update scene timings from real audio rather than estimates;
+    \item optional background music with ducking;
+    \item final loudness normalisation;
+    \item no clipping.
+\end{itemize}
+
+Music must be user-owned, bundled under a suitable licence, or explicitly licensed. The application must not download arbitrary commercial music.
+
+\section{Subtitles}
+
+Generate timestamped subtitles from narration segments/word timings where available. Subtitles must:
+\begin{itemize}
+    \item be editable;
+    \item avoid excessive characters per line;
+    \item use at most a small number of lines at once;
+    \item remain within portrait safe areas;
+    \item have high contrast;
+    \item support optional emphasis/highlighting without becoming visually distracting;
+    \item be exportable as SRT in addition to optional burned-in captions.
+\end{itemize}
+
+\section{Rendering Pipeline}
+
+The render pipeline shall be deterministic given a completed project. It should not invoke the research model while encoding.
+
+Recommended stages:
+\begin{enumerate}
+    \item Validate every scene has a usable visual fallback.
+    \item Resolve exact scene durations against narration.
+    \item Normalise visual dimensions/frame rates.
+    \item Generate deterministic overlays/graphics.
+    \item Produce per-scene intermediate clips.
+    \item Concatenate scenes.
+    \item Mix narration/music.
+    \item apply captions and global branding;
+    \item encode final MP4;
+    \item probe output to confirm dimensions, duration, codecs and playable streams;
+    \item generate thumbnail candidates and preview image.
+\end{enumerate}
+
+Intermediate files may be retained according to project settings. Failed renders must leave the project recoverable.
+
+\section{Project Persistence and Directory Layout}
+
+Create a project at the beginning of production. Use a stable unique ID in addition to a human-readable slug.
+
+\begin{verbatim}
+Projects/
+  2026-09-17_floppy-disks_<id>/
+    project.json
+    sources/
+      sources.json
+      extracted/
+    research/
+      brief.md
+      claims.json
+    script/
+      script.md
+      script.json
+    scenes/
+      scenes.json
+    audio/
+      narration/
+      final-narration.wav
+    assets/
+      generated-images/
+      generated-video/
+      imported/
+      graphics/
+    subtitles/
+      captions.srt
+    renders/
+      scenes/
+      final/
+        final.mp4
+    youtube/
+      metadata.json
+    logs/
+\end{verbatim}
+
+All paths inside project JSON should be relative where practical so projects can be moved.
+
+Project status must survive restart. On launch, interrupted jobs should appear as \textbf{Interrupted / Resume Available}, not silently restart.
+
+\section{Project Editor}
+
+A completed/in-progress project screen shall show:
+\begin{itemize}
+    \item topic and production profile;
+    \item research/source list;
+    \item claim warnings;
+    \item editable script;
+    \item ordered scene timeline;
+    \item visual preview per scene;
+    \item narration status;
+    \item regenerate scene action;
+    \item replace/import asset action;
+    \item edit scene prompt;
+    \item rerender action;
+    \item final preview;
+    \item YouTube metadata;
+    \item upload controls.
+\end{itemize}
+
+Regenerating one scene must not rerun unrelated research or regenerate every asset.
+
+\section{YouTube Integration}
+
+YouTube integration is a first-class requirement.
+
+\subsection{Settings}
+
+Settings MUST contain:
+\begin{itemize}
+    \item \textbf{YouTube Channel URL} text field;
+    \item button to open/validate the configured channel link;
+    \item connection status;
+    \item \textbf{Connect YouTube} OAuth action;
+    \item disconnect/re-authorise action;
+    \item default upload privacy;
+    \item default category/tags where applicable;
+    \item default ``made with AI''/disclosure text field configurable by the user;
+    \item auto-upload toggle, default OFF.
+\end{itemize}
+
+The channel URL is not an authentication credential. Authentication must use Google's supported OAuth flow. Never ask the user to save a YouTube/Google password in application settings.
+
+\subsection{Upload}
+
+The application shall upload the final MP4 with editable metadata:
+\begin{itemize}
+    \item title;
+    \item description;
+    \item source list with URLs;
+    \item tags/keywords where supported;
+    \item privacy status;
+    \item category where supported.
+\end{itemize}
+
+Upload progress must be visible. Network failure must be retryable without rerendering. The project shall persist the returned YouTube video ID/URL after successful publication.
+
+The system must not claim that an upload is public merely because upload succeeded. Respect API/project restrictions and return the actual status.
+
+\section{Metadata Generation}
+
+After the final script exists, the local LLM shall propose:
+\begin{itemize}
+    \item several title candidates;
+    \item a concise description;
+    \item longer description containing source references;
+    \item tags/keywords;
+    \item thumbnail text suggestions;
+    \item optional chapter/timestamp suggestions if meaningful.
+\end{itemize}
+
+Avoid deceptive clickbait. The title may be engaging but must remain supported by the video.
+
+\section{Quality Assurance Gate}
+
+Before marking a video Ready, run automated checks. At minimum:
+\begin{itemize}
+    \item all required source records exist;
+    \item unresolved unsupported factual claims are surfaced;
+    \item all scenes have valid assets;
+    \item final narration exists and is non-empty;
+    \item no subtitle is outside configured safe bounds;
+    \item no subtitle contains obvious placeholder text;
+    \item final video dimensions/aspect ratio are correct;
+    \item audio stream exists;
+    \item duration is within reasonable tolerance of target;
+    \item no missing intermediate clip referenced by timeline;
+    \item no known unlicensed third-party asset is included;
+    \item title/description are non-empty before upload;
+    \item final MP4 passes ffprobe/media validation.
+\end{itemize}
+
+Quality warnings may be overridden by the user; fatal structural failures may not.
+
+\section{Failure Recovery}
+
+Every external operation must have a bounded timeout and useful diagnostics. The UI must translate technical failures into actionable messages while retaining detailed logs.
+
+Examples:
+\begin{description}
+    \item[LLM model missing:] offer Model Manager.
+    \item[Out of VRAM:] offer lower preset, CPU/offload where supported, or still-image fallback.
+    \item[ComfyUI unavailable:] continue with non-generative visual fallback if possible.
+    \item[Research page unavailable:] try alternative sources and record failure.
+    \item[TTS segment failure:] retry only the segment.
+    \item[Video scene failure:] retry/regenerate/fallback only the scene.
+    \item[FFmpeg failure:] retain command, stderr and intermediates for diagnosis.
+    \item[YouTube failure:] retain completed video and metadata and allow upload retry.
+\end{description}
+
+\section{Concurrency and Responsiveness}
+
+Use async/await for I/O and background workers/processes for CPU/GPU jobs. UI state updates must be marshalled correctly. Each production run has a \texttt{CancellationToken}. Cancellation must:
+\begin{itemize}
+    \item stop launching new stages;
+    \item terminate child processes owned by the cancelled job where safe;
+    \item preserve completed project data;
+    \item leave project status as Cancelled/Resumable rather than corrupt.
+\end{itemize}
+
+Do not run multiple GPU-heavy generation jobs simultaneously by default. A resource scheduler should serialise expensive GPU work while allowing safe research/download operations in parallel.
+
+\section{Security and Privacy}
+
+The personal build still requires sound security:
+\begin{itemize}
+    \item OAuth tokens must not be written to logs.
+    \item Secrets/tokens must use Windows-appropriate protected storage.
+    \item Do not embed user credentials in source code.
+    \item Sanitize filenames and paths.
+    \item Avoid invoking shells with untrusted prompt text.
+    \item Treat downloaded files and web content as untrusted.
+    \item Apply maximum download sizes/timeouts.
+    \item Never execute code found in researched web pages.
+    \item Keep logs free of sensitive OAuth material.
+\end{itemize}
+
+\section{Local Model Manager}
+
+The application shall include a Model Manager showing:
+\begin{itemize}
+    \item installed models;
+    \item type (LLM/TTS/image/video/vision);
+    \item disk size;
+    \item source;
+    \item licence summary/link;
+    \item hardware recommendation;
+    \item installed version/hash;
+    \item active/inactive status.
+\end{itemize}
+
+Model weights should normally be separate from the application binary. Downloads must be resumable where practical and checksum-verified when authoritative checksums are available.
+
+Do not redistribute a model merely because it is downloadable. The build system/documentation must identify redistribution/commercial-use constraints for every bundled dependency/model.
+
+\section{Configuration}
+
+Use a versioned configuration model. Separate ordinary preferences from protected credentials.
+
+Example:
+\begin{verbatim}
+AppSettings
+  ProjectRoot
+  DefaultProfileId
+  ModelDirectories
+  LlmBackend
+  ComfyUiEndpoint
+  FfmpegPath
+  YoutubeChannelUrl
+  YoutubeConnected
+  DefaultUploadPrivacy
+  AutoUpload
+  HardwareOverrides
+\end{verbatim}
+
+Configuration migration must preserve older settings where possible.
+
+\section{Suggested Core Interfaces}
+
+At minimum consider contracts equivalent to:
+\begin{verbatim}
+ILanguageModel
+IResearchService
+ISourceFetcher
+ISourceRanker
+IClaimLedgerService
+IScriptWriter
+IScenePlanner
+ITextToSpeechProvider
+IImageGenerator
+IVideoGenerator
+IVisualAssetProvider
+IGraphicsRenderer
+ISubtitleService
+IMediaRenderer
+IHardwareProfiler
+IModelManager
+IProjectRepository
+IQualityGate
+IYouTubePublisher
+IOAuthCredentialStore
+\end{verbatim}
+
+Do not create ``Manager'' classes that become global god objects. \texttt{ProductionPipeline} may orchestrate stages, but each stage owns one coherent responsibility.
+
+\section{Production State Machine}
+
+Represent production explicitly:
+\begin{verbatim}
+Created
+Researching
+ResearchReview
+WritingScript
+PlanningScenes
+GeneratingNarration
+GeneratingVisuals
+Rendering
+QualityChecking
+ReadyForReview
+Uploading
+Published
+Failed
+Cancelled
+\end{verbatim}
+
+Persist transitions. A stage should be idempotent where practical so Resume can determine what already exists.
+
+\section{Prompt Engineering Requirements}
+
+Internal prompts must be stored as versioned templates rather than scattered string literals. Each prompt shall state:
+\begin{itemize}
+    \item role;
+    \item exact input schema;
+    \item exact output schema;
+    \item prohibition on inventing missing source facts;
+    \item desired tone;
+    \item length constraints;
+    \item source/claim IDs where required.
+\end{itemize}
+
+Prefer structured JSON outputs for machine-consumed results. Validate and retry malformed structured responses with a bounded repair strategy.
+
+The user's Video Idea prompt must remain distinguishable from system instructions. Web pages and source text must be treated as data, not trusted instructions, to reduce prompt-injection risk.
+
+\section{Topic History and Repetition Avoidance}
+
+Maintain a local history database containing topic embedding/hash, title, date and category. Automatic suggestions should penalise near-duplicates. The user may intentionally override this and revisit a topic.
+
+A future scheduled mode may call the same \texttt{CreateVideoAsync} pipeline. The manual button and scheduler must not have separate production implementations.
+
+\section{Optional Scheduler Architecture}
+
+Scheduling is not required for first acceptance, but the architecture may support:
+\begin{itemize}
+    \item manual only;
+    \item every X hours/minutes with a safe minimum;
+    \item fixed daily times;
+    \item ``create immediately when scheduler starts''.
+\end{itemize}
+
+The scheduler must never overlap two full productions by default. It must not prevent the PC from shutting down, and the application must not require continuous operation for manual mode.
+
+\section{Logging and Diagnostics}
+
+Use structured logs with levels. Each project should have a correlated production ID. Provide an in-app diagnostics view with:
+\begin{itemize}
+    \item application version;
+    \item hardware summary;
+    \item backend versions;
+    \item FFmpeg version;
+    \item model identifiers;
+    \item recent errors;
+    \item button to open logs folder.
+\end{itemize}
+
+Never log OAuth access/refresh tokens or secret values.
+
+\section{Testing Strategy}
+
+\subsection{Unit Tests}
+
+Unit test:
+\begin{itemize}
+    \item URL canonicalisation;
+    \item duplicate detection;
+    \item source ranking heuristics;
+    \item project serialization/migration;
+    \item scene timing;
+    \item subtitle line wrapping/safe areas;
+    \item filename sanitisation;
+    \item quality-gate rules;
+    \item FFmpeg argument generation;
+    \item state transitions;
+    \item metadata validation.
+\end{itemize}
+
+\subsection{Integration Tests}
+
+Provide integration tests or test harnesses for:
+\begin{itemize}
+    \item local LLM structured output;
+    \item research fetching against controlled fixtures;
+    \item TTS generation;
+    \item ComfyUI workflow submission using a configurable test endpoint;
+    \item FFmpeg rendering of a tiny synthetic project;
+    \item project resume after interruption;
+    \item YouTube client request construction without requiring real publication in automated tests.
+\end{itemize}
+
+\subsection{End-to-End Acceptance Test}
+
+The critical acceptance test is:
+
+\begin{enumerate}
+    \item Launch application on Windows.
+    \item Enter ``Why did floppy disks survive for so long?'' in Video Idea.
+    \item Press MAKE VIDEO.
+    \item System creates project.
+    \item System obtains multiple usable research sources.
+    \item Research brief and claims are persisted.
+    \item Script is generated.
+    \item Narration is generated.
+    \item Scene plan contains multiple visual types.
+    \item Required visual assets are produced or valid fallbacks selected.
+    \item A portrait MP4 is rendered.
+    \item MP4 is playable and has video and audio streams.
+    \item Application displays preview.
+    \item YouTube metadata is generated.
+    \item If a YouTube account is connected, the user can initiate an upload through the UI.
+\end{enumerate}
+
+A build that merely compiles but cannot complete this path is not complete.
+
+\section{Development Phases}
+
+The coding model MUST work incrementally and keep the solution compiling.
+
+\subsection{Phase 0 --- Repository and Architecture}
+Create solution, projects, DI, logging, configuration, domain models, tests and a minimal main window. Commit/build checkpoint.
+
+\subsection{Phase 1 --- Persistent Projects and UI}
+Implement Home, Settings, Projects, project creation, prompt box, profiles and project persistence. MAKE VIDEO may initially stop after creating a project, but no later phase may leave it mocked.
+
+\subsection{Phase 2 --- Local LLM}
+Integrate local inference, Model Manager basics, hardware detection and a structured-response test. Demonstrate CPU path and GPU path where hardware exists.
+
+\subsection{Phase 3 --- Research}
+Implement source discovery/fetch/extraction/ranking, research brief and claim ledger. A user topic must yield an inspectable source pack.
+
+\subsection{Phase 4 --- Script and Scene Plan}
+Generate editable script and structured scenes. No visual generation required yet.
+
+\subsection{Phase 5 --- Narration and Basic Video}
+Integrate local TTS and FFmpeg. Produce the first complete video using deterministic graphics/still images. This is the first major end-to-end milestone.
+
+\subsection{Phase 6 --- Image Generation}
+Integrate local image generation through provider/workflow abstraction. Add generated images to suitable scenes.
+
+\subsection{Phase 7 --- Video Generation}
+Integrate local text/image-to-video through a replaceable backend. Add hardware-aware fallbacks and scene regeneration.
+
+\subsection{Phase 8 --- Quality and Editing}
+Implement scene editor, candidate switching, quality gate, subtitle validation and rerender.
+
+\subsection{Phase 9 --- YouTube}
+Implement channel URL settings, OAuth, metadata editor, upload progress/retry and returned video URL persistence.
+
+\subsection{Phase 10 --- Packaging}
+Produce a clean Windows publish/build, first-run wizard, diagnostics, dependency documentation and user README.
+
+Do not start Phase 9 or future commercial licensing before the core Phase 5 pipeline is demonstrably working.
+
+\section{Future Commercial Extension}
+
+The personal codebase must be designed so a later commercial release can add:
+\begin{itemize}
+    \item Demo mode allowing a configurable number of completed productions;
+    \item licence activation;
+    \item cryptographically signed entitlements;
+    \item website purchase flow;
+    \item licence management;
+    \item installer/updater;
+    \item commercial model packs;
+    \item optional cloud providers.
+\end{itemize}
+
+No private signing key may ever be embedded in the client. Future licence verification should use server-side issuance and client-side verification. This is future scope only.
+
+\section{User Experience Standards}
+
+The final application must feel like a product, not a developer utility:
+\begin{itemize}
+    \item clear empty states;
+    \item no unexplained stack traces in normal UI;
+    \item progress stages written in plain English;
+    \item tooltips for advanced controls;
+    \item sensible defaults;
+    \item keyboard accessibility;
+    \item scalable layout;
+    \item confirmation before destructive project deletion;
+    \item no mandatory command prompt use after installation/configuration;
+    \item ability to open project/output folders from UI;
+    \item immediate feedback after MAKE VIDEO is pressed.
+\end{itemize}
+
+The user should be able to make a first basic video without knowing what GGUF, CUDA, ComfyUI or FFmpeg means.
+
+\section{Performance and Resource Rules}
+
+The program must not promise real-time generation. It should provide stage progress and elapsed time, and where estimable, an approximate remaining-time range.
+
+Large models should load lazily. Avoid holding the LLM, image model and video model in VRAM simultaneously if doing so would exceed resources. Provider shutdown/unload hooks should allow the resource scheduler to reclaim memory between stages.
+
+Disk cleanup must be explicit. Never silently delete the only generated final or user-imported asset.
+
+\section{Ethical, Factual and Platform Safeguards}
+
+The application is a general creative/research tool, but production must include basic safeguards:
+\begin{itemize}
+    \item distinguish sourced factual claims from fictional illustrative imagery;
+    \item do not fabricate quotations or sources;
+    \item provide source list in project and optionally video description;
+    \item avoid publishing private personal information discovered incidentally;
+    \item warn when a generated realistic depiction could be mistaken for documentary footage where appropriate;
+    \item retain user control over publication;
+    \item comply with configured platform disclosure requirements;
+    \item do not automatically upload when unresolved fatal quality/licensing checks exist.
+\end{itemize}
+
+\section{Deliverables Required from the Coding Model}
+
+The final coding task must deliver:
+\begin{enumerate}
+    \item complete Visual Studio solution;
+    \item all source code;
+    \item unit/integration tests;
+    \item README with build and first-run instructions;
+    \item dependency/model manifest with licences and official source locations;
+    \item sample production profile;
+    \item configuration schema;
+    \item model/workflow setup instructions;
+    \item FFmpeg setup instructions;
+    \item YouTube OAuth setup instructions;
+    \item troubleshooting guide;
+    \item architecture document;
+    \item a successful build;
+    \item evidence/log of the end-to-end acceptance test where the environment permits execution.
+\end{enumerate}
+
+Do not claim successful runtime testing for hardware/services that were not actually available. Clearly distinguish compiled, unit-tested, integration-tested and manually verified functionality.
+
+\section{Implementation Instructions to the Coding Model}
+
+When this specification is supplied to an autonomous coding model, it shall:
+\begin{enumerate}
+    \item inspect the complete specification before changing files;
+    \item create a development checklist mapped to sections above;
+    \item implement in the stated phases;
+    \item build and run tests after every significant phase;
+    \item fix compiler/test errors before continuing;
+    \item use official/upstream dependency documentation;
+    \item pin dependency versions or record resolved versions;
+    \item never invent an API method without checking the installed/current dependency;
+    \item keep UI responsive;
+    \item preserve modularity;
+    \item avoid placeholder implementations in final deliverable;
+    \item produce a final report listing implemented requirements, deferred optional requirements, tests run, known limitations and exact run instructions.
+\end{enumerate}
+
+If a dependency has changed since this document was written, select a maintained compatible replacement while preserving the interface and user-facing requirement. Explain the substitution in documentation.
+
+\section{Definition of Done}
+
+Jenga Video Studio Personal V1 is \textbf{done} when a non-technical Windows user can install/configure the required local components through documented or guided steps, launch the GUI, enter a video idea, press MAKE VIDEO, wait while the system performs real research and local AI production, preview a coherent portrait video with narration and captions, modify/regenerate a scene if desired, and upload the approved MP4 to the configured YouTube channel through the application's YouTube integration.
+
+The following are not sufficient definitions of done:
+\begin{itemize}
+    \item the solution compiles;
+    \item the UI opens;
+    \item a script is generated but no video is rendered;
+    \item a video is rendered from hard-coded sample assets;
+    \item buttons display ``coming soon'';
+    \item a fake YouTube upload succeeds locally;
+    \item the program requires an undeclared paid AI API for its core workflow.
+\end{itemize}
+
+\section{Final Architectural Principle}
+
+The application shall be designed as an \textbf{AI video director}, not a single-model wrapper. C\# owns orchestration, persistence, user experience, source provenance, scheduling, quality control and publication. Specialised local engines perform language inference, speech synthesis, image generation and short video generation. FFmpeg performs deterministic media composition. Each external engine is replaceable behind an interface. This separation is what allows the personal prototype to evolve later into a commercially distributable product without discarding the core implementation.
+
+\section{Reference Technologies and Verification Notes}
+
+The implementation model must verify current versions and licences at build time rather than treating the names in this document as immutable. The intended reference technologies are:
+\begin{itemize}
+    \item llama.cpp or a compatible maintained GGUF local inference backend for CPU/GPU local language models;
+    \item a maintained local neural TTS engine such as Piper-compatible tooling;
+    \item ComfyUI or a compatible local workflow server for image/video model orchestration;
+    \item replaceable open-weight video workflows such as Wan/LTX/Hunyuan families where hardware and licences permit;
+    \item FFmpeg/ffprobe for deterministic media processing;
+    \item Google/YouTube Data API with OAuth for publication.
+\end{itemize}
+
+\section{Conclusion}
+
+The first objective is not commercial licensing and not maximum automation. It is proof of production quality: one button must reliably turn an idea into a researched, enjoyable, phone-friendly video. Once that pipeline is stable, scheduling and a commercial Demo/Pro licensing layer become comparatively isolated extensions. The architecture above deliberately protects that future while keeping Personal V1 focused on the difficult problem that determines whether the product has value: producing a video worth watching.
+
+\end{document}

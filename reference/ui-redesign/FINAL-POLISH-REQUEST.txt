@@ -1,0 +1,1331 @@
+FINAL GUI POLISH PASS — JENGA VIDEO STUDIO PERSONAL TEST 0.2
+
+I have now tested the redesigned Jenga Video Studio Personal Test 0.2 interface.
+
+IMPORTANT:
+
+DO NOT START AGAIN.
+DO NOT REWRITE THE APPLICATION.
+DO NOT REPLACE THE EXISTING BACKEND.
+DO NOT REMOVE OR SIMPLIFY EXISTING FUNCTIONALITY.
+DO NOT TURN THIS INTO A STATIC MOCKUP.
+
+The 0.2 redesign is an improvement over 0.1 and should be treated as the new foundation.
+
+This task is a FINAL VISUAL / UI / UX POLISH PASS.
+
+All existing application functionality, commands, bindings, ViewModels, services, project persistence, production pipeline, rendering, AI integration, narration, visual generation, component management and YouTube functionality must remain intact.
+
+The attached polished concept images show the TARGET QUALITY AND DESIGN LANGUAGE.
+
+The current 0.2 screenshots show the CURRENT IMPLEMENTATION.
+
+Your job is to close the visual gap between them.
+
+============================================================
+THE MAIN PROBLEM WITH VERSION 0.2
+============================================================
+
+Version 0.2 has substantially better structure than version 0.1.
+
+KEEP:
+
+- the left navigation
+- Home
+- Create
+- Projects
+- Getting Started
+- System Status
+- Manage Components
+- Create → Production → Review → Export workflow
+- recent projects
+- project persistence
+- current functionality
+
+However, aesthetically it is still not professional enough.
+
+The biggest remaining problem is that the application is visually split between:
+
+1. very large WHITE content areas
+2. very dark navy/black panels
+3. black text appearing over dark navy in several places
+4. pale text with insufficient contrast
+5. controls that still resemble ordinary WPF forms
+6. large areas with very little visual structure
+
+This creates a disconnected appearance.
+
+It looks like a dark sidebar attached to a mostly white application rather than one coherent premium dark desktop product.
+
+The final interface should look much closer to the supplied concept images.
+
+============================================================
+1. CONVERT THE APPLICATION TO A COHERENT DARK THEME
+============================================================
+
+This is the most important change.
+
+REMOVE the enormous white/light-grey application canvas.
+
+The main content area should use a dark navy background consistent with the concept images.
+
+Do NOT simply make everything black.
+
+Use several deliberately separated dark tones.
+
+For example, establish a palette similar to:
+
+Application background:
+#071827 / #081E2D
+
+Sidebar / deepest background:
+#061521
+
+Primary surface:
+#0D2639
+
+Secondary surface:
+#12334A
+
+Raised card:
+#163B54
+
+Subtle border:
+#24506A
+
+Primary accent:
+#22D3C5
+
+Secondary accent:
+#38A9E8
+
+Primary text:
+#F3F7FA
+
+Secondary text:
+#A8BED0
+
+Muted text:
+#7893A8
+
+Success:
+#31C48D
+
+Warning:
+#F5A623
+
+Error:
+#EF5B5B
+
+These exact values are not mandatory.
+
+Use them as a design direction and adjust where necessary.
+
+The critical requirement is:
+
+EVERY TEXT ELEMENT MUST HAVE ADEQUATE CONTRAST AGAINST ITS BACKGROUND.
+
+============================================================
+2. FIX THE CURRENT BLACK-TEXT-ON-DARK-BACKGROUND PROBLEM
+============================================================
+
+The current screenshots visibly contain black headings/text on dark blue cards.
+
+This is unacceptable.
+
+Examples include the Home hero heading and Getting Started cards.
+
+Audit ALL foreground/background combinations throughout the application.
+
+On dark surfaces:
+
+Primary headings = white / near-white.
+
+Secondary text = light blue-grey.
+
+Accent labels = turquoise.
+
+Never use black text over dark navy.
+
+Never rely on WPF's default Foreground value.
+
+Explicitly style text through reusable resources.
+
+Create semantic brushes such as:
+
+TextPrimaryBrush
+TextSecondaryBrush
+TextMutedBrush
+AccentBrush
+SuccessBrush
+WarningBrush
+ErrorBrush
+
+Then use these consistently.
+
+============================================================
+3. ELIMINATE DEFAULT WPF APPEARANCE
+============================================================
+
+The finished application should not look like controls were dropped onto a default WPF window.
+
+Audit:
+
+- TextBox
+- ComboBox
+- Button
+- ListBox
+- ScrollBar
+- CheckBox
+- RadioButton
+- Expander
+- ToolTip
+- progress indicators
+- menus
+- selected states
+- disabled states
+- focus states
+
+Give them a consistent Jenga Video Studio visual style.
+
+For example:
+
+Text fields:
+dark raised surface
+subtle border
+white text
+turquoise focus border
+
+ComboBoxes:
+dark surface
+white text
+custom arrow treatment
+clear hover/selection states
+
+Buttons:
+different styles for primary, secondary, tertiary and destructive actions.
+
+Scrollbars:
+thin and unobtrusive.
+
+Disabled controls:
+muted rather than washed-out white/grey.
+
+============================================================
+4. THE ENTIRE APPLICATION MUST FEEL LIKE ONE PRODUCT
+============================================================
+
+Currently the sidebar and dark cards look like one visual system while the white centre looks like another.
+
+Remove this separation.
+
+The header, sidebar, main workspace, cards, workflow controls and footer/status area should all use the same design system.
+
+The user should perceive:
+
+ONE DARK CREATIVE APPLICATION
+
+rather than:
+
+DARK NAVIGATION + WHITE WPF CONTENT PAGE.
+
+============================================================
+5. HEADER
+============================================================
+
+Keep the existing Jenga Video Studio logo and branding.
+
+The header should become dark like the concept images.
+
+Left:
+
+JENGA VIDEO STUDIO
+An idea. A researched story. Your next video.
+
+Right:
+
+Help
+Settings
+PERSONAL 0.2
+
+Use restrained separators and icons.
+
+Do not leave a large bright white header across the top.
+
+The header should visually merge naturally with the application shell.
+
+============================================================
+6. SIDEBAR
+============================================================
+
+The current sidebar structure is good.
+
+KEEP IT.
+
+Improve the visual treatment.
+
+Navigation:
+
+Home
+Create
+Projects
+Getting Started
+
+The selected item should have:
+
+- slightly lighter navy background
+- turquoise left indicator
+- brighter icon
+- white text
+
+Unselected items should remain readable but quieter.
+
+System Status should remain in the sidebar.
+
+Improve it using compact status indicators:
+
+✓ Local AI
+  Ready
+
+✓ Video Engine
+  Ready
+
+✓ Narration
+  Ready
+
+○ Image Generation
+  Optional
+
+○ Video Generation
+  Optional
+
+○ YouTube
+  Not connected
+
+Do not allow this area to dominate the navigation.
+
+============================================================
+7. HOME SCREEN — MAKE THIS FEEL LIKE THE CONCEPT IMAGE
+============================================================
+
+The current Home structure is much better than version 0.1.
+
+KEEP its underlying functionality.
+
+However, redesign its presentation substantially.
+
+The Home screen should resemble a premium dashboard.
+
+At the top, use a strong hero card.
+
+Something similar to:
+
+Turn ideas into
+amazing videos
+
+AI research. Compelling scripts.
+Stunning visuals. All in one place.
+
+[ + CREATE NEW VIDEO → ]
+
+Use a dark photographic/abstract/gradient background if an appropriate bundled asset exists or can be safely added.
+
+Do not require an online image to render the Home screen.
+
+The hero should feel visually rich rather than being a plain dark rectangle.
+
+The Jenga triangular logo can remain as a subtle decorative element if appropriate.
+
+============================================================
+8. HOME WORKFLOW ICONS
+============================================================
+
+Under/in the hero, visually communicate:
+
+Research
+with real sources
+
+Generate
+scripts and visuals
+
+Add narration
+and captions
+
+Render
+high-quality video
+
+Upload
+to YouTube (optional)
+
+Use simple consistent icons.
+
+Do not use large rectangular buttons for these.
+
+They are explanatory workflow indicators.
+
+============================================================
+9. HOME DASHBOARD LAYOUT
+============================================================
+
+Use the available widescreen space.
+
+Instead of stacking everything vertically, create a dashboard composition.
+
+For example:
+
+LEFT / CENTRE:
+Hero
+
+RIGHT:
+Recent Projects
+
+BELOW:
+Continue Where You Left Off
+
+RIGHT:
+Quick Actions
+
+BELOW:
+Getting Started cards
+
+This should resemble the supplied polished Home concept.
+
+Do not hard-code fake projects from the concept image.
+
+Populate project cards using the REAL project persistence system.
+
+============================================================
+10. RECENT PROJECTS
+============================================================
+
+The current Recent Projects implementation is functionally useful but visually too plain.
+
+Use compact cards containing:
+
+thumbnail where available
+
+project title
+
+duration where available
+
+state
+
+last modified
+
+Open action
+
+Example:
+
+[thumbnail]
+
+Why did floppy disks survive for so long?
+
+1:02 • In Review
+17 Sep 2026, 20:33
+
+[ Open → ]
+
+If no thumbnail exists, use a tasteful Jenga placeholder.
+
+Do not fabricate a thumbnail or duration.
+
+============================================================
+11. CONTINUE WHERE YOU LEFT OFF
+============================================================
+
+If a recently active project exists, create a prominent continuation card.
+
+For example:
+
+CONTINUE WHERE YOU LEFT OFF
+
+[thumbnail]
+
+Why did floppy disks survive for so long?
+
+● In Review • 1:02 • 7 scenes
+
+Last opened: ...
+
+[ OPEN → ]   [ MORE ]
+
+Again, only show metadata that genuinely exists.
+
+============================================================
+12. QUICK ACTIONS
+============================================================
+
+Add a small Quick Actions card using existing commands.
+
+For example:
+
++ Create new video
+
+Open a project
+
+Manage components
+
+These should be compact secondary controls, not huge buttons.
+
+============================================================
+13. GETTING STARTED
+============================================================
+
+The current Getting Started screen contains enormous dark rectangles with black headings.
+
+This needs substantial improvement.
+
+Use compact cards with icons.
+
+For example:
+
+[gear icon]
+
+1. Prepare your studio
+
+Install/check the AI models and
+video engine. This only needs
+to be completed once.
+
+[ Get set up ]
+
+--------------------------------
+
+[idea icon]
+
+2. Create your idea
+
+Enter a topic or use a suggested
+idea. Choose duration, tone and
+visual style.
+
+[ Create a video ]
+
+--------------------------------
+
+[edit icon]
+
+3. Review and refine
+
+Check the script, scenes and
+narration. Make changes and
+rerender if required.
+
+[ Learn more ]
+
+--------------------------------
+
+[export icon]
+
+4. Export and share
+
+Render the final video and
+optionally upload to YouTube.
+
+[ See how ]
+
+On widescreen displays these should appear horizontally as cards where space permits.
+
+Do not create four giant full-width rectangles.
+
+============================================================
+14. CREATE SCREEN
+============================================================
+
+The current Create screen has a good overall hierarchy.
+
+KEEP its functionality and basic structure.
+
+Visually convert it into the same dark design language.
+
+Remove the white page background.
+
+Use something like:
+
+LET'S MAKE SOMETHING
+
+What should the video be about?
+
+Ask a question, explore a topic,
+or try one of the suggested ideas.
+
+[ dark topic input ]
+
+Why did floppy disks survive for so long?
+
+Suggest ideas    Surprise me
+
+Duration       Tone              Visual Quality
+[60]           [Clear...]        [Light]
+
+Preferred research sources
+(optional)
+
+[ CREATE VIDEO → ]
+
+The topic field should be prominent without being enormous.
+
+The Create Video button should be the obvious primary action.
+
+============================================================
+15. WORKFLOW BAR
+============================================================
+
+Keep:
+
+01 Create
+Your idea
+
+02 Production
+AI at work
+
+03 Review
+Edit and refine
+
+04 Export
+Your finished video
+
+But style it like the concept images.
+
+Use one integrated workflow strip.
+
+Completed stage:
+subtle success/accent state.
+
+Current stage:
+strong turquoise border/glow/highlight.
+
+Future stages:
+muted navy.
+
+Do not make it resemble four unrelated buttons.
+
+============================================================
+16. PROJECTS SCREEN
+============================================================
+
+The current Projects screen wastes most of the display because one project occupies a single huge horizontal dark rectangle followed by a massive white area.
+
+Replace this with a proper project library.
+
+Header:
+
+Your Projects
+
+[ + New Video ]
+
+Then display project cards/rows within the dark workspace.
+
+Each should contain:
+
+thumbnail
+title
+status
+duration where available
+last modified
+Open
+additional actions where supported
+
+If only one project exists, the screen should still look intentional.
+
+Use a maximum content width or grid rather than stretching one card across nearly the entire monitor.
+
+============================================================
+17. PRODUCTION SCREEN
+============================================================
+
+Preserve ALL existing Production functionality.
+
+Style it according to the earlier Production reference image.
+
+The user should see:
+
+Creating your video...
+
+PROJECT TITLE
+
+progress
+
+Research
+Evidence
+Script
+Scenes
+Narration
+Visuals
+Render
+Quality Check
+
+Generated scene thumbnails where available.
+
+Current scene preview where available.
+
+Production Journal/log as secondary information.
+
+Do not fabricate exact percentages for model operations where the backend does not know them.
+
+Use indeterminate animation for unknown progress.
+
+============================================================
+18. REVIEW SCREEN
+============================================================
+
+Preserve ALL existing Review functionality.
+
+Use the earlier Review concept image as the visual target.
+
+The Review screen should resemble a lightweight editor.
+
+Major regions:
+
+LARGE VIDEO PREVIEW
+
+SCENE STRIP
+
+OPTIONAL LIGHTWEIGHT TIMELINE
+
+RIGHT-HAND SCENE INSPECTOR
+
+The scene inspector contains the existing fields:
+
+Narration
+On-screen heading
+Visual treatment
+Visual prompt
+Graphic labels
+
+Existing actions such as:
+
+Save / Apply Changes
+Regenerate Visual
+Rerender
+
+must remain connected to the real backend.
+
+============================================================
+19. EXPORT SCREEN
+============================================================
+
+Give Export the same dark creative-software styling.
+
+Clearly separate:
+
+Finished Video
+
+File information
+
+Open MP4
+
+Open Folder
+
+YouTube
+
+Title
+Description
+Tags
+Privacy
+Audience
+Disclosure
+
+Upload
+
+Do not expose OAuth implementation details here.
+
+Those belong under Settings / Manage Components.
+
+============================================================
+20. MANAGE COMPONENTS
+============================================================
+
+The friendly component screen should use cards.
+
+Example:
+
+LOCAL AI
+✓ Ready
+[ Manage ]
+
+VIDEO ENGINE
+✓ Ready
+[ Manage ]
+
+NARRATION
+✓ Ready
+[ Change ]
+
+IMAGE GENERATION
+○ Optional
+[ Install ]
+
+VIDEO GENERATION
+○ Optional
+[ Install ]
+
+YOUTUBE
+○ Not connected
+[ Connect ]
+
+Then:
+
+Advanced Setup →
+
+Advanced Setup retains ALL current technical controls:
+
+Ollama
+Qwen
+CPU inference
+FFmpeg
+Python
+Piper
+ComfyUI
+workflow files
+OAuth configuration
+paths
+diagnostics
+
+DO NOT REMOVE THESE.
+
+============================================================
+21. USE CARDS — BUT DO NOT OVERDO THEM
+============================================================
+
+Cards should organise meaningful groups of information.
+
+Do not put every label inside another rectangle.
+
+Use:
+
+large surfaces for major regions
+
+cards for projects/settings/actions
+
+spacing for simple relationships
+
+dividers for secondary grouping
+
+The concept images are information-dense but organised.
+
+That is the target.
+
+============================================================
+22. DEPTH AND SEPARATION
+============================================================
+
+One current problem is dark blue and almost-black elements merging into each other.
+
+Fix this through controlled tonal separation.
+
+For example:
+
+Application background:
+very dark navy
+
+Sidebar:
+slightly different dark navy
+
+Main card:
+clearly lighter navy
+
+Nested control:
+another slightly lighter tone
+
+Selected state:
+turquoise border/accent
+
+Use subtle borders and tonal differences.
+
+DO NOT solve separation by introducing huge white areas.
+
+DO NOT use pure black next to extremely dark blue everywhere.
+
+============================================================
+23. TYPOGRAPHY
+============================================================
+
+Create a clear type hierarchy.
+
+For example:
+
+Page title:
+28–34px equivalent
+
+Section title:
+18–22px
+
+Card title:
+14–17px
+
+Body:
+12–14px
+
+Metadata:
+11–12px
+
+Primary text:
+near-white
+
+Secondary text:
+blue-grey
+
+Muted metadata:
+darker blue-grey
+
+Accent labels:
+turquoise
+
+Avoid black text completely on dark surfaces.
+
+Do not make every heading enormous.
+
+============================================================
+24. SPACING
+============================================================
+
+Use a consistent spacing scale.
+
+For example:
+
+4
+8
+12
+16
+24
+32
+48
+
+Do not use arbitrary margins throughout the XAML.
+
+Create reusable spacing resources where sensible.
+
+The concept images feel polished partly because their spacing is consistent.
+
+============================================================
+25. CORNERS AND BORDERS
+============================================================
+
+Use modest rounded corners.
+
+Approximately:
+
+small controls: 4–6px
+cards: 6–10px
+major panels: 8–12px
+
+Do NOT turn everything into highly rounded pills.
+
+Use thin borders with low-contrast blue tones.
+
+Turquoise borders should generally indicate:
+
+selection
+focus
+current stage
+important status
+
+not every panel.
+
+============================================================
+26. ICONOGRAPHY
+============================================================
+
+Use a consistent icon style.
+
+Icons should help distinguish:
+
+Home
+Create
+Projects
+Help
+Settings
+Research
+AI generation
+Narration
+Render
+Upload
+Components
+
+Do not mix wildly different icon styles.
+
+Do not use emoji as primary UI icons.
+
+============================================================
+27. HOVER / FOCUS / SELECTED STATES
+============================================================
+
+Every interactive control should have intentional states.
+
+Buttons:
+
+normal
+hover
+pressed
+disabled
+
+Navigation:
+
+normal
+hover
+selected
+
+Text input:
+
+normal
+focused
+invalid
+disabled
+
+Cards where clickable:
+
+normal
+hover
+selected
+
+Use subtle brightness/border changes.
+
+Avoid distracting animations.
+
+============================================================
+28. ACCESSIBILITY / CONTRAST
+============================================================
+
+Audit the entire application for readability.
+
+The current screenshots contain several low-contrast combinations.
+
+Fix them.
+
+Important information must remain readable without relying solely on turquoise colour.
+
+Use:
+
+icons
+text
+shape
+colour
+
+together for statuses.
+
+For example:
+
+✓ Ready
+
+rather than merely changing a circle from blue to green.
+
+============================================================
+29. SCROLLING
+============================================================
+
+The current Getting Started screen uses a very obvious default light scrollbar.
+
+Replace default scrollbar styling with a dark unobtrusive scrollbar.
+
+Avoid horizontal scrolling at ordinary desktop resolutions.
+
+============================================================
+30. RESPONSIVE DESKTOP LAYOUT
+============================================================
+
+Target a normal desktop application experience.
+
+The supplied screenshots are approximately widescreen desktop usage.
+
+Make good use of that space.
+
+At larger widths:
+
+use multiple columns.
+
+At smaller widths:
+
+allow cards to wrap/reflow.
+
+Do not simply stretch every element wider.
+
+Use sensible MaxWidth values for text-heavy content.
+
+============================================================
+31. DO NOT COPY THE CONCEPT IMAGE LITERALLY
+============================================================
+
+The attached concept images contain illustrative content.
+
+They are DESIGN REFERENCES.
+
+Do not hard-code:
+
+fake projects
+fake durations
+fake progress
+fake storage
+fake thumbnails
+fake AI status
+fake scenes
+fake timestamps
+
+Use actual application state.
+
+If actual information is unavailable, display a truthful empty/unknown state.
+
+============================================================
+32. PRESERVE VERSION 0.2 FUNCTIONALITY EXACTLY
+============================================================
+
+This is a HARD REQUIREMENT.
+
+The application already works.
+
+The final visual redesign must preserve the existing behaviour.
+
+Do not replace:
+
+ViewModels
+services
+models
+persistence
+AI orchestration
+research
+claim/evidence handling
+Ollama integration
+FFmpeg
+narration
+Piper
+ComfyUI integration
+rendering
+project recovery
+scene editing
+YouTube OAuth
+YouTube upload
+validation
+logging
+
+unless a very small change is genuinely necessary to bind the redesigned UI.
+
+Prefer changing:
+
+XAML
+ResourceDictionaries
+DataTemplates
+Styles
+layout containers
+visual state presentation
+
+over backend code.
+
+============================================================
+33. CENTRALISE THE DESIGN SYSTEM
+============================================================
+
+Do not fix colours manually in hundreds of controls.
+
+Create/rework shared ResourceDictionaries.
+
+Centralise:
+
+Colours.xaml
+Brushes.xaml
+Typography.xaml
+Controls.xaml
+
+or an equivalent structure appropriate to the existing project.
+
+Define semantic resources such as:
+
+AppBackgroundBrush
+SidebarBackgroundBrush
+SurfaceBrush
+SurfaceRaisedBrush
+CardBrush
+BorderBrush
+
+TextPrimaryBrush
+TextSecondaryBrush
+TextMutedBrush
+
+AccentBrush
+AccentHoverBrush
+
+SuccessBrush
+WarningBrush
+ErrorBrush
+
+Then use those resources throughout the application.
+
+The goal is that changing the theme later should not require editing every page individually.
+
+============================================================
+34. REMOVE HARDCODED VISUAL INCONSISTENCIES
+============================================================
+
+Search the XAML for:
+
+Foreground="Black"
+Background="White"
+Background="#FFFFFF"
+Foreground="#000000"
+
+and other local colour definitions that conflict with the new design system.
+
+Replace them with semantic theme resources where appropriate.
+
+Also inspect control templates because default WPF templates may reintroduce light backgrounds.
+
+============================================================
+35. DO NOT INTRODUCE FEATURE CREEP
+============================================================
+
+This pass is about visual completion.
+
+Do NOT spend the task adding:
+
+advanced video editing
+new AI providers
+new research engines
+new upload services
+cloud accounts
+collaboration
+plugin systems
+professional NLE functionality
+
+unless necessary to preserve something that already exists.
+
+Spend the effort on making the EXISTING PRODUCT look finished.
+
+============================================================
+36. WHAT THE FINAL APPLICATION SHOULD FEEL LIKE
+============================================================
+
+When I launch the final Personal Test build, I want the immediate impression to be:
+
+"This looks like a real modern AI video creation application."
+
+NOT:
+
+"This looks like a WPF prototype."
+
+NOT:
+
+"This looks like a website embedded inside an application."
+
+NOT:
+
+"This is a white form with a dark sidebar."
+
+NOT:
+
+"This is a collection of AI tools glued together."
+
+The underlying technologies should disappear behind the Jenga Video Studio product identity.
+
+============================================================
+37. USE ALL SUPPLIED VISUAL REFERENCES TOGETHER
+============================================================
+
+The earlier supplied concept images show:
+
+A. IDEAL HOME / PRODUCTION DESIGN
+
+B. IDEAL REVIEW / VIDEO EDITOR DESIGN
+
+C. LATEST IDEAL DARK HOME DASHBOARD
+
+Use all of these as a coherent visual specification.
+
+The newest dark dashboard image should be the PRIMARY reference for:
+
+- colour palette
+- application shell
+- sidebar
+- header
+- Home
+- project cards
+- component status
+- general styling
+
+The Production reference should remain the PRIMARY reference for:
+
+- generation progress
+- pipeline stages
+- scene generation
+- production activity
+
+The Review reference should remain the PRIMARY reference for:
+
+- video preview
+- scene strip
+- editing inspector
+- review workflow
+- rerendering
+
+All screens must look like they belong to exactly the same application.
+
+============================================================
+38. FINAL VERIFICATION
+============================================================
+
+After the redesign:
+
+Build the COMPLETE solution.
+
+Fix every compilation error introduced by the UI changes.
+
+Run the existing automated tests.
+
+Check for:
+
+- binding errors
+- missing resources
+- invalid StaticResource/DynamicResource references
+- unreadable text
+- default white WPF controls
+- black text on dark surfaces
+- unexpected light backgrounds
+- broken navigation
+- broken commands
+- missing scene selection
+- broken project opening
+- broken component management
+- broken resizing
+- clipped content
+
+Launch the application if the environment permits it.
+
+Inspect EVERY major screen:
+
+Home
+Create
+Projects
+Getting Started
+Production
+Review
+Export
+Manage Components
+Advanced Setup
+
+Do not consider the redesign complete merely because Home looks good.
+
+============================================================
+FINAL PRIORITY ORDER
+============================================================
+
+If trade-offs are necessary, use this priority:
+
+1. DO NOT BREAK EXISTING FUNCTIONALITY.
+2. Fix contrast/readability everywhere.
+3. Establish one coherent dark theme.
+4. Match the professional visual language of the supplied concept images.
+5. Improve hierarchy and screen-space usage.
+6. Remove default WPF appearance.
+7. Improve polish, hover states and details.
+8. Avoid unnecessary backend changes.
+9. Avoid feature creep.
+
+This should be the final substantial visual redesign of Personal Test 0.2.
+
+Do not start from scratch.
+
+Take the CURRENT 0.2 application and FINISH its visual design.
+
+The structure is now broadly correct.
+
+The functionality is already there.
+
+The remaining task is to make the entire application visually coherent, professional, readable and convincingly close to the supplied Jenga Video Studio concept images.

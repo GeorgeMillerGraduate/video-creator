@@ -1,0 +1,78 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Background="{StaticResource AppBackgroundBrush}" Foreground="{StaticResource TextPrimaryBrush}" x:Class="JengaVideoStudio.App.Views.ExportView">
+  <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="18" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <StackPanel>
+        <TextBlock Text="Your finished video" Style="{StaticResource Title}" />
+        <TextBlock Text="{Binding CurrentTitle, Mode=OneWay}" Style="{StaticResource Muted}" FontSize="15" Margin="0,0,0,20" />
+        <Border Style="{StaticResource Card}">
+          <StackPanel>
+            <TextBlock Text="LOCAL VIDEO" Style="{StaticResource Eyebrow}" />
+            <TextBlock Text="1080 × 1920 · Portrait MP4" FontSize="20" FontWeight="SemiBold" />
+            <TextBlock Text="{Binding CurrentSummary, Mode=OneWay}" Style="{StaticResource Muted}" Margin="0,10,0,18" />
+            <TextBlock Text="{Binding PreviewNote, Mode=OneWay}" Style="{StaticResource Muted}" Margin="0,0,0,18" />
+            <WrapPanel>
+              <Button Content="Render final video" Command="{Binding Resume}" Style="{StaticResource Primary}" Margin="0,0,8,8" />
+              <Button Content="Open MP4" Command="{Binding OpenVideo}" Margin="0,0,8,8" />
+              <Button Content="Open output folder" Command="{Binding OpenFolder}" Margin="0,0,8,8" />
+            </WrapPanel>
+            <Button Content="← Return to review" Command="{Binding Navigate}" CommandParameter="Review" Style="{StaticResource QuietButton}" HorizontalAlignment="Left" Margin="0,10,0,0" />
+          </StackPanel>
+        </Border>
+        <Border Style="{StaticResource Card}" Margin="0,16,0,0">
+          <StackPanel>
+            <TextBlock Text="QUALITY NOTES" Style="{StaticResource Eyebrow}" />
+            <TextBlock Text="{Binding WarningText, Mode=OneWay}" Foreground="{StaticResource WarningBrush}" />
+            <Expander Header="Research sources">
+              <TextBox Text="{Binding SourceText,Mode=OneWay}" IsReadOnly="True" Height="220" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="0,10,0,0" />
+            </Expander>
+          </StackPanel>
+        </Border>
+      </StackPanel>
+      <Border Grid.Column="2" Style="{StaticResource Card}">
+        <StackPanel IsEnabled="{Binding Idle}">
+          <TextBlock Text="Share on YouTube" FontSize="21" FontWeight="SemiBold" />
+          <TextBlock Text="Optional. Your video stays local until you approve an upload." Style="{StaticResource Muted}" Margin="0,8,0,12" />
+          <TextBlock Text="{Binding YouTubeStatus, Mode=OneWay}" Foreground="{StaticResource AccentHoverBrush}" FontSize="11" />
+          <Button Content="Manage YouTube connection" Command="{Binding Navigate}" CommandParameter="Settings" Style="{StaticResource QuietButton}" HorizontalAlignment="Left" Margin="0,6,0,0" />
+          <TextBlock Text="Title" Style="{StaticResource FieldLabel}" />
+          <TextBox Text="{Binding Current.Metadata.Title,UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="YouTube video title" />
+          <TextBlock Text="Description · source links appended automatically" Style="{StaticResource FieldLabel}" />
+          <TextBox Text="{Binding Current.Metadata.Description,UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="YouTube description" Height="100" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+          <TextBlock Text="Tags · comma-separated" Style="{StaticResource FieldLabel}" />
+          <TextBox Text="{Binding Current.Metadata.Tags,UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="YouTube tags" />
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition />
+              <ColumnDefinition Width="95" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="0,0,14,0">
+              <TextBlock Text="Privacy" Style="{StaticResource FieldLabel}" />
+              <ComboBox ItemsSource="{Binding PrivacyOptions}" SelectedItem="{Binding Current.Metadata.Privacy}" AutomationProperties.Name="Upload privacy" />
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+              <TextBlock Text="Category ID" Style="{StaticResource FieldLabel}" />
+              <TextBox Text="{Binding Current.Metadata.Category,UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="YouTube category ID" />
+            </StackPanel>
+          </Grid>
+          <CheckBox Content="Made for children" IsChecked="{Binding Current.Metadata.MadeForKids}" />
+          <CheckBox IsChecked="{Binding Current.Metadata.ContainsSyntheticMedia}">
+            <TextBlock Text="Contains realistic altered or synthetic content" />
+          </CheckBox>
+          <CheckBox IsChecked="{Binding Current.EditorialReviewed}">
+            <TextBlock Text="I have reviewed the video, facts, sources, captions, rights and disclosure settings." />
+          </CheckBox>
+          <WrapPanel Margin="0,16,0,0">
+            <Button Content="UPLOAD TO YOUTUBE" Command="{Binding Upload}" Style="{StaticResource Primary}" Margin="0,0,8,8" />
+            <Button Content="Save details" Command="{Binding SaveEdits}" Margin="0,0,8,8" />
+            <Button Content="Open YouTube video" Command="{Binding OpenYouTubeVideo}" Margin="0,0,8,8" />
+          </WrapPanel>
+        </StackPanel>
+      </Border>
+    </Grid>
+  </ScrollViewer>
+</UserControl>

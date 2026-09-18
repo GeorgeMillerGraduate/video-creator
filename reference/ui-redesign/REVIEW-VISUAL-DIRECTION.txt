@@ -1,0 +1,967 @@
+SECOND VISUAL REFERENCE — REVIEW / EDITING WORKSPACE
+
+The second attached Jenga Video Studio concept image shows the desired direction for the REVIEW stage of the existing application.
+
+As with the first reference image:
+
+DO NOT rebuild Jenga Video Studio from scratch.
+DO NOT replace existing backend systems.
+DO NOT remove existing functionality.
+DO NOT create fake functionality simply to match the image.
+
+The objective is to reorganise and restyle the EXISTING Review functionality so that it behaves visually like a coherent video-production workspace.
+
+The existing project remains the source of truth for functionality.
+
+==================================================
+PURPOSE OF THIS SECOND REFERENCE
+==================================================
+
+The first visual reference demonstrates the overall application shell, Home experience and Production experience.
+
+This second reference demonstrates what happens AFTER production has generated a project and the user enters Review.
+
+The major design principle is:
+
+REVIEW SHOULD FEEL LIKE EDITING A VIDEO PROJECT,
+NOT COMPLETING A CONFIGURATION FORM.
+
+The existing Review screen currently contains many of the correct controls:
+
+- video preview
+- narration
+- on-screen heading
+- visual treatment
+- graphic labels
+- visual prompt
+- scene selection
+- regeneration
+- rerendering
+- project access
+
+The problem is primarily PRESENTATION.
+
+Preserve the underlying functionality and reorganise it into a professional editing workspace.
+
+==================================================
+1. RETAIN THE SAME APPLICATION SHELL
+==================================================
+
+The Review screen should NOT suddenly look like a different application.
+
+Retain the same global shell established in the first visual reference:
+
+LEFT:
+application navigation
+
+TOP:
+project workflow / global controls
+
+CENTRE:
+primary creative workspace
+
+RIGHT:
+context-sensitive inspector
+
+BOTTOM/CENTRE:
+scene and timeline information
+
+Use the same:
+
+- dark navy backgrounds
+- slightly lighter panels
+- turquoise accent
+- typography
+- button hierarchy
+- iconography
+- spacing system
+- status indicators
+- borders
+- card styling
+
+Moving between Create, Production and Review should feel like moving between workspaces in ONE APPLICATION.
+
+==================================================
+2. PROJECT WORKFLOW REMAINS VISIBLE
+==================================================
+
+At the top of an opened project, retain the clear workflow:
+
+1  Create
+   Your idea
+
+2  Production
+   AI at work
+
+3  Review
+   Edit and refine
+
+4  Export
+   Your finished video
+
+When reviewing, Stage 3 should be visibly active.
+
+This gives the user constant context.
+
+They immediately know:
+
+- the idea has been created
+- production has completed
+- they are reviewing/editing
+- export is the next major stage
+
+This is preferable to treating Review as an isolated page.
+
+==================================================
+3. LARGE VIDEO PREVIEW IS THE PRIMARY OBJECT
+==================================================
+
+The largest element on Review should be the video itself.
+
+The concept image places the preview prominently in the centre-left.
+
+This is intentional.
+
+A video application should visually prioritise:
+
+THE VIDEO.
+
+The preview should not be squeezed between configuration controls.
+
+Where supported by the existing application, show:
+
+- current frame
+- generated visual
+- on-screen text
+- playback position
+- current scene
+- total duration
+
+Under the preview provide conventional playback controls.
+
+For example:
+
+Play / Pause
+
+timeline scrubber
+
+current position
+
+volume
+
+fullscreen where practical
+
+Do not add controls that cannot actually be supported by the existing preview implementation without significant unnecessary rewriting.
+
+==================================================
+4. SCENE SELECTION SHOULD BE VISUAL
+==================================================
+
+The existing Review interface should avoid relying primarily on a plain ComboBox to select scenes.
+
+Where project data permits, display scenes as a horizontal strip of visual cards.
+
+Example:
+
+[IMAGE]     [IMAGE]       [IMAGE]        [IMAGE]
+1. Intro    2. Early days  3. Why lasted  4. Decline
+0:08        0:08           0:12           0:10
+
+The selected scene receives a strong turquoise outline.
+
+Each scene card can contain:
+
+- thumbnail
+- scene number
+- short scene title
+- duration where known
+- status
+- small additional-actions menu where useful
+
+The purpose is to make the structure of the video immediately understandable.
+
+The user should be able to SEE that the project contains seven scenes.
+
+Selecting a scene must invoke the existing scene-selection logic.
+
+Do not duplicate project state.
+
+Do not create a second independent scene system purely for the GUI.
+
+==================================================
+5. SELECTED SCENE SHOULD DRIVE THE ENTIRE WORKSPACE
+==================================================
+
+The selected scene should become the current editing context.
+
+For example:
+
+Scene 3 of 7
+Why they lasted
+0:12
+
+Selecting Scene 3 should cause:
+
+- the preview to represent Scene 3 where supported
+- the inspector to display Scene 3 data
+- narration editor to display Scene 3 narration
+- heading editor to display Scene 3 heading
+- visual treatment to display Scene 3 treatment
+- visual prompt to display Scene 3 prompt
+- labels to display Scene 3 labels
+
+Changing to Scene 4 should update all of these controls to Scene 4.
+
+This should use the EXISTING scene/project model.
+
+==================================================
+6. RIGHT-HAND SCENE INSPECTOR
+==================================================
+
+The existing editable fields belong in a dedicated right-hand inspector.
+
+This is one of the most important changes represented by the second reference.
+
+The inspector might be headed:
+
+SCENE DETAILS
+
+Scene 3 of 7
+
+Then group the existing properties logically.
+
+SCENE TITLE / HEADING
+
+[ Why they lasted ]
+
+NARRATION
+
+[ editable narration text ]
+
+ON-SCREEN HEADING
+
+[ editable heading ]
+
+VISUAL TREATMENT
+
+[ existing selection ]
+
+IMAGE / VIDEO PROMPT
+
+[ existing visual prompt ]
+
+GRAPHIC LABELS
+
+[ existing labels ]
+
+The important difference from the existing GUI is that these fields now have CONTEXT.
+
+They are clearly properties belonging to the currently selected scene.
+
+==================================================
+7. NARRATION EDITING
+==================================================
+
+Narration is important enough to receive a substantial editor.
+
+Do not squeeze narration into an unnecessarily small field.
+
+The user should be able to comfortably read and modify the generated voiceover text.
+
+Where existing functionality permits, useful actions can appear beside it.
+
+For example:
+
+Regenerate with AI
+
+or the existing equivalent.
+
+However:
+
+DO NOT implement a new AI regeneration system merely because the mockup depicts a button.
+
+Use the application's existing capabilities.
+
+If narration regeneration currently happens through rerendering or another existing command, connect the interface appropriately.
+
+==================================================
+8. VISUAL PROMPT EDITING
+==================================================
+
+The visual prompt should similarly be clearly associated with the current scene.
+
+For example:
+
+IMAGE / VIDEO PROMPT
+
+"Close-up of a 3.5 inch floppy disk on a desk with
+a retro computer in the background, nostalgic lighting,
+clear and detailed documentary style."
+
+[ Regenerate Visual ]
+
+The user should immediately understand:
+
+"This text describes the image/video for this scene."
+
+Regenerate Visual must continue to use the existing visual regeneration system.
+
+Do not create fake regenerated previews.
+
+==================================================
+9. SCENE ACTIONS
+==================================================
+
+Group scene-specific actions together rather than scattering them throughout the page.
+
+For example:
+
+SCENE ACTIONS
+
+[ Apply Changes ]
+
+[ Regenerate Scene ]
+
+[ Preview This Scene ]
+
+Potential future actions such as:
+
+Insert New Scene
+Duplicate Scene
+Delete Scene
+Move Scene
+
+should ONLY be made functional if the current backend supports them or if they can be implemented cleanly without destabilising the existing architecture.
+
+Do not introduce major new editing functionality during a UI refactor unless required.
+
+If unsupported, OMIT these actions rather than creating dummy buttons.
+
+==================================================
+10. SAVE STATE SHOULD BE OBVIOUS
+==================================================
+
+Creative applications need to reassure users that their work is safe.
+
+The concept image shows a subtle state such as:
+
+✓ Project saved
+Last saved: 17 Sep 2026, 20:39
+
+If the existing persistence system provides sufficient information, surface this in the interface.
+
+Possible states include:
+
+Saving...
+Saved
+Unsaved changes
+Save failed
+
+Do not pretend a project has been saved before persistence has actually succeeded.
+
+This status should reflect real application state.
+
+==================================================
+11. RENDER FINAL VIDEO IS A MAJOR ACTION
+==================================================
+
+Once Review is complete, the next major action should be visually obvious.
+
+For example:
+
+[ RENDER FINAL VIDEO ]
+
+This should be one of the strongest buttons on the Review screen.
+
+The user has moved through:
+
+Idea
+→ AI Production
+→ Review
+→ Final Render
+
+The interface should make that progression obvious.
+
+Connect this to the existing rendering functionality.
+
+Do not create a second rendering path solely for the new interface.
+
+==================================================
+12. TIMELINE — USE EXISTING DATA FIRST
+==================================================
+
+The concept image includes a lightweight timeline beneath the scene strip.
+
+It illustrates tracks such as:
+
+Narration
+On-screen text
+Visuals
+
+This is intended primarily as a VISUAL EXPLANATION of the video's structure.
+
+Do not turn this redesign into development of a full Adobe Premiere-style non-linear editor.
+
+That is NOT required.
+
+If the existing project already exposes sufficient timing information, create a lightweight read-only or limited-interaction timeline.
+
+For example:
+
+0:00       0:10       0:20       0:30
+
+Narration
+████████████████████████████████
+
+On-screen text
+[Intro][Small disk][Reliability][Decline]
+
+Visuals
+[scene1][scene2][scene3][scene4]
+
+The timeline should help users understand:
+
+- where scenes occur
+- where narration occurs
+- where headings/captions occur
+- approximate project duration
+
+It does NOT need to become a professional multi-track editor during this redesign.
+
+==================================================
+13. DO NOT INVENT TIMING DATA
+==================================================
+
+This is particularly important.
+
+If exact narration waveforms are not currently available, do NOT fabricate a waveform.
+
+If exact timing information is unavailable, show the scene structure using information that actually exists.
+
+The concept image's waveform is illustrative.
+
+Possible legitimate implementations include:
+
+- actual waveform if audio data can be analysed easily
+- simple narration-duration blocks
+- scene-duration blocks
+- caption regions
+- thumbnails aligned proportionally by known duration
+
+Prefer honest data over decorative fake precision.
+
+==================================================
+14. CURRENT PROJECT PANEL
+==================================================
+
+The left sidebar can display concise information about the opened project.
+
+For example:
+
+CURRENT PROJECT
+
+[thumbnail]
+
+Why did floppy disks
+survive for so long?
+
+1:02 • 7 scenes
+
+● In Review
+
+Then useful project-level actions such as:
+
+Project Details
+Export Video
+
+Only expose Duplicate/Delete/etc. if already supported or straightforwardly connected to the existing project management layer.
+
+The point is to distinguish:
+
+GLOBAL APPLICATION NAVIGATION
+
+from
+
+CURRENT PROJECT CONTEXT.
+
+==================================================
+15. SYSTEM STATUS REMAINS AVAILABLE
+==================================================
+
+As established in the first reference, the lower sidebar can continue showing concise component health.
+
+For example:
+
+SYSTEM STATUS
+
+✓ Local AI
+  Ready
+
+✓ Video Engine
+  Ready
+
+✓ Narration
+  Ready
+
+✓ Image Generation
+  Ready
+
+○ YouTube
+  Not connected
+
+[ Manage Components ]
+
+This status area should remain relatively small.
+
+Reviewing the video is the primary task.
+
+The implementation technologies must not dominate the screen.
+
+==================================================
+16. EXPORT SHOULD BE ITS OWN FINAL STAGE
+==================================================
+
+The existing application currently combines some Review/upload concepts.
+
+The redesigned GUI should make the user's mental model clearer:
+
+CREATE
+What should I make?
+
+PRODUCTION
+The AI creates it.
+
+REVIEW
+I inspect and edit it.
+
+EXPORT
+I produce/use the finished result.
+
+Export can expose existing functionality such as:
+
+- final render
+- output location
+- open MP4
+- open project folder
+- YouTube metadata
+- YouTube upload
+- privacy
+- title
+- description
+- tags
+- upload status
+
+This does NOT require rewriting the underlying upload system.
+
+It means presenting existing functionality at the point where users naturally expect it.
+
+==================================================
+17. EDITOR DENSITY
+==================================================
+
+Unlike the Home/Create screens, Review SHOULD be relatively information-dense.
+
+That is intentional.
+
+However, density must come from organised panels rather than clutter.
+
+The reference image demonstrates three major working regions:
+
+LEFT/CENTRE:
+video and scene structure
+
+RIGHT:
+properties of selected scene
+
+LEFT SIDEBAR:
+navigation/project/system context
+
+This allows considerable functionality to remain visible without making everything compete for attention.
+
+==================================================
+18. USE SCREEN SPACE INTELLIGENTLY
+==================================================
+
+The existing Personal Test 0.1 Review screen wastes significant screen area because controls are stacked vertically into very large regions.
+
+The redesign should take advantage of a widescreen desktop monitor.
+
+A typical 1920x1080 display has much more horizontal than vertical working space.
+
+Therefore use:
+
+- columns
+- inspector panels
+- horizontal scene strips
+- compact toolbars
+- context-sensitive controls
+
+rather than simply stacking every control vertically.
+
+The interface must still resize sensibly.
+
+Do not rely on absolute coordinates.
+
+==================================================
+19. CLEAR CONTROL HIERARCHY
+==================================================
+
+Review contains several different levels of action.
+
+PRIMARY PROJECT ACTION:
+
+Render Final Video
+
+PRIMARY SCENE ACTION:
+
+Apply Changes / Save Scene Changes
+
+SECONDARY SCENE ACTIONS:
+
+Regenerate Visual
+Preview Scene
+Regenerate Scene where supported
+
+TERTIARY ACTIONS:
+
+More options
+Project details
+Advanced information
+
+DESTRUCTIVE ACTIONS:
+
+Delete scene/project, if supported
+
+These should NOT all have identical button styling.
+
+==================================================
+20. FEEDBACK AFTER EDITING
+==================================================
+
+When the user modifies narration, headings or prompts, provide clear visual feedback.
+
+For example:
+
+Unsaved changes
+
+then:
+
+Saving...
+
+then:
+
+✓ Changes saved
+
+If rerendering is required:
+
+Changes saved — rerender required
+
+[ Rerender ]
+
+Use the actual existing state machine/commands wherever possible.
+
+The user should never be uncertain whether editing a text box actually changed the project.
+
+==================================================
+21. DISABLED CONTROLS
+==================================================
+
+Disabled controls should remain visible only when their presence helps users understand the workflow.
+
+They should be clearly muted.
+
+Do not fill the interface with large disabled rectangles.
+
+For example, before a video exists:
+
+Render Final Video
+
+may legitimately be disabled.
+
+But twenty unrelated unavailable actions should not occupy valuable workspace.
+
+==================================================
+22. RESPONSIVE WPF IMPLEMENTATION
+==================================================
+
+This is still a WPF Windows desktop application.
+
+Implement the design using proper WPF layout rather than attempting to recreate a static screenshot.
+
+Prefer appropriate combinations of:
+
+Grid
+DockPanel
+Border
+ItemsControl
+ListBox/ListView
+ContentControl
+ScrollViewer where genuinely required
+
+Use reusable DataTemplates for scene cards.
+
+Use reusable styles/resources for:
+
+- buttons
+- panels
+- status indicators
+- navigation
+- typography
+- text inputs
+- inspectors
+- cards
+- scene selection
+- workflow indicators
+
+Avoid copying enormous amounts of repeated XAML.
+
+==================================================
+23. MVVM / EXISTING ARCHITECTURE
+==================================================
+
+The redesign must respect the architecture of the existing application.
+
+Before modifying Review, inspect:
+
+- current ViewModel
+- current scene model
+- project model
+- existing ICommand implementations
+- property change notifications
+- rendering services
+- narration services
+- visual-generation services
+- persistence services
+- project loading
+- project saving
+- cancellation
+- resume behaviour
+
+Reuse these.
+
+Where new UI state is genuinely required, extend the existing ViewModel cleanly.
+
+DO NOT place large amounts of application logic directly into XAML code-behind merely because it makes recreating the mockup faster.
+
+==================================================
+24. PRESERVE EXISTING REVIEW CAPABILITIES
+==================================================
+
+This is a hard requirement.
+
+After redesigning Review, verify that existing functionality has not disappeared.
+
+In particular preserve whatever the current build already supports for:
+
+- selecting scenes
+- reading narration
+- editing narration
+- editing headings
+- selecting visual treatment
+- editing visual prompts
+- editing graphic labels
+- saving edits
+- regenerating selected visuals
+- rerendering
+- video playback
+- opening MP4 externally
+- opening project folder
+- project persistence
+- resume/recovery
+
+A prettier interface that removes functionality is a regression.
+
+==================================================
+25. DO NOT CONFUSE POLISH WITH FEATURE CREEP
+==================================================
+
+This task is primarily about making EXISTING capabilities understandable and pleasant to use.
+
+Do not suddenly implement:
+
+- a professional NLE
+- dozens of video transitions
+- colour grading
+- keyframe animation
+- hundreds of effects
+- audio mixing
+- multi-camera editing
+- plugin marketplaces
+- cloud collaboration
+
+unless those systems already exist.
+
+The concept image is deliberately polished, but its purpose is to demonstrate UI ORGANISATION.
+
+The current goal is:
+
+MAKE JENGA VIDEO STUDIO'S EXISTING FUNCTIONALITY
+LOOK AND FEEL LIKE A COHERENT PRODUCT.
+
+==================================================
+26. THE DESIRED USER EXPERIENCE
+==================================================
+
+A new user should be able to perform this workflow without understanding the implementation:
+
+1. Open Jenga Video Studio.
+
+2. Click Create New Video.
+
+3. Enter:
+   "Why did floppy disks survive for so long?"
+
+4. Choose duration/tone/quality.
+
+5. Click Create Video.
+
+6. Watch Production progress through:
+   Research
+   Evidence
+   Script
+   Scenes
+   Narration
+   Visuals
+   Render
+   Quality Check
+
+7. Enter Review.
+
+8. Watch the generated video.
+
+9. Click Scene 3.
+
+10. Read its narration.
+
+11. Modify one sentence.
+
+12. Change its visual prompt.
+
+13. Regenerate that visual.
+
+14. Save the changes.
+
+15. Rerender as required.
+
+16. Review the result.
+
+17. Render/export the finished MP4.
+
+18. Optionally upload it through the existing YouTube integration.
+
+At no point should the normal user NEED to understand:
+
+Ollama
+FFmpeg
+Piper
+ComfyUI
+Python environments
+workflow JSON
+OAuth internals
+
+Those remain available through advanced configuration.
+
+==================================================
+27. RELATIONSHIP BETWEEN BOTH REFERENCE IMAGES
+==================================================
+
+Treat BOTH attached concept images as parts of the SAME application.
+
+REFERENCE IMAGE 1 establishes:
+
+- global design language
+- Home
+- Recent Projects
+- navigation
+- system status
+- Production
+- production pipeline
+- scene generation
+- activity information
+
+REFERENCE IMAGE 2 establishes:
+
+- Review
+- video preview
+- scene selection
+- editing workspace
+- selected-scene inspector
+- lightweight timeline
+- save state
+- rerender workflow
+- transition toward Export
+
+Do not implement them as separate designs.
+
+They are two states of Jenga Video Studio.
+
+==================================================
+28. FUNCTIONALITY TAKES PRIORITY OVER MOCKUP DETAILS
+==================================================
+
+If there is ever a conflict between:
+
+A. preserving tested existing functionality
+
+and
+
+B. perfectly matching a detail in the reference image
+
+choose A.
+
+Then adapt the visual design around the real functionality.
+
+The reference image is a UX target, NOT a specification requiring destructive architectural changes.
+
+==================================================
+FINAL REQUIREMENT
+==================================================
+
+The Personal Test 0.1 build proves that the application exists and launches.
+
+Now transform its presentation.
+
+The finished result should make the existing architecture feel like a genuine desktop AI video-production application.
+
+Do this through:
+
+- stronger visual hierarchy
+- intelligent widescreen layout
+- permanent navigation
+- clear project workflow
+- visual scene selection
+- prominent video preview
+- context-sensitive scene inspector
+- clear save state
+- visible production state
+- simplified component management
+- professional typography and spacing
+- consistent controls
+- restrained turquoise accent
+- reusable WPF styling
+
+But preserve the existing functionality.
+
+DO NOT START AGAIN.
+
+DO NOT REPLACE WORKING SERVICES.
+
+DO NOT CREATE A STATIC MOCKUP.
+
+DO NOT ADD FAKE CONTROLS JUST TO MATCH THE IMAGE.
+
+DO NOT REMOVE ADVANCED FEATURES.
+
+REFASHION THE EXISTING APPLICATION'S GUI AROUND ITS EXISTING FUNCTIONALITY.
+
+After completing the redesign:
+
+1. Build the complete solution.
+2. Fix compilation errors introduced by the changes.
+3. Run existing automated tests.
+4. Check that bindings and commands still resolve.
+5. Check that existing project files still load.
+6. Check that the application still works without optional components installed.
+7. Verify that advanced Setup remains accessible.
+8. Report any feature from the reference images that was deliberately omitted because the backend does not support it.
+9. Clearly distinguish automated verification from anything that still requires manual Windows testing.

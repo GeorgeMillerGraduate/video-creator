@@ -1,0 +1,2 @@
+PASS: project/XAML XML, all JSON, command binding names and required prompt files.
+C# build and WPF markup compilation NOT performed; compiler unavailable.

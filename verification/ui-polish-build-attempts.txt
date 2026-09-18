@@ -1,0 +1,9 @@
+dotnet build JengaVideoStudio/JengaVideoStudio.sln
+/bin/bash: line 1: dotnet: command not found
+Exit code: 127
+
+dotnet test JengaVideoStudio/JengaVideoStudio.sln
+/bin/bash: line 1: dotnet: command not found
+Exit code: 127
+
+Compilation, existing automated tests and WPF runtime checks remain unverified.

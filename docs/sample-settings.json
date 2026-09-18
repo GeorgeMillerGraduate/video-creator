@@ -1,0 +1,22 @@
+{
+ "Version":1,
+ "ProjectRoot":"C:\\Users\\YOUR-NAME\\Documents\\Jenga Video Studio",
+ "OllamaEndpoint":"http://127.0.0.1:11434",
+ "Model":"qwen2.5:7b",
+ "CpuOnly":false,
+ "Ffmpeg":"ffmpeg",
+ "Ffprobe":"ffprobe",
+ "SpeechProvider":"Windows",
+ "Python":"python",
+ "PiperPython":"",
+ "PiperVoice":"",
+ "WindowsVoice":"",
+ "ComfyEndpoint":"http://127.0.0.1:8188",
+ "EnableImages":false,
+ "EnableVideo":false,
+ "ImageWorkflow":"",
+ "VideoWorkflow":"",
+ "GoogleClientJson":"",
+ "YouTubeChannelUrl":"",
+ "DefaultPrivacy":"private"
+}

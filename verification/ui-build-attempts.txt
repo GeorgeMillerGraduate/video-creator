@@ -1,0 +1,12 @@
+Revision: Personal Test 0.2 UI redesign
+
+Attempted:
+  dotnet build JengaVideoStudio/JengaVideoStudio.sln -c Release
+Result: exit 127; /bin/bash: dotnet: command not found
+
+Attempted:
+  dotnet run --project JengaVideoStudio/tests/JengaVideoStudio.Tests -c Release
+Result: exit 127; /bin/bash: dotnet: command not found
+
+No C# build, C# test pass, WPF execution or Windows UI/DPI verification is claimed.
+Static UI and backend-preservation checks are reported separately in ui-static-checks.txt.

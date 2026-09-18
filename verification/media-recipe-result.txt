@@ -1,0 +1,3 @@
+PASS: real FFmpeg graphic scene, still-image zoompan scene, concatenation, H.264/AAC 1080x1920, duration check and full decode.
+NOT TESTED: C# execution, Windows UI, actual neural narration, research, LLM, ComfyUI or YouTube.
+ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers

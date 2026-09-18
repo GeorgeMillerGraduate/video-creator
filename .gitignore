@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+*.user
+*.zip
+client_secret*.json
+settings.json
+*.token
+Projects/
+models/

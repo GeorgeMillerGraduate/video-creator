@@ -1,0 +1,29 @@
+92 UI polish source checks; 0 failures.
+XML/resource/contrast/source checks only. No Windows compilation, live bindings, playback or layout testing.
+
+{
+  "TextPrimaryBrush/AppBackgroundBrush": 15.8,
+  "TextPrimaryBrush/SurfaceBrush": 14.4,
+  "TextPrimaryBrush/SurfaceRaisedBrush": 12.2,
+  "TextPrimaryBrush/BorderBrush": 8.02,
+  "TextSecondaryBrush/AppBackgroundBrush": 8.87,
+  "TextSecondaryBrush/SurfaceBrush": 8.08,
+  "TextSecondaryBrush/SurfaceRaisedBrush": 6.85,
+  "TextSecondaryBrush/BorderBrush": 4.5,
+  "TextMutedBrush/AppBackgroundBrush": 9.25,
+  "TextMutedBrush/SurfaceBrush": 8.43,
+  "TextMutedBrush/SurfaceRaisedBrush": 7.14,
+  "TextMutedBrush/BorderBrush": 4.7,
+  "AccentHoverBrush/AppBackgroundBrush": 11.44,
+  "AccentHoverBrush/SurfaceBrush": 10.43,
+  "AccentHoverBrush/SurfaceRaisedBrush": 8.83,
+  "AccentHoverBrush/BorderBrush": 5.81,
+  "SuccessBrush/AppBackgroundBrush": 9.55,
+  "SuccessBrush/SurfaceBrush": 8.7,
+  "SuccessBrush/SurfaceRaisedBrush": 7.37,
+  "SuccessBrush/BorderBrush": 4.85,
+  "WarningBrush/AppBackgroundBrush": 10.08,
+  "WarningBrush/SurfaceBrush": 9.19,
+  "WarningBrush/SurfaceRaisedBrush": 7.78,
+  "WarningBrush/BorderBrush": 5.12
+}

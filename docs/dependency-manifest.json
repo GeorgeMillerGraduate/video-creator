@@ -1,0 +1,50 @@
+{
+  "manifestVersion": 1,
+  "checkedAt": "2026-09-17",
+  "components": [
+    {
+      "id": "qwen2.5:7b",
+      "type": "LLM",
+      "backend": "Ollama",
+      "approxDownloadGB": 4.7,
+      "licence": "Apache-2.0",
+      "source": "https://ollama.com/library/qwen2.5:7b",
+      "resolution": "Record Ollama digest after pull; no weights bundled"
+    },
+    {
+      "id": "qwen2.5:1.5b",
+      "type": "LLM",
+      "backend": "Ollama",
+      "approxDownloadGB": 0.986,
+      "licence": "Apache-2.0",
+      "source": "https://ollama.com/library/qwen2.5:1.5b"
+    },
+    {
+      "id": "piper-tts",
+      "version": "1.8.0",
+      "type": "TTS runtime",
+      "licence": "GPL-3.0-or-later",
+      "source": "https://pypi.org/project/piper-tts/"
+    },
+    {
+      "id": "en_US-lessac-medium",
+      "type": "TTS voice",
+      "source": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/lessac/medium/MODEL_CARD",
+      "licence": "Voice-specific dataset terms; review model card; not commercially cleared"
+    },
+    {
+      "id": "ffmpeg-essentials",
+      "type": "Renderer",
+      "source": "https://www.gyan.dev/ffmpeg/builds/",
+      "version": "Resolved at install; version and SHA-256 persisted",
+      "licence": "Build-specific, includes GPL components"
+    },
+    {
+      "id": "ComfyUI",
+      "type": "Optional image/video runtime",
+      "source": "https://github.com/Comfy-Org/ComfyUI",
+      "licence": "GPL-3.0; weights and nodes have separate terms",
+      "installation": "Guided manual setup"
+    }
+  ]
+}

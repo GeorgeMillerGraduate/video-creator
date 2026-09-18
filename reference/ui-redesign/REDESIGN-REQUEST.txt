@@ -1,0 +1,517 @@
+Improve the existing Jenga Video Studio project provided with this prompt.
+
+IMPORTANT: DO NOT START THIS PROJECT AGAIN FROM SCRATCH.
+
+The existing application is a successful first functional draft. Its architecture, backend logic, project structure, existing services, AI orchestration, rendering pipeline, setup logic, YouTube integration, project persistence, and other working functionality should be PRESERVED.
+
+This task is primarily a substantial UI/UX redesign of the existing WPF application.
+
+Do not replace working code merely because you would personally have implemented it differently. Refactor UI-related code where necessary, but preserve the existing functionality and connect the redesigned interface to the existing backend.
+
+The current application is "Personal Test 0.1". I have launched it successfully and inspected the interface.
+
+WHAT IS ALREADY GOOD
+
+The basic workflow is correct:
+
+Create
+→ Production
+→ Review
+→ finished video
+
+There is also a Setup system for configuring the components required by the application.
+
+The application already has useful functionality including:
+
+- local AI configuration
+- Ollama/model configuration
+- FFmpeg configuration
+- narration configuration
+- optional neural voice configuration
+- optional generated image/video configuration
+- YouTube OAuth configuration
+- project creation
+- production progress
+- project persistence/resume
+- video review
+- scene editing
+- rendering
+- upload functionality
+
+KEEP THESE FEATURES.
+
+Do not turn this task into a new prototype with dummy buttons.
+
+The redesigned controls must continue to call the real existing functionality.
+
+==================================================
+WHY THE CURRENT AESTHETICS NEED IMPROVEMENT
+==================================================
+
+The existing GUI works, but visually it currently feels like an internal developer/engineering tool rather than finished consumer desktop software.
+
+The problem is NOT simply the dark navy colour scheme.
+
+The navy/turquoise Jenga Video Studio identity can remain.
+
+The main problems are:
+
+1. WEAK VISUAL HIERARCHY
+
+Almost every control has similar visual importance.
+
+Major actions, secondary actions, configuration controls and technical information all compete for attention.
+
+The user's eye should immediately understand:
+
+- where they are
+- what they need to do
+- what the application is currently doing
+- what the primary action is
+- what can safely be ignored
+
+2. TOO MANY LARGE RECTANGULAR CONTROLS
+
+There are many full-width buttons, text boxes and panels.
+
+This makes the interface feel like a configuration form rather than creative video software.
+
+Use better spacing, grouping, cards, smaller secondary buttons and clear primary actions.
+
+3. EXCESSIVE EMPTY SPACE
+
+Some screens contain very large empty panels.
+
+For example, the Production screen has a huge amount of unused space while the actual production status occupies relatively little of the window.
+
+Use this space intelligently for progress information, scene previews and production activity.
+
+4. SETUP IS TOO TECHNICAL
+
+The current Setup screen exposes concepts such as:
+
+- Ollama
+- Qwen model names
+- FFmpeg
+- Python
+- Piper
+- ComfyUI
+- workflow files
+- OAuth
+
+These are useful for development and advanced configuration, but a normal customer should not need to understand the underlying technology.
+
+The normal Setup experience should communicate:
+
+Local AI            Ready / Needs setup
+Video Engine        Ready / Needs setup
+Narration           Ready / Needs setup
+Image Generation    Optional / Ready
+Video Generation    Optional / Ready
+YouTube             Connected / Not connected
+
+Provide one obvious action such as:
+
+INSTALL / REPAIR COMPONENTS
+
+Keep the existing detailed configuration available under:
+
+Advanced Setup
+
+DO NOT DELETE the advanced functionality.
+
+Simply move technical controls away from the normal consumer-facing experience.
+
+5. REVIEW CURRENTLY LOOKS LIKE A FORM
+
+The Review screen should feel like a lightweight video editor.
+
+The existing large video preview is appropriate.
+
+Redesign the surrounding interface so that it contains:
+
+- prominent video preview
+- playback controls
+- horizontal scene/timeline strip
+- selectable scene thumbnails
+- scene number/duration
+- properties inspector for the selected scene
+- narration editor
+- on-screen heading
+- visual treatment
+- visual prompt
+- graphic labels
+- regenerate visual
+- save changes
+- rerender video
+
+Selecting a scene should populate the inspector with that scene's existing information.
+
+Preserve the existing scene editing/rendering functionality.
+
+6. PRODUCTION SHOULD FEEL ACTIVE
+
+Production is one of the most important screens in the application.
+
+It should visually communicate that a sophisticated process is taking place.
+
+The application already conceptually performs stages similar to:
+
+Research
+→ Evidence
+→ Script
+→ Scenes
+→ Narration
+→ Visuals
+→ Render
+→ Quality Check
+
+Turn this into an attractive production pipeline display.
+
+For example:
+
+Creating your video
+
+"Why did floppy disks survive for so long?"
+
+██████████████████░░░░░░░░  64%
+
+✓ Research
+✓ Evidence
+✓ Script
+● Generating visuals
+○ Narration
+○ Rendering
+○ Quality check
+
+Scene 1   Scene 2   Scene 3   Scene 4
+[thumb]   [thumb]   [...]     [...]
+
+Currently generating scene 3 of 7
+
+Below this, retain a collapsible or secondary Production Journal showing the detailed technical activity/log information.
+
+Do NOT fabricate progress percentages for operations where the existing backend cannot determine a percentage.
+
+Use indeterminate progress/activity animation where appropriate.
+
+7. CREATE SCREEN NEEDS SIMPLIFICATION
+
+The Create screen is currently the strongest screen, but it can still be substantially improved.
+
+The enormous topic text area is unnecessary.
+
+Create a strong central composition such as:
+
+        What do you want to make?
+
+[ Why did floppy disks survive for so long? ]
+
+Duration       Tone              Quality
+60 seconds     Documentary       Standard
+
+             CREATE VIDEO →
+
+Preferred research sources can remain available as an expandable optional section.
+
+"Suggest ideas" and "Surprise me" should remain but should be secondary actions.
+
+The CREATE VIDEO button should clearly be the dominant action.
+
+8. NAVIGATION SHOULD MATCH THE USER'S MENTAL MODEL
+
+The current tabs are:
+
+Create
+Production
+Review
+Setup
+
+This exposes implementation/workflow stages as top-level application sections.
+
+Consider changing the main navigation to:
+
+Home
+Create
+Projects
+Settings
+
+Production and Review should then appear naturally when working inside a project.
+
+However, do this carefully.
+
+Do not break the existing workflow or project state management merely to change navigation.
+
+If changing the navigation architecture would require substantial destructive rewriting, preserve the underlying navigation and create a cleaner visual abstraction over it.
+
+==================================================
+HOME SCREEN
+==================================================
+
+Add a polished Home screen.
+
+It should show:
+
+JENGA VIDEO STUDIO
+An idea. A researched story. Your next video.
+
+Create New Video
+
+Recent Projects
+
+Each recent project should appear as a card containing, where available:
+
+- thumbnail
+- title
+- duration
+- current status
+- last modified
+- Open button
+
+Example:
+
+┌─────────────────────┐
+│     [thumbnail]     │
+│                     │
+│ Floppy Disks        │
+│ 1:02 • Complete     │
+│                     │
+│ Open Project →      │
+└─────────────────────┘
+
+Do not invent project information. Populate this from the existing project persistence system.
+
+==================================================
+DESIGN LANGUAGE
+==================================================
+
+Keep Jenga Video Studio's identity.
+
+Suggested visual direction:
+
+- dark navy primary background
+- slightly lighter navy cards
+- white primary text
+- muted blue/grey secondary text
+- turquoise/aqua accent
+- restrained use of accent colour
+- subtle borders
+- modest rounded corners
+- generous padding
+- clear typography
+- consistent spacing
+- modern icons where appropriate
+- smooth hover states
+- clear selected states
+- attractive progress indicators
+
+Avoid:
+
+- excessive gradients
+- excessive rounded "bubble" UI
+- huge empty boxes
+- giant buttons everywhere
+- unnecessary borders
+- excessive technical text
+- visual clutter
+- making every element turquoise
+- a generic Bootstrap/web-dashboard appearance
+
+This is a WINDOWS DESKTOP CREATIVE APPLICATION.
+
+It should feel closer to polished video/creative software than a website or system administration utility.
+
+==================================================
+WINDOW SCALING
+==================================================
+
+The UI must behave properly at common Windows desktop resolutions and scaling settings.
+
+Avoid layouts that only work on the developer's monitor.
+
+Use responsive WPF layout techniques appropriately:
+
+- Grid
+- DockPanel
+- StackPanel where appropriate
+- sensible MinWidth/MinHeight
+- scrolling only where genuinely necessary
+- avoid hard-coded coordinates
+- support Windows display scaling
+
+The interface should remain usable on a typical 1920x1080 display.
+
+==================================================
+SETUP EXPERIENCE
+==================================================
+
+For this development build, preserve every existing setup capability.
+
+Create two levels:
+
+SIMPLE SETUP
+
+Shows friendly component cards and statuses.
+
+Example:
+
+SYSTEM STATUS
+
+✓ Core application
+✓ Video encoder
+! Local AI needs installation
+✓ Windows narration
+○ Neural narration optional
+○ Image generation optional
+○ Video generation optional
+○ YouTube not connected
+
+[ INSTALL / REPAIR ]
+
+[ Advanced Setup ]
+
+ADVANCED SETUP
+
+Contains the existing detailed controls for:
+
+Ollama
+model selection
+CPU inference
+FFmpeg
+Python
+Piper
+ComfyUI
+workflow paths
+OAuth
+other existing technical configuration
+
+This is important because developers still need access to those controls.
+
+==================================================
+FIRST-RUN EXPERIENCE
+==================================================
+
+Prepare the GUI structure for a future consumer installer.
+
+Do NOT attempt to redesign the entire installation architecture in this task.
+
+However, the UI should be capable of eventually supporting:
+
+Welcome to Jenga Video Studio
+
+Checking your computer...
+
+CPU       ✓
+Memory    ✓
+GPU       ✓
+Storage   ✓
+
+Required download: approximately XX GB
+
+[ Install Jenga Video Studio Components ]
+
+The eventual commercial version should hide unnecessary implementation details from ordinary users.
+
+==================================================
+PRESERVE FUNCTIONALITY
+==================================================
+
+This requirement is critical.
+
+Before modifying the project, inspect the existing solution and understand:
+
+- ViewModels
+- models
+- services
+- commands
+- persistence
+- production pipeline
+- rendering
+- AI integration
+- FFmpeg integration
+- narration
+- generated visual integration
+- YouTube authentication/upload
+- cancellation
+- resume/recovery
+- validation
+- existing tests
+
+DO NOT casually replace these systems.
+
+Prefer binding the new interface onto the existing implementation.
+
+After redesigning the GUI, ensure that existing commands remain connected.
+
+Do not produce an attractive interface containing nonfunctional placeholders.
+
+==================================================
+CODE QUALITY
+==================================================
+
+Keep the project maintainable.
+
+Where appropriate, introduce reusable WPF resources for:
+
+- colours
+- typography
+- buttons
+- cards
+- text fields
+- ComboBoxes
+- progress indicators
+- status badges
+- navigation
+- spacing
+
+Avoid duplicating huge Style definitions throughout individual XAML files.
+
+If the current project already has an appropriate resource/style architecture, improve it rather than replacing it unnecessarily.
+
+==================================================
+FINAL RESULT
+==================================================
+
+The objective is NOT:
+
+"Make another Jenga Video Studio."
+
+The objective is:
+
+"Take the working Jenga Video Studio Personal Test 0.1 application and make it look and behave like a polished, intuitive desktop product."
+
+The existing version is an acceptable engineering prototype.
+
+Treat it as the foundation.
+
+Preserve its working architecture and functionality.
+
+Substantially improve:
+
+- usability
+- visual hierarchy
+- navigation
+- spacing
+- typography
+- progress presentation
+- project presentation
+- setup simplicity
+- review workflow
+- overall polish
+
+When finished, build the complete solution and fix any errors introduced by the redesign.
+
+Run existing tests.
+
+Do not claim functionality has been tested unless it actually has been tested.
+
+Provide a concise summary of:
+
+1. Files changed
+2. UI/UX improvements made
+3. Existing functionality preserved
+4. Any architectural changes made and why
+5. Build/test results
+6. Anything that still requires manual Windows testing
+
+Most importantly: preserve the existing application and improve it. Do not start over.

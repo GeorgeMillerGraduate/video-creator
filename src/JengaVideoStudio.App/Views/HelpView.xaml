@@ -1,0 +1,37 @@
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Background="{StaticResource AppBackgroundBrush}" Foreground="{StaticResource TextPrimaryBrush}" x:Class="JengaVideoStudio.App.Views.HelpView">
+  <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <StackPanel MaxWidth="1320" HorizontalAlignment="Left">
+      <TextBlock Text="From an idea to a video" Style="{StaticResource Title}" />
+      <TextBlock Text="Start with a short, evergreen topic. Review the result before sharing it." Style="{StaticResource Muted}" FontSize="15" Margin="0,0,0,24" />
+      <WrapPanel>
+        <Border Style="{StaticResource Card}" Margin="0,0,16,16" Width="248" MinHeight="300">
+          <StackPanel>
+            <TextBlock Text="1  Prepare your studio" FontSize="19" FontWeight="SemiBold" />
+            <TextBlock Text="Open Manage components and run a check. Install the writing model and video engine, then test your chosen voice. Optional image and video generators can wait." Style="{StaticResource Muted}" Margin="0,10,0,16" />
+            <Button Content="Manage components →" Command="{Binding Navigate}" CommandParameter="Settings" HorizontalAlignment="Left" />
+          </StackPanel>
+        </Border>
+        <Border Style="{StaticResource Card}" Margin="0,0,16,16" Width="248" MinHeight="300">
+          <StackPanel>
+            <TextBlock Text="2  Make a first draft" FontSize="19" FontWeight="SemiBold" />
+            <TextBlock Text="Choose Create, enter your topic and start with 45–60 seconds in Light quality. Production shows completed stages and actual activity. You can cancel safely and resume from a saved project." Style="{StaticResource Muted}" Margin="0,10,0,16" />
+            <Button Content="Create a video →" Command="{Binding Navigate}" CommandParameter="Create" HorizontalAlignment="Left" />
+          </StackPanel>
+        </Border>
+        <Border Style="{StaticResource Card}" Margin="0,0,16,16" Width="248" MinHeight="300">
+          <StackPanel>
+            <TextBlock Text="3  Review and refine" FontSize="19" FontWeight="SemiBold" />
+            <TextBlock Text="Choose a scene card to edit its narration, heading and visual instructions. Apply changes saves the project. Render final video applies your edits to the MP4. Scene previews show the last rendered version, never unsaved edits." Style="{StaticResource Muted}" Margin="0,10,0,0" />
+          </StackPanel>
+        </Border>
+        <Border Style="{StaticResource Card}" Width="248" MinHeight="300" Margin="0,0,16,16">
+          <StackPanel>
+            <TextBlock Text="4  Export when you're happy" FontSize="19" FontWeight="SemiBold" />
+            <TextBlock Text="Open the finished MP4 or its project folder from Export. YouTube uploading is optional and requires your separate approval. Review source evidence and disclosure settings before uploading." Style="{StaticResource Muted}" Margin="0,10,0,0" />
+          </StackPanel>
+        </Border>
+      </WrapPanel>
+      <TextBlock Text="The full setup-and-downloads guide is included beside the solution. Model and workflow terms belong to their respective providers." Style="{StaticResource Muted}" Margin="0,20,0,0" />
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

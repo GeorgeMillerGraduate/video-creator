@@ -1,0 +1,622 @@
+VISUAL REFERENCE — TARGET UI / UX
+
+The attached Jenga Video Studio concept image is the primary visual reference for how the finished application should feel.
+
+Do NOT attempt to reproduce the image pixel-for-pixel, and do not sacrifice existing functionality merely to match the mockup. Instead, use it as the design target for layout, hierarchy, density, navigation, component styling and overall product quality.
+
+The important characteristics of the reference are as follows.
+
+OVERALL APPEARANCE
+
+The application should look like polished commercial Windows creative software rather than a developer utility, configuration form or website placed inside a desktop window.
+
+The visual identity consists of:
+
+- very dark navy main background
+- slightly lighter navy panels/cards
+- turquoise/aqua as the primary accent
+- white high-priority text
+- muted blue-grey secondary text
+- thin/subtle borders
+- restrained shadows
+- modest corner rounding
+- generous but efficient spacing
+- consistent typography
+- clear icons
+- strong contrast between primary and secondary controls
+
+The interface should feel sophisticated and technical without looking complicated.
+
+Avoid giant empty areas and avoid filling the application with identical rectangular buttons.
+
+--------------------------------------------------
+1. PERMANENT APPLICATION HEADER
+--------------------------------------------------
+
+Across the top is a relatively compact application header.
+
+Left:
+
+JENGA VIDEO STUDIO
+An idea. A researched story. Your next video.
+
+The Jenga branding should be prominent but should not consume excessive vertical space.
+
+Right:
+
+- Help
+- Settings
+- current user/account information where applicable
+- normal Windows window controls
+
+The header establishes the application identity without dominating the working area.
+
+--------------------------------------------------
+2. LEFT NAVIGATION SIDEBAR
+--------------------------------------------------
+
+Use a narrow permanent navigation sidebar.
+
+Primary navigation should contain approximately:
+
+Home
+Create
+Projects
+Tutorials / Help if retained
+
+Use simple icons alongside labels.
+
+The currently selected section has a clearly visible turquoise/blue highlight.
+
+The sidebar should NOT contain dozens of technical options.
+
+Near the bottom of the sidebar, provide a compact SYSTEM STATUS area.
+
+For example:
+
+Storage
+143 GB free
+
+✓ Local AI
+  Ready
+
+✓ Video Engine
+  Ready
+
+✓ Narration
+  Ready
+
+○ Image Generation
+  Optional
+
+○ Video Generation
+  Optional
+
+○ YouTube
+  Not connected
+
+[ Manage Components ]
+
+This is an important design concept.
+
+Instead of forcing users to visit Setup and understand Ollama, FFmpeg, Python, Piper and ComfyUI, the application translates those technologies into understandable PRODUCT COMPONENTS.
+
+The existing technical configuration must remain accessible through Manage Components / Advanced Setup.
+
+--------------------------------------------------
+3. HOME DASHBOARD
+--------------------------------------------------
+
+The reference contains a strong Home experience.
+
+The main hero area communicates the purpose of the software immediately:
+
+Turn ideas into amazing videos
+
+AI research. Compelling scripts. Stunning visuals. All in one place.
+
+[ + Create New Video → ]
+
+Under this is a concise explanation of the workflow:
+
+Research
+with real sources
+
+Generate
+scripts and visuals
+
+Add narration
+and captions
+
+Render
+high-quality video
+
+Upload
+to YouTube (optional)
+
+This should make the software understandable within a few seconds of opening it.
+
+Do not overwhelm the Home screen with configuration controls.
+
+--------------------------------------------------
+4. RECENT PROJECTS
+--------------------------------------------------
+
+A Recent Projects panel is visible prominently.
+
+Each project appears as a compact card/row containing:
+
+- thumbnail
+- project title
+- video duration where known
+- project state
+- last modified date/time
+- Open button
+- optional additional-actions menu
+
+Example:
+
+[thumbnail]
+
+Why did floppy disks survive?
+1:02  •  Complete
+Modified 17 Sep 2026
+
+[ Open ]
+
+Other states might include:
+
+Draft
+Researching
+Generating
+Rendering
+Complete
+Failed / Needs attention
+
+Use REAL existing project state.
+
+Do not invent project metadata simply to populate the UI.
+
+--------------------------------------------------
+5. PROJECT WORKFLOW
+--------------------------------------------------
+
+Once a project is opened, display its lifecycle clearly.
+
+The visual reference uses four understandable stages:
+
+1  Create
+   Your idea
+
+2  Production
+   AI at work
+
+3  Review
+   Edit and refine
+
+4  Export
+   Your finished video
+
+The current stage receives a strong turquoise/blue highlight.
+
+This is superior to treating every stage as an unrelated application page.
+
+The user should understand that these screens are stages in ONE VIDEO PROJECT.
+
+--------------------------------------------------
+6. PRODUCTION SCREEN
+--------------------------------------------------
+
+This is one of the most important parts of the redesign.
+
+Production should visually communicate that meaningful work is happening.
+
+At the top:
+
+Creating your video...
+
+Why did floppy disks survive for so long?
+
+Researching sources, generating visuals and assembling your video.
+
+Then show progress prominently.
+
+Example:
+
+████████████████████░░░░░░ 64%
+
+Estimated time remaining should ONLY be displayed when the application has enough information to make a defensible estimate.
+
+Do not invent fake progress.
+
+--------------------------------------------------
+7. PIPELINE VISUALISATION
+--------------------------------------------------
+
+Directly underneath, show the production pipeline horizontally:
+
+✓ Research
+✓ Evidence
+✓ Script
+✓ Scenes
+● Narration
+○ Visuals
+○ Render
+○ Quality Check
+
+Completed stages should be visually obvious.
+
+Current activity should be highlighted.
+
+Future stages should be muted.
+
+Where exact progress cannot be measured, use an indeterminate activity indicator rather than inventing a percentage.
+
+The user should be able to glance at this and immediately understand what the AI is doing.
+
+--------------------------------------------------
+8. SCENE STRIP
+--------------------------------------------------
+
+Generated scenes should appear visually as they become available.
+
+Example:
+
+[thumbnail] [thumbnail] [thumbnail] [thumbnail]
+Scene 1     Scene 2     Scene 3     Scene 4
+Intro       Early days  Why lasted  Decline
+
+Continue horizontally for additional scenes.
+
+The selected/current scene receives a turquoise outline.
+
+Scenes currently being generated can show an activity indicator.
+
+Completed scenes can show a small completion mark.
+
+This makes the production process feel tangible rather than presenting the user with a blank progress screen.
+
+Use actual generated assets whenever available.
+
+--------------------------------------------------
+9. CURRENT SCENE PREVIEW
+--------------------------------------------------
+
+On the right side of Production, show a substantial Current Scene panel.
+
+It can contain:
+
+Current Scene
+Scene 3 of 7
+
+[large scene preview]
+
+Why they lasted
+
+0:12 / 1:02
+
+[playback controls]
+
+This allows the user to see the video gradually taking shape.
+
+If the scene does not yet exist, show an attractive generation/loading state rather than a giant empty black rectangle.
+
+--------------------------------------------------
+10. NEXT ACTION / CURRENT ACTIVITY
+--------------------------------------------------
+
+Below the current-scene preview, show what the application is presently doing.
+
+For example:
+
+NEXT UP
+
+🎙 Generating narration
+
+Converting script to speech...
+
+[activity indicator]
+
+This should be driven by the actual production state.
+
+Do not fabricate activities purely for visual effect.
+
+--------------------------------------------------
+11. PRODUCTION JOURNAL / TECHNICAL LOG
+--------------------------------------------------
+
+The existing Production Journal functionality is useful and should NOT be removed.
+
+However, it should become secondary information.
+
+The normal user sees a concise activity feed such as:
+
+19:58:12  Generating narration for scene 3...
+19:57:43  Scene 3 script completed
+19:57:34  Generating image for scene 3...
+19:56:21  Scene 2 completed
+
+Provide something like:
+
+[ ] Show detailed technical log
+
+The normal interface therefore remains understandable while developers and advanced users retain diagnostic information.
+
+--------------------------------------------------
+12. REVIEW SCREEN
+--------------------------------------------------
+
+Use the same design language for Review.
+
+Review should resemble a lightweight video editor.
+
+Recommended layout:
+
+LEFT / CENTRE:
+large video preview
+
+BOTTOM:
+horizontal scene timeline / thumbnail strip
+
+RIGHT:
+selected scene inspector
+
+The inspector should expose existing editable properties such as:
+
+Scene 3 of 7
+
+Narration
+[editable text]
+
+On-screen heading
+[editable text]
+
+Visual treatment
+[selection]
+
+Visual prompt
+[editable text]
+
+Graphic labels
+[editable text]
+
+[ Regenerate Visual ]
+
+[ Save Changes ]
+
+[ Rerender Video ]
+
+Selecting another scene should update the inspector.
+
+Do not discard the existing editing logic.
+
+--------------------------------------------------
+13. CREATE SCREEN
+--------------------------------------------------
+
+Create should be extremely approachable.
+
+The main question should dominate:
+
+What should the video be about?
+
+Then provide a clean topic input.
+
+Example:
+
+[ Why did floppy disks survive for so long? ]
+
+Secondary options underneath:
+
+Duration
+60 seconds
+
+Tone
+Clear and curious
+
+Visual Quality
+Light / Standard / High
+
+Then one dominant action:
+
+CREATE VIDEO →
+
+Suggest Ideas and Surprise Me can remain as smaller secondary actions.
+
+Preferred Research Sources should remain available through an expandable section rather than permanently occupying significant screen space.
+
+--------------------------------------------------
+14. SETUP / MANAGE COMPONENTS
+--------------------------------------------------
+
+Do not present ordinary users with the current large technical Setup form by default.
+
+Instead create a friendly Manage Components screen.
+
+Example:
+
+Jenga Video Studio Components
+
+LOCAL AI
+✓ Ready
+Qwen 7B installed
+
+VIDEO ENGINE
+✓ Ready
+
+NARRATION
+✓ Windows Voice
+
+IMAGE GENERATION
+○ Not installed
+Optional
+
+VIDEO GENERATION
+○ Not installed
+Optional
+
+YOUTUBE
+○ Not connected
+
+Then provide context-sensitive actions:
+
+Install
+Repair
+Change
+Connect
+Remove
+
+An Advanced Setup section should expose all the existing detailed controls.
+
+This preserves developer control while massively improving usability.
+
+--------------------------------------------------
+15. INFORMATION DENSITY
+--------------------------------------------------
+
+Notice that the reference image contains a LOT of information without appearing chaotic.
+
+Achieve this through hierarchy rather than simply removing functionality.
+
+Important information is large.
+
+Secondary information is smaller.
+
+Technical information is subdued.
+
+Primary actions are brightly accented.
+
+Completed states use small status indicators.
+
+Panels are clearly grouped.
+
+Whitespace separates concepts rather than producing enormous unused regions.
+
+The goal is efficient use of a desktop monitor.
+
+--------------------------------------------------
+16. BUTTON HIERARCHY
+--------------------------------------------------
+
+Not every action should look equally important.
+
+PRIMARY ACTION:
+
+Bright turquoise/accent.
+
+Examples:
+
+Create New Video
+Create Video
+Render Final Video
+
+SECONDARY ACTION:
+
+Dark blue with subtle border.
+
+Examples:
+
+Open
+Save Changes
+Regenerate Visual
+Manage Components
+
+TERTIARY ACTION:
+
+Text/icon controls.
+
+Examples:
+
+Advanced
+View Log
+More
+Help
+
+DESTRUCTIVE ACTION:
+
+Clearly differentiated.
+
+Examples:
+
+Cancel
+Delete Project
+
+Do not use turquoise for every clickable element.
+
+--------------------------------------------------
+17. COMMERCIAL PRODUCT FEEL
+--------------------------------------------------
+
+The final interface should make somebody unfamiliar with the implementation think:
+
+"This is an AI video creation application."
+
+It should NOT make them think:
+
+"This is a GUI someone built around some command-line AI tools."
+
+Ollama, FFmpeg, Piper, ComfyUI and other underlying technologies are implementation details.
+
+They should remain accessible to advanced users but should not define the consumer experience.
+
+--------------------------------------------------
+18. IMPORTANT: THE IMAGE IS A DESIGN REFERENCE,
+NOT A NEW SPECIFICATION
+--------------------------------------------------
+
+The attached image contains illustrative content such as example projects, thumbnails, statuses and progress.
+
+Do NOT hard-code those examples.
+
+Do NOT create fake projects.
+
+Do NOT create fake progress.
+
+Do NOT replace working backend functionality merely because something in the concept image is different.
+
+Instead map the EXISTING Jenga Video Studio functionality onto this visual structure.
+
+Where the mockup depicts something the backend does not currently support, either:
+
+1. connect it properly using existing project data if feasible, or
+2. omit/disable it cleanly.
+
+Do not implement deceptive placeholder behaviour.
+
+--------------------------------------------------
+TARGET RESULT
+--------------------------------------------------
+
+The existing Personal Test 0.1 application is the engineering foundation.
+
+The attached image represents approximately how the mature consumer-facing application should FEEL.
+
+Transform the existing UI toward this standard while preserving the underlying implementation.
+
+The desired result is:
+
+existing functionality
++
+existing production architecture
++
+existing project system
++
+modern navigation
++
+clear workflow
++
+visual production feedback
++
+scene previews
++
+friendly component management
++
+professional creative-software aesthetics
+
+Do not start again.
+
+Do not replace the application with a mockup.
+
+Do not merely copy the screenshot.
+
+Use the screenshot as a visual design system and reorganise the EXISTING WORKING APPLICATION around that design.
