@@ -1,3 +1,0 @@
-2638 static checks passed; 0 failed.
-No C# compilation, WPF rendering, live binding evaluation or Windows integration tests were performed.
-
