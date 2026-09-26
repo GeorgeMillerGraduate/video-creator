@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<edu-video version="1.0" width="1920" height="1080" fps="60">
+  <scene id="derivative" duration="34" theme="midnight-blue">
+    <background grid="false" curves="true" dots="true" vignette="true" intensity=".18" />
+    <text id="brand" x="96" y="74" text="JENGA–CODE   /   02  /  CALCULUS" size="17" color="#36D4FF" bold="true" align="left" />
+    <text id="title" x="96" y="158" text="A slope becomes instantaneous" size="64" color="#F3F6FC" bold="true" align="left" />
+    <text id="subtitle" x="99" y="211" text="Bring two points together. The secant becomes the tangent." size="25" color="#9DAFC9" bold="false" align="left" />
+    <line id="rule" x="96" y="249" width="1728" height="0" strokeWidth="1" color="#36D4FF" opacity=".25" />
+    <text id="footer" x="96" y="1019" text="EDUVIDEO   /   MATHEMATICS IN MOTION" size="15" color="#9DAFC9" bold="false" align="left" />
+    <text id="index" x="1824" y="1019" text="02  /  CALCULUS" size="15" color="#36D4FF" bold="false" align="right" />
+    <line id="progress" x="96" y="980" width="1728" height="0" strokeWidth="2" color="#4CF0B3" drawProgress="0" opacity=".75" />
+    <animate target="progress" property="drawProgress" to="1" start="0" duration="34" easing="linear" from="0" />
+    <effect target="title" name="fadeIn" start="0" duration="0.8" />
+    <effect target="subtitle" name="fadeIn" start="0" duration="0.8" />
+    <music src="../../assets/music/quiet-orbits.wav" start="0" end="34" volume=".12" loop="true" fade-in="1.5" fade-out="2" />
+    <axes id="plane" x="140" y="320" width="1120" height="565" xmin="-.2" xmax="3.4" ymin="-.5" ymax="10" step="1" xlabel="x" ylabel="f(x)" gridOpacity=".35" tickSize="19">
+      <function id="curve" expression="x^2" strokeWidth="4" color="#36D4FF" glow=".25" />
+      <calculus id="secant" expression="x^2" mode="secant" point="1" to="3" a="2" from="-.1" />
+    </axes>
+    <animate target="secant" property="a" to="0" start="5" duration="19" easing="smoothStep" from="2" />
+    <text id="functionlabel" x="1470" y="358" text="f(x) = x²" size="45" color="#36D4FF" bold="true" align="center" />
+    <text id="definition" x="1470" y="451" text="THE DIFFERENCE QUOTIENT" size="16" color="#9DAFC9" bold="true" align="center" />
+    <equation id="quotient" x="1470" y="525" value="\frac{f(x+h)-f(x)}{h}" size="38" align="center" typeset="true" color="#F3F6FC" />
+    <text id="limit" x="1470" y="624" text="h → 0" size="38" color="#C09DFF" bold="false" align="center" />
+    <effect target="limit" name="fadeIn" start="5" duration="0.8" />
+    <token-equation id="derivative" x="1470" y="736" terms="f=mₕ;eq==;a=2x;b=+;h=h" size="42" spacing="88" color="#4CF0B3" />
+    <transform-equation target="derivative" terms="f=f′(x);eq==;a=2x" start="23.5" duration="1.1" />
+    <text id="tangentcaption" x="1470" y="820" text="At x = 1, the tangent slope is 2." size="23" color="#9DAFC9" bold="false" align="center" />
+    <effect target="derivative" name="fadeIn" start="8" duration="0.6" />
+    <effect target="tangentcaption" name="fadeIn" start="25" duration="0.6" />
+    <speak id="intro" start="0.5" max-end="4.5" text="A curve has a different slope at every point." />
+    <speak id="move" start="5" max-end="11" text="Start with two points. Their secant measures the average rate of change." />
+    <speak id="closer" start="12" max-end="18" text="As the horizontal gap shrinks, the second point approaches the first." />
+    <speak id="limit" start="19" max-end="25" text="The secant approaches a tangent. The extra term tends to zero." />
+    <speak id="result" start="26" max-end="33" text="For x squared, the derivative is two x. Here, the slope is two." />
+    <focus targets="plane,title,secant" start="12" duration="9" dim="0.45" />
+  </scene>
+</edu-video>

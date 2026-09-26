@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edu-video version="1.0" width="1920" height="1080" fps="60.0">
+ <theme name="midnight-blue"/>
+ <scene id="lesson" duration="20.0" theme="midnight-blue">
+  <text id="title" x="96" y="120" text="Untitled lesson" size="50" bold="true"/>
+  <text id="subtitle" x="96" y="180" text="JENGA-CODE / EDUCATIONAL FILMS" size="20" color="#38BDF8"/>
+  <text id="formula" x="350" y="460" text="f(x) = x² + 2x + 1" size="64"/>
+ </scene>
+</edu-video>

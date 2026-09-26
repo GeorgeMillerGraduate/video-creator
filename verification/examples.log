@@ -1,0 +1,23 @@
+LESSON studio-multipart/examples/bubble-sort-demo.xml duration=14.7
+LESSON studio-multipart/examples/core-demo.xml duration=2.0
+LESSON studio-multipart/examples/emerald-quadratic.xml duration=20.0
+LESSON studio-multipart/examples/gallery.xml duration=6.0
+LESSON studio-multipart/examples/matrix-multiplication.xml duration=59.0
+LESSON studio-multipart/examples/midnight-integral.xml duration=18.0
+LESSON studio-multipart/examples/production/derivative-production.xml duration=34.0
+LESSON studio-multipart/examples/production/fourier-course/01-introduction.xml duration=16.0
+LESSON studio-multipart/examples/production/fourier-course/02-fourier-series.xml duration=16.0
+LESSON studio-multipart/examples/production/fourier-course/03-heat-equation.xml duration=16.0
+LESSON studio-multipart/examples/production/fourier-course/04-solution.xml duration=16.0
+LESSON studio-multipart/examples/production/fourier-course/05-summary.xml duration=16.0
+MANIFEST studio-multipart/examples/production/fourier-course/fourier-course.xml parts=5 duration=80.0
+LESSON studio-multipart/examples/production/matrix-production.xml duration=46.0
+LESSON studio-multipart/examples/production/offline-studio-demo.xml duration=16.0
+LESSON studio-multipart/examples/production/openai-voice-check.xml duration=12.0
+LESSON studio-multipart/examples/production/science-gallery.xml duration=28.0
+LESSON studio-multipart/examples/production/sorting-production.xml duration=35.0
+LESSON studio-multipart/examples/production/sudoku-backtracking.xml duration=78.0
+LESSON studio-multipart/examples/production/vector-gallery.xml duration=32.0
+LESSON studio-multipart/examples/purple-sine-rule.xml duration=20.0
+LESSON studio-multipart/examples/quadratic-demo.xml duration=22.0
+PASS 22 XML files validated and rendered through actual engine

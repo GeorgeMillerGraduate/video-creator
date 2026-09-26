@@ -1,0 +1,7 @@
+<edu-video version="1.0" width="640" height="360" fps="30">
+ <scene id="core" duration="2">
+  <text id="title" x="320" y="70" text="EduVideo · Java2D" align="center" size="34"/>
+  <rectangle id="box" x="60" y="150" width="100" height="100" color="#38BDF8"/>
+  <animate target="box" property="x" from="60" to="480" start="0" duration="2" easing="easeInOut"/>
+ </scene>
+</edu-video>

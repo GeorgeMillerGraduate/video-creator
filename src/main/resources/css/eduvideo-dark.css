@@ -1,0 +1,81 @@
+/* Jenga-Code EduVideo Studio · Copyright (c) 2026 George Miller. */
+.root { -fx-base:#17212e; -fx-background:#101720; -fx-control-inner-background:#111b28; -fx-accent:#289ede; -fx-focus-color:#289ede; -fx-faint-focus-color:transparent; -fx-font-family:"DejaVu Sans", "Segoe UI"; -fx-font-size:12px; -fx-text-fill:#dbe6f3; }
+.label { -fx-text-fill:#c9d7e8; }
+.app-header { -fx-padding:9 16; -fx-alignment:center-left; -fx-background-color:#1b2736; -fx-border-color:transparent transparent #344458 transparent; }
+.brand { -fx-font-size:16px; -fx-font-weight:bold; -fx-text-fill:#f1f6ff; }
+.button { -fx-background-color:#26374b; -fx-text-fill:#dfebfb; -fx-background-radius:3; -fx-border-radius:3; -fx-padding:7 11; -fx-border-color:#3a4c61; -fx-cursor:hand; }
+.button:hover { -fx-background-color:#344b65; -fx-border-color:#5e8bb1; }
+.button:pressed { -fx-background-color:#152b40; }
+.button:focused { -fx-border-color:#5ec7fc; }
+.button:disabled { -fx-opacity:.4; }
+.button.primary { -fx-background-color:#147bb9; -fx-border-color:#35aff2; -fx-font-weight:bold; -fx-padding:9 20; }
+.menu-bar,.tool-bar { -fx-background-color:#172231; -fx-border-color:transparent transparent #2c3b4e transparent; }
+.menu-bar { -fx-padding:0 10; }
+.tool-bar { -fx-padding:4 10; }
+.menu-item:focused { -fx-background-color:#205476; }
+.context-menu { -fx-background-color:#1d2b3c; -fx-border-color:#41536a; }
+.split-pane { -fx-background-color:#101720; -fx-padding:0; }
+.split-pane-divider { -fx-background-color:#2b3949; -fx-padding:0 2; }
+.panel { -fx-padding:12; -fx-background-color:#15202c; }
+.panel-title { -fx-font-size:11px; -fx-font-weight:bold; -fx-text-fill:#8eabc7; -fx-padding:0 0 3 0; }
+.tab-pane .tab-header-background { -fx-background-color:#111a25; }
+.tab { -fx-background-color:#1a2737; -fx-background-radius:0; -fx-padding:4 10; }
+.tab:selected { -fx-background-color:#24394f; -fx-border-color:#41b7f1 transparent transparent transparent; -fx-border-width:2 0 0 0; }
+.tab-label { -fx-text-fill:#d4e1f0; }
+.tab-content-area { -fx-background-color:#101720; }
+.tree-view,.list-view,.text-area,.scroll-pane { -fx-background-color:#111b28; -fx-border-color:#293a4e; -fx-background-insets:0; }
+.tree-cell,.list-cell { -fx-background-color:#111b28; -fx-text-fill:#c2d2e5; -fx-padding:7 6; }
+.tree-cell:selected,.list-cell:selected { -fx-background-color:#214a6b; -fx-text-fill:white; }
+.tree-cell:hover,.list-cell:hover { -fx-background-color:#1c3249; }
+.text-area .content { -fx-background-color:#111b28; }
+.text-area { -fx-text-fill:#c9dbef; }
+.text-field,.combo-box { -fx-background-color:#111e2d; -fx-text-fill:#e0ebf7; -fx-border-color:#3a4f65; -fx-background-radius:3; -fx-border-radius:3; -fx-padding:5; }
+.combo-box .list-cell { -fx-background-color:transparent; }
+.scroll-bar { -fx-background-color:#14202e; }
+.scroll-bar .thumb { -fx-background-color:#41566e; -fx-background-radius:3; }
+.scroll-pane .viewport { -fx-background-color:#101720; }
+.preview-viewport { -fx-background-color:#080e15; -fx-min-height:0; }
+.transport { -fx-padding:9; -fx-background-color:#192635; -fx-alignment:center-left; }
+.slider .track { -fx-background-color:#314b65; -fx-pref-height:4; }
+.slider .thumb { -fx-background-color:#44b6f0; }
+.timeline { -fx-padding:2 0; }
+.button.video-block { -fx-background-color:#215678; -fx-border-color:#387b9a; -fx-padding:4 5; -fx-font-size:10px; }
+.button.speech-block { -fx-background-color:#504477; -fx-border-color:#7761a4; -fx-padding:4 5; -fx-font-size:10px; }
+.button.audio-block { -fx-background-color:#215c58; -fx-border-color:#34897d; -fx-padding:4 5; -fx-font-size:10px; }
+.progress-bar .bar { -fx-background-color:#29b99c; -fx-background-radius:2; -fx-padding:6; }
+.progress-bar .track { -fx-background-color:#2d3f52; -fx-background-radius:2; }
+.status-bar { -fx-background-color:#182a3a; -fx-text-fill:#adc4dc; -fx-padding:7 14; -fx-border-color:#344a60 transparent transparent transparent; }
+.welcome { -fx-padding:45; -fx-background-color:#111c2a; }
+.welcome-title { -fx-font-size:48px; -fx-font-weight:bold; -fx-text-fill:#e5f5ff; }
+.welcome-copy { -fx-font-size:16px; -fx-text-fill:#9cb5cf; }
+.code-area { -fx-background-color:#0f1926; -fx-font-family:"DejaVu Sans Mono", "Consolas"; -fx-font-size:13px; }
+.code-area .text { -fx-fill:#d0dcee; }
+.code-area .caret { -fx-stroke:#6bdaff; }
+.code-area .selection { -fx-fill:#245a7f; }
+.code-area .paragraph-box:has-caret { -fx-background-color:#1b2b3f; }
+.lineno { -fx-background-color:#15202e; -fx-fill:#69849f; -fx-padding:0 10; }
+.code-area .xml-tag { -fx-fill:#62c9f0; }
+.code-area .xml-string { -fx-fill:#a5d69c; }
+.code-area .xml-attribute { -fx-fill:#c2a7ec; }
+.code-area .xml-comment { -fx-fill:#637f9c; }
+.editor-search { -fx-padding:8; -fx-background-color:#1a283a; }
+.log-list { -fx-font-family:"DejaVu Sans Mono", "Consolas"; -fx-font-size:11px; }
+.dialog-pane { -fx-background-color:#172332; -fx-padding:15; }
+.dialog-pane .header-panel { -fx-background-color:#1d2e42; }
+.tooltip { -fx-background-color:#304258; -fx-text-fill:#f0f5ff; }
+
+.problem-line { -fx-background-color:#422532; -fx-border-color:transparent transparent transparent #ff657e; -fx-border-width:0 0 0 3; }
+
+.text-input { -fx-prompt-text-fill:#7e96af; }
+.narration-note { -fx-text-fill:#98afc6; -fx-font-size:11px; }
+
+/* Responsive chapter workspace: sizing belongs to layout containers, not raster pixels. */
+.production-parts { -fx-padding: 10; -fx-background-color: #101b2d; }
+.production-parts .list-cell { -fx-padding: 10 12; }
+.preview-viewport { -fx-background-color: #080e19; }
+.split-pane-divider { -fx-padding: 0 3; -fx-background-color: #23344c; }
+.split-pane-divider:hover { -fx-background-color: #368cb5; }
+
+.timeline-panel { -fx-padding: 6 10; -fx-background-color: #152130; }
+.timeline-panel > .label { -fx-font-size: 10px; -fx-text-fill: #9eb7d2; }
+.timeline .button { -fx-padding: 2 4; }

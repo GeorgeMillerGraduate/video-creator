@@ -1,0 +1,5 @@
+Quiet Orbits — original procedural audio generated for this EduVideo deliverable.
+No external recording, sample library or third-party composition was used.
+The reproducible synthesis formula is documented in docs/PRODUCTION.md.
+Included for use, editing and redistribution with this project. No third-party attribution requirement is asserted.
+This statement does not represent a legal determination of copyright status.

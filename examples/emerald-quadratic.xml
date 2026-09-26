@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<edu-video version="1.0" width="1600" height="900" fps="30">
+  <scene id="quadratic" duration="20" theme="emerald-green">
+    <text id="kicker" x="80" y="65" text="02  /  ALGEBRA" size="16" color="#35EBA8" bold="true" />
+    <text id="title" x="80" y="135" text="Solving a quadratic" size="54" color="#F5F8FF" bold="true" />
+    <text id="subtitle" x="82" y="184" text="Factorise the expression, then connect each solution to a root of the graph." size="23" color="#B7CADD" bold="false" />
+    <line id="divider" x="80" y="216" width="1440" height="0" color="#35EBA8" opacity=".22" strokeWidth="1" />
+    <text id="footer" x="80" y="864" text="JENGA-CODE   /   EDUVIDEO" size="14" color="#35EBA8" bold="true" />
+    <text id="footer2" x="1180" y="864" text="MATHEMATICS, MADE VISIBLE" size="13" color="#8493AC" bold="false" />
+    <result id="question" x="80" y="253" width="665" height="88" text="x² − 5x + 6 = 0" style="info" size="40" />
+    <step id="factor" number="1" title="Factorise" x="80" y="368" width="665" height="130" padding="24">
+      <equation id="factorEq" x="30" y="81" value="x² − 5x + 6 = (x − 2)(x − 3)" size="31" font="Serif" color="#EDF6FF" typeset="false" />
+    </step>
+    <step id="zero" number="2" title="Use the zero-product rule" x="80" y="518" width="665" height="145" padding="24">
+      <equation id="zeroEq" x="30" y="83" value="x − 2 = 0   or   x − 3 = 0" size="32" font="Serif" color="#EDF6FF" typeset="false" />
+    </step>
+    <step id="solve" number="3" title="Solve for x" x="80" y="683" width="665" height="125" padding="24">
+      <equation id="solveEq" x="30" y="78" value="x = 2   or   x = 3" size="36" font="Serif" color="#89F4B8" typeset="false" />
+    </step>
+    <axes id="plane" x="858" y="328" width="625" height="425" xmin="-.5" xmax="5.5" ymin="-2" ymax="8" step="1" tickSize="18" gridOpacity=".7">
+      <function id="curve" expression="x^2-5*x+6" color="#42F3B4" glow=".8" strokeWidth="3" />
+      <plot-point id="root2" px="2" py="0" label="(2, 0)" color="#FFDC78" labelDx="-25" labelDy="-25" />
+      <plot-point id="root3" px="3" py="0" label="(3, 0)" color="#FFDC78" labelDx="30" labelDy="-25" />
+    </axes>
+    <equation id="functionLabel" x="1020" y="278" value="y = x² − 5x + 6" size="35" font="Serif" color="#95F5CA" typeset="false" />
+    <text id="graphNote" x="973" y="806" text="Roots are where the curve meets y = 0." size="20" color="#B7CADD" bold="false" />
+    <effect target="factor" name="fadeIn" start="2" duration="0.8" />
+    <effect target="zero" name="fadeIn" start="6" duration="0.8" />
+    <effect target="solve" name="fadeIn" start="11" duration="0.8" />
+    <effect target="root2" name="fadeIn" start="11" duration="0.8" />
+    <effect target="root3" name="fadeIn" start="12" duration="0.8" />
+    <effect target="graphNote" name="fadeIn" start="13" duration="0.8" />
+    <effect target="curve" name="drawOn" start="1" duration="3" />
+  </scene>
+</edu-video>

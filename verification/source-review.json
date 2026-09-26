@@ -1,0 +1,598 @@
+{
+  "base": "Jenga-Code-EduVideo-Studio-OpenAI-3.1.zip",
+  "version": "3.2.0",
+  "java_files": 141,
+  "added": [
+    "src/main/java/io/jengacode/eduvideo/production/FrameSequence.java",
+    "src/main/java/io/jengacode/eduvideo/production/PartProgress.java",
+    "src/main/java/io/jengacode/eduvideo/production/ProductionAudio.java",
+    "src/main/java/io/jengacode/eduvideo/production/ProductionProject.java",
+    "src/main/java/io/jengacode/eduvideo/ui/ProductionPartsPane.java",
+    "src/main/java/io/jengacode/eduvideo/xml/ProductionParser.java",
+    "src/main/java/io/jengacode/eduvideo/xml/ProductionWriter.java",
+    "src/test/java/io/jengacode/eduvideo/MultipartProductionTest.java"
+  ],
+  "changed_including_formatting": [
+    "src/main/java/io/jengacode/eduvideo/app/EduVideoStudio.java",
+    "src/main/java/io/jengacode/eduvideo/audio/AudioMixer.java",
+    "src/main/java/io/jengacode/eduvideo/cli/Main.java",
+    "src/main/java/io/jengacode/eduvideo/editor/XmlEditor.java",
+    "src/main/java/io/jengacode/eduvideo/export/ProductionBuilder.java",
+    "src/main/java/io/jengacode/eduvideo/production/ProductionListener.java",
+    "src/main/java/io/jengacode/eduvideo/production/RenderQueue.java",
+    "src/main/java/io/jengacode/eduvideo/ui/MainWindow.java",
+    "src/main/java/io/jengacode/eduvideo/ui/PreferencesDialog.java",
+    "src/main/java/io/jengacode/eduvideo/ui/PreviewPane.java",
+    "src/main/java/io/jengacode/eduvideo/ui/ProductionPane.java",
+    "src/main/java/io/jengacode/eduvideo/ui/ProjectDialogs.java",
+    "src/main/java/io/jengacode/eduvideo/ui/TimelinePane.java",
+    "src/main/java/io/jengacode/eduvideo/ui/VoicePane.java",
+    "src/main/java/io/jengacode/eduvideo/video/VideoRenderer.java"
+  ],
+  "sources": [
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/algorithm/ArrayObject.java",
+      "sha256": "a960572116188e42a487e2ea292354eaa7cdc6e26cb2a0907d9e0a478ac4c0b1"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/algorithm/CodeBlockObject.java",
+      "sha256": "68ad9c101002b948b731418e2a22bbce7ff6223605cde4ca0b80d52694c7c3dc"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/algorithm/EdgeObject.java",
+      "sha256": "a7506c3bc7fdfcde950f5b91e0bfb0ba27d4632960b71d414e5471b751fccad5"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/algorithm/GraphObject.java",
+      "sha256": "38fae9ee0ec21d0736ed9c7998b3641fd1a49bc0a8d3771fa23613d508d56bff"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/algorithm/NodeObject.java",
+      "sha256": "390888b59bee0d359c1fa0b72947b2b05961b15aacf10b605e22fa42018415f0"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/algorithm/TreeObject.java",
+      "sha256": "c3d684a97f9fff58adaf1c59a85d376843260b0d631e4fdb8db8589b9a6af0df"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/algorithm/VariableObject.java",
+      "sha256": "5114dd5c0ac5dfd20b95d8021a8b1c87a5e5dd9a5e6d998ec5f95083f2b1cbb7"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/Animation.java",
+      "sha256": "65efe22da8a5a10aa4620b3c085f3ad5f8cf212cffffd384008457fcdf79a22a"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/CameraFollow.java",
+      "sha256": "b4fe91ff5796ab3a71a08d477c8f5972d843cad54cfbe4c04011bc6aa1ec957d"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/Easing.java",
+      "sha256": "25ba57f34d5674c0990709b68409ee1bd1cc56ef64eeb6ac19748ad8de2c039c"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/Effects.java",
+      "sha256": "e6968cd0a32845f537c4b682ebf7b939f5e8b27668d7b77ff1f69b6bfa100a19"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/Keyframe.java",
+      "sha256": "db99a420ef0dda71f3d0a1fe4f71e441b689422f7c8a4304218383e1fa01eea8"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/MotionPath.java",
+      "sha256": "1145c26e11164ebdc2d75d951506c951d4318e5d96582d8229ec9512c35a9138"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/PathAnimation.java",
+      "sha256": "fe942d8012d4b83feb41107c357991e3fef479bde119caf8b7611b16f5c483c6"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/PathTrack.java",
+      "sha256": "57ccef72e802bde3c98ceda67d626899d6dfa84d15a126e7fe9687c67a7f50da"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/Property.java",
+      "sha256": "1c0dd360468e49e93e7a04cae8110c70aa76acc155bc235de33cba96f605f94a"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/PropertyAnimation.java",
+      "sha256": "25c62a5ec962826c97de0bcfc95bca7235c3a2823085fd436a3e11b5ae805faf"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/PulseAnimation.java",
+      "sha256": "9cb0b892fbf27450c7b88bf751cb59927e21dc38fc9a0eaac81ee9ab1bc1a9f1"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/Timeline.java",
+      "sha256": "120b7f8e25e256970ec098c839131e6a274f0f1354f759b8229c2290ca97f483"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/Transforms.java",
+      "sha256": "0f1812ea45d6066e6618a7f32613b4cf65471992da7b442242cca44bf32cd14e"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/animation/ValueTransfer.java",
+      "sha256": "63b112129146ad30523f477539c65d0b651f62a221bdf5938b9551bcc04806be"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/app/ApplicationContext.java",
+      "sha256": "d1e1e055b5efd47ec69a3c4727b7e8160260b4c0ba0413654f4f5a26fe434953"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/app/EduVideoStudio.java",
+      "sha256": "4834dd4ef88d53b5b16f8dd169db769889e5f0d5966f1b32722007f2b24c3658"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/app/ProjectState.java",
+      "sha256": "36707772ef26ba86a385e649e1fe7519d0fe930d1ce0233fd40ec84449840290"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/app/StudioSettings.java",
+      "sha256": "15a8b72e714eda1633bcfafeab50cc46a539d3996f85d559f6a1eaa35bfbd836"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/audio/AudioMixer.java",
+      "sha256": "210a6c1d4cd27aa4efaa54324864d288b567e20200f65d12ef977070206a8202"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/audio/AudioSettings.java",
+      "sha256": "cd5ed074e83882a6616a404c66f37e1ce3f525ab9a5710b3b36344187cc2abf3"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/audio/AudioTimeline.java",
+      "sha256": "63825cce451b3033639ed77b60a36f90b1e7343a930c241e646a5110185b3366"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/audio/NarrationCue.java",
+      "sha256": "4bbbc6973070c2602ad3bb2b25c906db3c64da841b48c3a5762b39580457d9a1"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/audio/OpenAISpeechProvider.java",
+      "sha256": "d40f44c0da1061febef31746ce398e04448dacdb193f41fa1fb927b09a73a2e3"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/audio/OpenAIVoices.java",
+      "sha256": "33d3b69417ad5b122dcb4f16e81be62b1ed767267b63bbdb7dace1b8ed7f8db2"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/audio/SpeechCache.java",
+      "sha256": "9974d048e7012df054c0ba9b44b000ad9b051211588415d97ddf8d2006ae04c5"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/audio/SpeechProvider.java",
+      "sha256": "28d9521284bfe53dab1b1406a084ce570d2916c32dbc12c7aaab1f602b10e516"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/audio/SpeechVoice.java",
+      "sha256": "e5a762d32da55f66f73945dd2db107d815bd706a658def70409da8bbafc586c7"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/audio/VoiceSettings.java",
+      "sha256": "893357efe70658626ff59e3734e6f819ed7bd48babad9d5036f024a378389a87"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/audio/WavAudio.java",
+      "sha256": "b0df5364048f59ce833efce5b2f5c24c3ed30b9823de12127bd2adbe95689a6a"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/cli/GaussianEliminationMain.java",
+      "sha256": "22592a17e5d5629cd1df7bf8c4c4f4b736a69c007f94ce0d4c76757052269a72"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/cli/Main.java",
+      "sha256": "da2031e87f10b7a6c628c848d80186d95ad259cbb0d8c863642d85270a09ae75"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/cli/RenderLesson.java",
+      "sha256": "f0af874e34da43e1d45dc08827ae398487588aa9fe7598f0ea9ecf1ed3669b3e"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/cli/SudokuBacktrackingMain.java",
+      "sha256": "e253bc8d0deff12f68aae2e5f377714d019d3f39459c0cf916dfd8a2583967e6"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/editor/XmlEditor.java",
+      "sha256": "66af6023415e8ed35e48db5658e6917903af07344993f305f25302bc77a7d583"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/export/FFmpegExporter.java",
+      "sha256": "ad12f3b83fc9118cdab9f03c9d4f0c21a887a8fd78ffd064d3eeca60e9d5358b"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/export/FrameExporter.java",
+      "sha256": "d68195127f30eb7562fb9d683a8cc12cbc5135914f781a7a4e8b3a3a53b2bf97"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/export/ProductionBuilder.java",
+      "sha256": "3f125ac933d7a10b927a4fd907992abdceee3d0c0769fa858d7b765501cb2541"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/AreaPlot.java",
+      "sha256": "2e059343283f3353043f87150930debf24a18e0b26883d68f2becd3bbfcdb296"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/CalculusObject.java",
+      "sha256": "f0bfd01d25c1cbc671a8654db849f700646bf7ee12eeb701f69b55a63aa97f2c"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/CoordinatePlane.java",
+      "sha256": "7d6a690895aaf4a13834a922c00dd23d1a6cb15fb90cc489fee4b0ef0ad87de6"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/EquationObject.java",
+      "sha256": "a046e4d3a4ca423413be016e90a5f08cf055f5bcf0ac362fd9f6cb29a1486dc3"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/FunctionPlot.java",
+      "sha256": "9feb49ccc962e5802ca26eb74969d3f4356a211b1aa8339f5b09255f8288810a"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/GeometryObject.java",
+      "sha256": "883fd397cb8d4cfcd3769ed10ed4f19558617a861ccd1a6fd6dea97258fba06f"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/MatrixAlgebra.java",
+      "sha256": "3df8b6b68089881a5e646985cfda5980ebc26f1032b9c57687a43220a254ff5c"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/MatrixObject.java",
+      "sha256": "7a1ec43c01f137bc5bdd5a79532458bb707d7e85897e73cc139d047cdf6f1b05"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/MatrixProductStep.java",
+      "sha256": "ce754badc0dafd66f9875d41e7a9eb05d9b7c9fb4a5cc1b2ec081229760e1601"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/NumberLine.java",
+      "sha256": "cc8bebe68ae00b0d3d25c32491e9b9776aa9e91326149152165b0a3f569ad3be"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/PlotPoint.java",
+      "sha256": "b8fd9bacdd2067bd7a8d30faa958717f36c9c5c412a8a35ebfd69a22bfeb0a5c"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/StatisticsPlot.java",
+      "sha256": "75071df15571487591b0fc1d05a4477f5f81be161510da87001fdfc14abbdc76"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/TokenEquation.java",
+      "sha256": "d87bc00935a6e90157eb209a1b551b77cdf890bf42d8aa15b8ab7ba17f1aea75"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/TriangleObject.java",
+      "sha256": "d58e1faf9eefeabeb6832ae42490f34e156c55244a64f98f43730333d6b88740"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/VectorDiagram.java",
+      "sha256": "0071c522658140f1d12ee6cf1acfab2f64c3e74d598c6bff44e724987be0e002"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/math/VennDiagram.java",
+      "sha256": "dfab79aa06bbf125d02de0d02054122d8267cb856bea382b4786ba8421d22928"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/objects/ArrowObject.java",
+      "sha256": "d0c1df31a4f221e93e8acc7e5eaa3660abc20c81b24df8582ae253bdb598fd3e"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/objects/CircleObject.java",
+      "sha256": "858d4553da69126d7af1d3b311a2d3306f8a84e31e1a603a409c9696e58684c8"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/objects/CurvedArrowObject.java",
+      "sha256": "a1f21ad24993293b683362137d1dce930618c2e8869066fdfad760cc1924bd87"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/objects/ImageObject.java",
+      "sha256": "3dd63343060023f5f19c91e2139b523985d4413ae475626ff3bd8cced047712e"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/objects/LineObject.java",
+      "sha256": "2cbba377ee46722ec6c6c98809115b6e22c155bf13babded36353f0606b5625c"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/objects/PanelObject.java",
+      "sha256": "38ce3996e199cf6b2a9cfe91b361e7c15475c9ec5e3393b9fc3e1445496e9de0"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/objects/RectangleObject.java",
+      "sha256": "e86171ebee01253166dcda7b62ef2817ec1f7a69c3b1b568539a0eb58f3c6393"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/objects/ResultObject.java",
+      "sha256": "c01dcaa5c3691e7ac91db46aadf0fe8c3e8f76d61e29686cb0be21852e8eb9f3"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/objects/ShapeObject.java",
+      "sha256": "3ea53c189815bfcbb85ed12c0c5912812124cdc671a9861fbcf156d7deeeb4a1"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/objects/StepObject.java",
+      "sha256": "ab3d3435c0d74022980c66f77ca5083e2725902f2e8956d6e38ac854931dfe8b"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/objects/TextObject.java",
+      "sha256": "cafe90cd230736fd0ff233cb2997cf2ba0d1841cc7ff626d11c8737072440213"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/preview/PreviewApp.java",
+      "sha256": "d6fa43527d89053775164fd3332c7f723102b93fd83c23933d5bcfe70e6a0d74"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/production/Cancellation.java",
+      "sha256": "86fd5df658e60f72f9d2a5998c65ac843b2d129ba9d3658af5dd75dc77bd4ae5"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/production/FrameSequence.java",
+      "sha256": "b6f7e9f8e4fe944e5bc61609ad281ddf3cd505ddbbeec3579c11138c70fdf265"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/production/PartProgress.java",
+      "sha256": "76f6d4c7ddf1a1a832d7407d2cfed574cf3541281603d82ca6354dc643e6d49b"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/production/ProductionAudio.java",
+      "sha256": "b7c61129997d78ed39d6afa5a5151b0d8b88bbeaafc82704ef881b7bb3061316"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/production/ProductionListener.java",
+      "sha256": "f4b6048633582d2101b98dd72da7375c99024acb75388bde8fbe0dd1a5b1546f"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/production/ProductionProgress.java",
+      "sha256": "03386c9e0364b04dd5a922c84d3272b62df93542c4bc5f978eb7efb744df98d4"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/production/ProductionProject.java",
+      "sha256": "86e67753f2039d0b95f0a691af13a8e5ef4e61289b55e72f0afd762829a1df23"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/production/RenderQueue.java",
+      "sha256": "e9fa3c397b3c4004f50e405b342cfc9ce261cec33f57f1b70c1567019797fb91"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/project/ProjectLibrary.java",
+      "sha256": "6603dca973b20ef3a4da49cf3bc7cdb60ef6ab4baba968b11a44d391c3833d34"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/project/ProjectTemplates.java",
+      "sha256": "4a771543b23107f88d5d8122cb1609fe4e099902d63da531b58f7308810cb63a"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/render/BackgroundRenderer.java",
+      "sha256": "1dc9c864022f13505e5d00e5f5072625d458ef6bf427fa0569dd4aed686848b5"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/render/EquationRenderer.java",
+      "sha256": "66f335fa4af3f0578a7d8872b8d02f9dd0790541ce98e9fc26a9bfffe02458c1"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/render/GlowRenderer.java",
+      "sha256": "747d98a3160ed64444b4889396136f6f884735d6178e6ca406a809cccb3de9a1"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/render/JavaHighlighter.java",
+      "sha256": "26753409607cb8d087bd42c69daa33574af69ca3f28fe95baba36bd9a7b2b5a6"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/render/MathRenderer.java",
+      "sha256": "e488ae47b60d763bb2108b5b6f1f903ae10b260f9b7498eec63f3de4462321a0"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/render/PanelRenderer.java",
+      "sha256": "967d2ee0398b0e173a7bce657bfe268620788e0efb6044c6828d5e8320ab93ec"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/render/PathRenderer.java",
+      "sha256": "fc9a955080b39ed55236c3fb163313af7ccaa9f29136a8bc93d80ce3b6e89de3"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/render/SyntaxHighlighter.java",
+      "sha256": "d20d9065cc1b34d211bcc46df106a2cee6a8f1e7a5e7d6c2ae98d2b00cfc4591"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/render/TextRenderer.java",
+      "sha256": "386b8faa56602c58420518f7ff7ec878ec3a186e34b171315df644d73d08e485"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/scene/Anchor.java",
+      "sha256": "d22d51a1979a296702ef9169167ccd60dba889896fd7fa95c0f1bdde990e6ff1"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/scene/Camera.java",
+      "sha256": "a2c17bea3ef9ad85fd8fcd2df24746017ea80bb8a9886deafd551c2ae403d4cb"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/scene/GroupObject.java",
+      "sha256": "cf4990e66f6d43d5c2d95f42b9b1871101826247fd2f200f4156ac6b3ec18455"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/scene/Layout.java",
+      "sha256": "652b4d94ab8375be7e768c81d112bbd5209465daaeed7002dcf0f1b834e36ba8"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/scene/SafeLayout.java",
+      "sha256": "aa9c364767271079b7e4d4a97caebd20f761f38feb03e5c6ee05d97e5c600655"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/scene/Scene.java",
+      "sha256": "d4d7c2b5fa7dabdbd746fa92dffdc504b79c207154185f7e36dc3a60e126cf95"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/scene/SceneObject.java",
+      "sha256": "d83e5608987a3b85368c5cc49c93fa44aa74ff14970acc8203dd3cc93bc208a4"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/ui/LogPane.java",
+      "sha256": "112284f94dacb295c5164b9a5c1550fbc661ab2f0b38f704f7d7b3e140a48d52"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/ui/MainWindow.java",
+      "sha256": "2a320abc166d0353d84c00e77e5328a13a810ad1badf8d1d4b2266142c802099"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/ui/PreferencesDialog.java",
+      "sha256": "f86803194a3545c2e6578a6d6978c45ff5767b2f26e3931d9309d3646c5e6126"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/ui/PreviewPane.java",
+      "sha256": "a2bb6a092094008f348cf7cc462f348d47d8956e350e029be1ef95cb186dda26"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/ui/ProductionPane.java",
+      "sha256": "cd415f342d063fb71aa412deb92ea31f2722b94b8eb0cbb156167418d596377f"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/ui/ProductionPartsPane.java",
+      "sha256": "cefe39ba8a881b74ca4ae7c1546cf3bdca61f9bc8e9e57c81e6d4c500d064340"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/ui/ProjectDialogs.java",
+      "sha256": "3624a34f1c0c407d62c9b7de751e8c969fc29aad1a6b8cf6bfcd7e12c4ede533"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/ui/TimelinePane.java",
+      "sha256": "b65ee10427d4141c10332e2888525f385e2a8703515cd3835995f3d46c4b3f7f"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/ui/Ui.java",
+      "sha256": "bcd10f194997ca1233f8780fa788d131aa2b42d5149b6b7ceab8a7c49cb01a2d"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/ui/VoicePane.java",
+      "sha256": "c0f14ac8023e0473ad1fe65c4c026f8eea48a5b47445c85df506d399ce3e3353"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/util/Checks.java",
+      "sha256": "23440e9e3c1db80ad1f23c3c60dacbe308238ac3aa537fc60ba7f7dc05f93ffd"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/util/ColorParser.java",
+      "sha256": "3a592e57116d9d7c0e16b42563304ae8d9c439d25fed5e5c557e7576498aac6e"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/util/ExpressionParser.java",
+      "sha256": "22f7e263b84e6b25e3fb6630c369fe4fac6956ec2c81ab1640affbcb46d31730"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/util/FontManager.java",
+      "sha256": "3c8319b6876d842d3564aa8e51a8c9b5accb2a35d80fa6f1ad76e92299b176e0"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/video/AudioCue.java",
+      "sha256": "58c395452de7a98656ebb210e1984796256e480b13249254715c98140a48fe2e"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/video/RenderContext.java",
+      "sha256": "a7455ce1619beca4c0fac498fdd3124192362c02187a1ab705d1d0fb0506cb15"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/video/Theme.java",
+      "sha256": "566b318b3085f74f79a764f6b590f4ea77ebb14ef01fbab2415a43d37f63f90d"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/video/VideoProject.java",
+      "sha256": "2a5ed2b1bfdbc34eaad21ad6b391e2b42e645fed4b0c1267f1c220ffedd318b9"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/video/VideoRenderer.java",
+      "sha256": "c882259a9f6be99442df4a75c3caabc95e9020d899e6677ef6a2defd8a32e91c"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/video/VideoSettings.java",
+      "sha256": "d383252a788266c3af2a9a4a1a4e77ea503b7059321a9d6f6de5239f6fcbc9e3"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/xml/AnimationParser.java",
+      "sha256": "346c90feb91881d4854fb55387f175e4ce5f3149d3ae6e7ea515c942630df012"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/xml/LocatedXml.java",
+      "sha256": "098a7dd60b19ce6b8ce187eb3681a060f8de30a685df34524a6006bc6ef6f059"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/xml/ObjectParser.java",
+      "sha256": "e7e27338b017d622a6b06d6a2cc3c0d069e59ba3ec06955fd7c888eedc265317"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/xml/ProductionEvents.java",
+      "sha256": "1701eefc015105cec3a4ab0108b220748952dcacd54fdfd23d740e2f42d89ba6"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/xml/ProductionParser.java",
+      "sha256": "aeb1f86d76d69d27b5c9d1bb13fbebea0c8bf8eb00e7ab92a260cc1f139f3843"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/xml/ProductionWriter.java",
+      "sha256": "316a59e51324ee0364f9c185884034c5a988e80be93b79042d13cf7b10d8104f"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/xml/ProjectFormatException.java",
+      "sha256": "c2a127961495f07a2b89ec6cd9033911c2e826359f547bd959d83f5e024f29f0"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/xml/ProjectParser.java",
+      "sha256": "3ded4aafda29d490bb92cf22960566357c81093539f78e330b0458187e786f73"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/xml/StandardObjects.java",
+      "sha256": "c0ff54f5767bf8adcb0016a08250f2c7c85e8fefece151c8e3ac096791439f7e"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/xml/VisualObjects.java",
+      "sha256": "cd8361d90a51d27b6ec8afad3248c9df162ba8944a752d2c3b0cd39322d3073a"
+    },
+    {
+      "path": "src/main/java/io/jengacode/eduvideo/xml/XmlElement.java",
+      "sha256": "61a693632f69f3e22777f3b89f16f8c2de1eca780fd796dfb77d29dbb8557c44"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/AlgorithmTest.java",
+      "sha256": "4e0bd4e6864ec9b1a11ae0adb4d7166c48003ee9b0f16892fdde6f627534f00f"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/AnimationTest.java",
+      "sha256": "b5a5e7bfe97ae9d84aaaedb456e1b7b1f49f142aad54286cbe4119783249ca22"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/AudioMixTest.java",
+      "sha256": "7df7cf8c8ec7c9a920575a3a7a997cb285f199ea2c70d53adeaf750f2d65992e"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/MathTest.java",
+      "sha256": "32e76c48e5fc98fe2999dd0a77c156ad13532f441bf8507bb4c9ea3d96b3a9fe"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/MultipartProductionTest.java",
+      "sha256": "34d9600709c568fbfb380bb99a0d202c7c05fc86e73dafacce3495ca2675aeb3"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/ProcessExecutionTest.java",
+      "sha256": "3b6ad615d3a03a6a2dc509a3ea4d2c7ab816273b44992298e6362c532231f8a5"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/ProductionTest.java",
+      "sha256": "d8efae9b534d122aaef90f2c9a16d12446516e60ec8370d2ae74dbe7ff6b7362"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/RenderingTest.java",
+      "sha256": "ae7e1e17d7411cb207320f7a25f1bec38749292438a8af79a4318e7f03d87b34"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/StudioTest.java",
+      "sha256": "5e1eb88915ba31fa81772fdd30dbad29b14fa1097229fc0f22e39e56bcb9a4f2"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/VisualUpgradeTest.java",
+      "sha256": "43cc8a931bd254914d96c6abb72d35fa1c76778b24a41e4bab69e27cffcb5d71"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/XmlTest.java",
+      "sha256": "e582ca8684218af25edd4a0f0f1a43a95ba107f63a6b81009374da50a1b617e5"
+    },
+    {
+      "path": "src/test/java/io/jengacode/eduvideo/audio/OpenAISpeechTest.java",
+      "sha256": "0b1bc36ff8a02cfa1d151b9b6320178246286bab085381bf3e0f86e28bf38774"
+    }
+  ]
+}

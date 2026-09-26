@@ -1,0 +1,5 @@
+00:00:00.000 Introduction
+00:00:16.000 Fourier series
+00:00:32.000 Heat equation
+00:00:48.000 Worked solution
+00:01:04.000 Summary

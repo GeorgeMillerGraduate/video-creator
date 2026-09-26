@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<edu-video version="1.0" width="1920" height="1080" fps="60">
+  <scene id="sorting" duration="35" theme="midnight-blue">
+    <background grid="false" curves="true" dots="true" vignette="true" intensity=".18" />
+    <text id="brand" x="96" y="74" text="JENGA–CODE   /   03  /  COMPUTER SCIENCE" size="17" color="#36D4FF" bold="true" align="left" />
+    <text id="title" x="96" y="158" text="Small comparisons. A sorted array." size="64" color="#F3F6FC" bold="true" align="left" />
+    <text id="subtitle" x="99" y="211" text="Bubble sort makes the largest remaining value travel to the right." size="25" color="#9DAFC9" bold="false" align="left" />
+    <line id="rule" x="96" y="249" width="1728" height="0" strokeWidth="1" color="#36D4FF" opacity=".25" />
+    <text id="footer" x="96" y="1019" text="EDUVIDEO   /   MATHEMATICS IN MOTION" size="15" color="#9DAFC9" bold="false" align="left" />
+    <text id="index" x="1824" y="1019" text="03  /  COMPUTER SCIENCE" size="15" color="#36D4FF" bold="false" align="right" />
+    <line id="progress" x="96" y="980" width="1728" height="0" strokeWidth="2" color="#4CF0B3" drawProgress="0" opacity=".75" />
+    <animate target="progress" property="drawProgress" to="1" start="0" duration="35" easing="linear" from="0" />
+    <effect target="title" name="fadeIn" start="0" duration="0.8" />
+    <effect target="subtitle" name="fadeIn" start="0" duration="0.8" />
+    <music src="../../assets/music/quiet-orbits.wav" start="0" end="35" volume=".12" loop="true" fade-in="1.5" fade-out="2" />
+    <text id="arraylabel" x="170" y="340" text="LIVE ARRAY" size="19" color="#36D4FF" bold="true" align="left" />
+    <array id="values" x="170" y="448" width="132" height="105" values="7,2,5,1" color="#36D4FF" />
+    <text id="passlabel" x="170" y="663" text="EXECUTION STATE" size="18" color="#9DAFC9" bold="true" align="left" />
+    <variable id="pass" x="170" y="723" name="pass" value="1" color="#C09DFF" />
+    <variable id="j" x="440" y="723" name="j" value="0" color="#36D4FF" />
+    <variable id="compare" x="170" y="782" name="compare" value="7 &gt; 2" color="#F3F6FC" />
+    <code id="code" x="920" y="335" width="830" height="480" size="25" title="BubbleSort.java" lineNumbers="true">for (int pass = 0; pass &lt; n - 1; pass++) {
+  for (int j = 0; j &lt; n - pass - 1; j++) {
+    if (a[j] &gt; a[j + 1]) {
+      swap(a, j, j + 1);
+    }
+  }
+}</code>
+    <assign target="j" value="0" start="4" />
+    <assign target="compare" value="7 &gt; 2" start="4" />
+    <highlight target="code" line="3" start="4" duration="1.25" />
+    <highlight target="values" index="0" start="4" duration="2.7" color="#FFD58A" />
+    <highlight target="values" index="1" start="4" duration="2.7" color="#FFD58A" />
+    <swap target="values" a="0" b="1" start="5.3" duration="1.2" />
+    <highlight target="code" line="4" start="5.3" duration="1.2" />
+    <assign target="j" value="1" start="8" />
+    <assign target="compare" value="7 &gt; 5" start="8" />
+    <highlight target="code" line="3" start="8" duration="1.25" />
+    <highlight target="values" index="1" start="8" duration="2.7" color="#FFD58A" />
+    <highlight target="values" index="2" start="8" duration="2.7" color="#FFD58A" />
+    <swap target="values" a="1" b="2" start="9.3" duration="1.2" />
+    <highlight target="code" line="4" start="9.3" duration="1.2" />
+    <assign target="j" value="2" start="12" />
+    <assign target="compare" value="7 &gt; 1" start="12" />
+    <highlight target="code" line="3" start="12" duration="1.25" />
+    <highlight target="values" index="2" start="12" duration="2.7" color="#FFD58A" />
+    <highlight target="values" index="3" start="12" duration="2.7" color="#FFD58A" />
+    <swap target="values" a="2" b="3" start="13.3" duration="1.2" />
+    <highlight target="code" line="4" start="13.3" duration="1.2" />
+    <assign target="j" value="0" start="18" />
+    <assign target="compare" value="2 &gt; 5" start="18" />
+    <highlight target="code" line="3" start="18" duration="1.25" />
+    <highlight target="values" index="0" start="18" duration="2.7" color="#FFD58A" />
+    <highlight target="values" index="1" start="18" duration="2.7" color="#FFD58A" />
+    <assign target="pass" value="2" start="18" />
+    <assign target="j" value="1" start="22" />
+    <assign target="compare" value="5 &gt; 1" start="22" />
+    <highlight target="code" line="3" start="22" duration="1.25" />
+    <highlight target="values" index="1" start="22" duration="2.7" color="#FFD58A" />
+    <highlight target="values" index="2" start="22" duration="2.7" color="#FFD58A" />
+    <swap target="values" a="1" b="2" start="23.3" duration="1.2" />
+    <highlight target="code" line="4" start="23.3" duration="1.2" />
+    <assign target="j" value="0" start="27" />
+    <assign target="compare" value="2 &gt; 1" start="27" />
+    <highlight target="code" line="3" start="27" duration="1.25" />
+    <highlight target="values" index="0" start="27" duration="2.7" color="#FFD58A" />
+    <highlight target="values" index="1" start="27" duration="2.7" color="#FFD58A" />
+    <swap target="values" a="0" b="1" start="28.3" duration="1.2" />
+    <highlight target="code" line="4" start="28.3" duration="1.2" />
+    <assign target="pass" value="3" start="27" />
+    <text id="sorted" x="960" y="894" text="1 ≤ 2 ≤ 5 ≤ 7   —   order emerges from local decisions." size="31" color="#4CF0B3" bold="true" align="center" />
+    <effect target="sorted" name="fadeIn" start="30" duration="0.8" />
+    <highlight target="values" index="0" start="30" duration="5" color="#4CF0B3" />
+    <highlight target="values" index="1" start="30" duration="5" color="#4CF0B3" />
+    <highlight target="values" index="2" start="30" duration="5" color="#4CF0B3" />
+    <highlight target="values" index="3" start="30" duration="5" color="#4CF0B3" />
+    <speak id="intro" start="0.5" max-end="3.8" text="Comparisons drive the code." />
+    <speak id="pass1" start="4" max-end="10.5" text="Seven is larger than its neighbour. Swap, then compare again." />
+    <speak id="largest" start="12" max-end="17" text="Seven reaches the right edge. Its final position is settled." />
+    <speak id="pass2" start="18" max-end="25.5" text="The next pass moves five right. The smallest value continues left." />
+    <speak id="finish" start="27" max-end="34" text="One final swap. The array is sorted: one, two, five, seven." />
+  </scene>
+</edu-video>

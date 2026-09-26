@@ -1,0 +1,7 @@
+target/
+output/
+**/eduvideo-build-*/
+**/speech-cache/
+*.onnx
+*.onnx.json
+studio.properties

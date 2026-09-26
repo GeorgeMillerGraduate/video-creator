@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edu-video version="1.0" width="1280" height="720" fps="30">
+ <theme background="#07111F" foreground="#EAF4FF" primary="#38BDF8" secondary="#A78BFA" success="#4ADE80" warning="#FBBF24"/>
+ <scene id="intro" duration="4">
+  <text id="brand" x="90" y="100" size="22" color="#38BDF8" text="JENGA CODE  /  MATHEMATICS"/>
+  <text id="title" x="90" y="290" size="70" text="The shape of a quadratic"/>
+  <equation id="eq" x="95" y="400" size="64" value="y = ax² + bx + c" color="#A78BFA"/>
+  <text id="sub" x="95" y="575" size="28" text="One curve. Three parameters. Endless possibilities."/>
+  <typewriter target="title" start="0.2" duration="1.7"/>
+  <animate target="eq" property="opacity" from="0" to="1" start="1.5" duration="1" easing="easeOut"/>
+  <animate target="sub" property="opacity" from="0" to="1" start="2.4" duration="0.7"/>
+ </scene>
+ <scene id="plot" duration="13" transition="crossfade" transitionDuration="0.8">
+  <text id="title" x="70" y="85" text="Start with y = x²" size="46"/>
+  <axes id="plane" x="110" y="165" width="720" height="440" xmin="-5" xmax="5" ymin="-1" ymax="11" step="1">
+   <function id="original" expression="x^2" color="#586582" strokeWidth="2"/>
+   <function id="curve" expression="a*(x-b)^2+c" color="#38BDF8" strokeWidth="4" drawProgress="0"/>
+  </axes>
+  <group id="notes" x="900" y="220">
+   <equation id="formula" value="y = (x − 2)² + 3" size="29" color="#A78BFA"/>
+   <text id="right" y="80" text="2 units right" size="26"/>
+   <text id="up" y="125" text="3 units up" size="26"/>
+   <text id="shape" y="230" text="Same shape.&#10;New position." size="30" color="#4ADE80"/>
+  </group>
+  <arrow id="shift" x="470" y="568" width="144" height="-110" color="#FBBF24" drawProgress="0"/>
+  <text id="caption" x="110" y="680" text="The grey curve is the original. The blue curve moves." size="26"/>
+  <animate target="curve" property="drawProgress" from="0" to="1" start="0.7" duration="2.5" easing="smoothStep"/>
+  <animate target="curve" property="b" from="0" to="2" start="4" duration="2.5" easing="easeInOut"/>
+  <animate target="curve" property="c" from="0" to="3" start="7" duration="2.5" easing="easeInOut"/>
+  <animate target="notes" property="opacity" from="0" to="1" start="3.3" duration="0.7"/>
+  <animate target="shift" property="drawProgress" from="0" to="1" start="9.5" duration="1"/>
+  <animate target="camera" property="zoom" from="1" to="1.035" start="10.5" duration="2" easing="easeInOut"/>
+ </scene>
+ <scene id="summary" duration="5" transition="fade" transitionDuration="1">
+  <text id="label" x="100" y="140" text="REMEMBER THE PATTERN" size="24" color="#38BDF8"/>
+  <equation id="rule" x="100" y="285" value="y = a(x − h)² + k" size="76" color="#A78BFA"/>
+  <text id="explain" x="105" y="395" text="h moves the vertex horizontally.&#10;k moves it vertically.&#10;a changes the width and direction." size="36"/>
+  <text id="footer" x="105" y="650" text="Rendered entirely with Java · BufferedImage · Graphics2D" size="22" color="#38BDF8"/>
+  <animate target="rule" property="y" from="310" to="285" start="0.5" duration="1" easing="easeOut"/>
+ </scene>
+</edu-video>

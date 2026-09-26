@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<edu-video version="1.0" width="1920" height="1080" fps="60">
+  <scene id="matrix" duration="46" theme="midnight-blue">
+    <background grid="false" curves="true" dots="true" vignette="true" intensity=".18" />
+    <text id="brand" x="96" y="74" text="JENGA–CODE   /   01  /  LINEAR ALGEBRA" size="17" color="#36D4FF" bold="true" align="left" />
+    <text id="title" x="96" y="158" text="Where one matrix entry comes from" size="64" color="#F3F6FC" bold="true" align="left" />
+    <text id="subtitle" x="99" y="211" text="Follow a row. Meet a column. Watch the answer take its place." size="25" color="#9DAFC9" bold="false" align="left" />
+    <line id="rule" x="96" y="249" width="1728" height="0" strokeWidth="1" color="#36D4FF" opacity=".25" />
+    <text id="footer" x="96" y="1019" text="EDUVIDEO   /   MATHEMATICS IN MOTION" size="15" color="#9DAFC9" bold="false" align="left" />
+    <text id="index" x="1824" y="1019" text="01  /  LINEAR ALGEBRA" size="15" color="#36D4FF" bold="false" align="right" />
+    <line id="progress" x="96" y="980" width="1728" height="0" strokeWidth="2" color="#4CF0B3" drawProgress="0" opacity=".75" />
+    <animate target="progress" property="drawProgress" to="1" start="0" duration="46" easing="linear" from="0" />
+    <effect target="title" name="fadeIn" start="0" duration="0.8" />
+    <effect target="subtitle" name="fadeIn" start="0" duration="0.8" />
+    <music src="../../assets/music/quiet-orbits.wav" start="0" end="46" volume=".12" loop="true" fade-in="1.5" fade-out="2" />
+    <text id="Alabel" x="240" y="327" text="A   /   2 × 3" size="22" color="#36D4FF" bold="true" align="left" />
+    <matrix id="A" x="240" y="370" values="2,3,1;1,4,2" cellWidth="100" cellHeight="86" size="42" color="#36D4FF" initiallyVisible="true" />
+    <effect target="A" name="fadeIn" start="0.3" duration="0.7" />
+    <text id="Blabel" x="815" y="327" text="B   /   3 × 2" size="22" color="#C09DFF" bold="true" align="left" />
+    <matrix id="B" x="815" y="370" values="1,2;3,1;2,6" cellWidth="100" cellHeight="86" size="42" color="#C09DFF" initiallyVisible="true" />
+    <effect target="B" name="fadeIn" start="0.3" duration="0.7" />
+    <text id="Clabel" x="1435" y="327" text="AB   /   2 × 2" size="22" color="#4CF0B3" bold="true" align="left" />
+    <matrix id="C" x="1435" y="370" values="13,13;17,18" cellWidth="100" cellHeight="86" size="42" color="#4CF0B3" initiallyVisible="false" />
+    <effect target="C" name="fadeIn" start="0.3" duration="0.7" />
+    <text id="times" x="660" y="476" text="×" size="48" color="#9DAFC9" bold="false" align="center" />
+    <text id="equals" x="1250" y="476" text="=" size="48" color="#9DAFC9" bold="false" align="center" />
+    <panel id="workspace" x="195" y="693" width="1530" height="228" padding="0" opacity=".6" />
+    <marker id="cell0" time="4" />
+    <matrix-product-step left="A" right="B" result="C" row="0" column="0" start="@cell0" duration="8.5" work-x="960" work-y="842" />
+    <speak id="entry0" start="4" max-end="12.1" text="Multiply corresponding entries, then add. Two plus nine plus two gives thirteen." />
+    <marker id="cell1" time="13" />
+    <matrix-product-step left="A" right="B" result="C" row="0" column="1" start="@cell1" duration="8.5" work-x="960" work-y="842" />
+    <speak id="entry1" start="13" max-end="21.1" text="Keep the first row. Change the column. Four plus three plus six is thirteen." />
+    <marker id="cell2" time="22" />
+    <matrix-product-step left="A" right="B" result="C" row="1" column="0" start="@cell2" duration="8.5" work-x="960" work-y="842" />
+    <speak id="entry2" start="22" max-end="30.1" text="Now take the second row. One plus twelve plus four gives seventeen." />
+    <marker id="cell3" time="31" />
+    <matrix-product-step left="A" right="B" result="C" row="1" column="1" start="@cell3" duration="8.5" work-x="960" work-y="842" />
+    <speak id="entry3" start="31" max-end="39.1" text="The final position. Two plus four plus twelve gives eighteen." />
+    <text id="conclusion" x="960" y="825" text="Every entry is one row–column conversation." size="36" color="#4CF0B3" bold="true" align="center" />
+    <effect target="conclusion" name="fadeIn" start="41" duration="0.7" />
+    <speak id="intro" start="0.5" max-end="3.9" text="Rows meet columns to form products." />
+    <speak id="ending" start="41" max-end="45.5" text="Four dot products. One new matrix." />
+  </scene>
+</edu-video>

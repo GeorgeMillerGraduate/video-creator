@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<edu-video version="1.0" width="1600" height="900" fps="30">
+  <scene id="integral" duration="18" theme="midnight-blue">
+    <text id="kicker" x="80" y="65" text="01  /  CALCULUS" size="16" color="#24D4FF" bold="true" />
+    <text id="title" x="80" y="135" text="The definite integral" size="54" color="#F5F8FF" bold="true" />
+    <text id="subtitle" x="82" y="184" text="Accumulating the area under y = x², from x = 0 to x = 2." size="23" color="#B7CADD" bold="false" />
+    <line id="divider" x="80" y="216" width="1440" height="0" color="#24D4FF" opacity=".22" strokeWidth="1" />
+    <text id="footer" x="80" y="864" text="JENGA-CODE   /   EDUVIDEO" size="14" color="#24D4FF" bold="true" />
+    <text id="footer2" x="1180" y="864" text="MATHEMATICS, MADE VISIBLE" size="13" color="#8493AC" bold="false" />
+    <axes id="plane" x="125" y="288" width="710" height="480" xmin="-.3" xmax="2.7" ymin="-.5" ymax="5.2" step="1" tickSize="22" gridOpacity=".85">
+      <area id="area" expression="x^2" from="0" to="2" color="#259DFE" />
+      <area id="rects" expression="x^2" from="0" to="2" rectangles="12" color="#46CAFF" opacity=".25" />
+      <function id="curve" expression="x^2" color="#30D7FF" glow=".8" strokeWidth="3" />
+      <plot-point id="bound" px="2" py="4" label="(2, 4)" guides="true" color="#B7F6FF" labelDx="-40" labelDy="-24" />
+    </axes>
+    <equation id="functionLabel" x="440" y="300" value="y = x²" size="36" font="Serif" color="#7EEAFF" typeset="false" />
+    <curved-arrow id="callout" x="545" y="306" width="110" height="116" controlX="80" controlY="-4" color="#24D4FF" strokeWidth="2" glow=".3" />
+    <equation id="areaLabel" x="505" y="675" value="A" size="52" font="Serif" color="#91DEFF" typeset="false" />
+    <step id="definition" number="1" title="Write the integral" x="960" y="260" width="550" height="154" padding="24">
+      <equation id="integral" x="35" y="84" value="A = ∫₀² x² dx" size="46" font="Serif" color="#EDF6FF" typeset="false" />
+    </step>
+    <step id="primitive" number="2" title="Find an antiderivative" x="960" y="434" width="550" height="154" padding="24">
+      <equation id="antiderivative" x="35" y="95" value="[ \frac{x^{3}}{3} ]₀²" size="40" font="Serif" color="#EDF6FF" typeset="true" />
+    </step>
+    <step id="evaluate" number="3" title="Evaluate the bounds" x="960" y="608" width="550" height="130" padding="24">
+      <equation id="substitution" x="35" y="83" value="A = 8/3 − 0 = 8/3" size="34" font="Serif" color="#EDF6FF" typeset="false" />
+    </step>
+    <result id="answer" x="960" y="755" width="550" height="66" text="A = 8/3 square units" style="success" size="32" />
+    <effect target="curve" name="drawOn" start="0.4" duration="2.3" />
+    <effect target="area" name="drawOn" start="2" duration="2.5" />
+    <effect target="rects" name="drawOn" start="2" duration="2.5" />
+    <effect target="bound" name="fadeIn" start="4.5" duration="0.8" />
+    <effect target="definition" name="fadeIn" start="1" duration="0.8" />
+    <effect target="primitive" name="fadeIn" start="6" duration="0.8" />
+    <effect target="evaluate" name="fadeIn" start="10" duration="0.8" />
+    <effect target="answer" name="fadeIn" start="14" duration="0.8" />
+    <effect target="areaLabel" name="fadeIn" start="4" duration="0.8" />
+  </scene>
+</edu-video>

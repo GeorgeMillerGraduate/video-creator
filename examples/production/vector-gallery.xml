@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<edu-video version="1.0" width="1920" height="1080" fps="60">
+  <scene id="addition" duration="8" theme="midnight-blue">
+    <background grid="false" curves="true" dots="true" vignette="true" intensity=".18" />
+    <text id="brand" x="96" y="74" text="JENGA–CODE   /   04  /  EXPLORATIONS" size="17" color="#36D4FF" bold="true" align="left" />
+    <text id="title" x="96" y="158" text="Vectors add head to tail" size="64" color="#F3F6FC" bold="true" align="left" />
+    <text id="subtitle" x="99" y="211" text="One progress parameter drives a continuous mathematical construction." size="25" color="#9DAFC9" bold="false" align="left" />
+    <line id="rule" x="96" y="249" width="1728" height="0" strokeWidth="1" color="#36D4FF" opacity=".25" />
+    <text id="footer" x="96" y="1019" text="EDUVIDEO   /   MATHEMATICS IN MOTION" size="15" color="#9DAFC9" bold="false" align="left" />
+    <text id="index" x="1824" y="1019" text="04  /  EXPLORATIONS" size="15" color="#36D4FF" bold="false" align="right" />
+    <line id="progress" x="96" y="980" width="1728" height="0" strokeWidth="2" color="#4CF0B3" drawProgress="0" opacity=".75" />
+    <animate target="progress" property="drawProgress" to="1" start="0" duration="8" easing="linear" from="0" />
+    <effect target="title" name="fadeIn" start="0" duration="0.8" />
+    <effect target="subtitle" name="fadeIn" start="0" duration="0.8" />
+    <vectors id="diagram" x="380" y="300" width="1160" height="600" mode="addition" ax="2" ay="1" bx="1" by="2" m00="1.5" m01="0.8" m10="0.2" m11="1" unit="95" a="0" />
+    <animate target="diagram" property="a" to="1" start="1" duration="5" easing="smoothStep" from="0" />
+  </scene>
+  <scene id="projection" duration="8" theme="midnight-blue">
+    <background grid="false" curves="true" dots="true" vignette="true" intensity=".18" />
+    <text id="brand" x="96" y="74" text="JENGA–CODE   /   05  /  EXPLORATIONS" size="17" color="#36D4FF" bold="true" align="left" />
+    <text id="title" x="96" y="158" text="Projection extracts a component" size="64" color="#F3F6FC" bold="true" align="left" />
+    <text id="subtitle" x="99" y="211" text="One progress parameter drives a continuous mathematical construction." size="25" color="#9DAFC9" bold="false" align="left" />
+    <line id="rule" x="96" y="249" width="1728" height="0" strokeWidth="1" color="#36D4FF" opacity=".25" />
+    <text id="footer" x="96" y="1019" text="EDUVIDEO   /   MATHEMATICS IN MOTION" size="15" color="#9DAFC9" bold="false" align="left" />
+    <text id="index" x="1824" y="1019" text="05  /  EXPLORATIONS" size="15" color="#36D4FF" bold="false" align="right" />
+    <line id="progress" x="96" y="980" width="1728" height="0" strokeWidth="2" color="#4CF0B3" drawProgress="0" opacity=".75" />
+    <animate target="progress" property="drawProgress" to="1" start="0" duration="8" easing="linear" from="0" />
+    <effect target="title" name="fadeIn" start="0" duration="0.8" />
+    <effect target="subtitle" name="fadeIn" start="0" duration="0.8" />
+    <vectors id="diagram" x="380" y="300" width="1160" height="600" mode="projection" ax="2" ay="1" bx="1" by="2" m00="1.5" m01="0.8" m10="0.2" m11="1" unit="95" a="0" />
+    <animate target="diagram" property="a" to="1" start="1" duration="5" easing="smoothStep" from="0" />
+  </scene>
+  <scene id="linear" duration="8" theme="midnight-blue">
+    <background grid="false" curves="true" dots="true" vignette="true" intensity=".18" />
+    <text id="brand" x="96" y="74" text="JENGA–CODE   /   06  /  EXPLORATIONS" size="17" color="#36D4FF" bold="true" align="left" />
+    <text id="title" x="96" y="158" text="A matrix moves the entire plane" size="64" color="#F3F6FC" bold="true" align="left" />
+    <text id="subtitle" x="99" y="211" text="One progress parameter drives a continuous mathematical construction." size="25" color="#9DAFC9" bold="false" align="left" />
+    <line id="rule" x="96" y="249" width="1728" height="0" strokeWidth="1" color="#36D4FF" opacity=".25" />
+    <text id="footer" x="96" y="1019" text="EDUVIDEO   /   MATHEMATICS IN MOTION" size="15" color="#9DAFC9" bold="false" align="left" />
+    <text id="index" x="1824" y="1019" text="06  /  EXPLORATIONS" size="15" color="#36D4FF" bold="false" align="right" />
+    <line id="progress" x="96" y="980" width="1728" height="0" strokeWidth="2" color="#4CF0B3" drawProgress="0" opacity=".75" />
+    <animate target="progress" property="drawProgress" to="1" start="0" duration="8" easing="linear" from="0" />
+    <effect target="title" name="fadeIn" start="0" duration="0.8" />
+    <effect target="subtitle" name="fadeIn" start="0" duration="0.8" />
+    <vectors id="diagram" x="380" y="270" width="1160" height="540" mode="linear" ax="2" ay="1" bx="1" by="2" m00="1.5" m01="0.8" m10="0.2" m11="1" unit="95" a="0" />
+    <animate target="diagram" property="a" to="1" start="1" duration="5" easing="smoothStep" from="0" />
+    <camera-focus target="diagram" zoom="1.04" start="1" duration="2" />
+    <camera-reset start="6" duration="1.5" />
+  </scene>
+  <scene id="complex" duration="8" theme="midnight-blue">
+    <background grid="false" curves="true" dots="true" vignette="true" intensity=".18" />
+    <text id="brand" x="96" y="74" text="JENGA–CODE   /   07  /  EXPLORATIONS" size="17" color="#36D4FF" bold="true" align="left" />
+    <text id="title" x="96" y="158" text="Complex multiplication rotates and scales" size="64" color="#F3F6FC" bold="true" align="left" />
+    <text id="subtitle" x="99" y="211" text="One progress parameter drives a continuous mathematical construction." size="25" color="#9DAFC9" bold="false" align="left" />
+    <line id="rule" x="96" y="249" width="1728" height="0" strokeWidth="1" color="#36D4FF" opacity=".25" />
+    <text id="footer" x="96" y="1019" text="EDUVIDEO   /   MATHEMATICS IN MOTION" size="15" color="#9DAFC9" bold="false" align="left" />
+    <text id="index" x="1824" y="1019" text="07  /  EXPLORATIONS" size="15" color="#36D4FF" bold="false" align="right" />
+    <line id="progress" x="96" y="980" width="1728" height="0" strokeWidth="2" color="#4CF0B3" drawProgress="0" opacity=".75" />
+    <animate target="progress" property="drawProgress" to="1" start="0" duration="8" easing="linear" from="0" />
+    <effect target="title" name="fadeIn" start="0" duration="0.8" />
+    <effect target="subtitle" name="fadeIn" start="0" duration="0.8" />
+    <vectors id="diagram" x="380" y="300" width="1160" height="600" mode="complex" ax="2" ay="1" bx="1" by="2" m00="1.5" m01="0.8" m10="0.2" m11="1" unit="95" a="0" />
+    <animate target="diagram" property="a" to="1" start="1" duration="5" easing="smoothStep" from="0" />
+  </scene>
+</edu-video>

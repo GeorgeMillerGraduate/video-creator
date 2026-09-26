@@ -1,0 +1,27 @@
+Jenga-Code EduVideo Studio 3.2 — verification, 26 September 2026
+
+Java 17 Maven clean install: BUILD SUCCESS.
+125 tests, zero failures, zero errors, zero skipped.
+22 multipart tests; original 103-test coverage retained.
+129 main Java sources, 12 test source files. All retain the George Miller copyright header.
+Public API Javadoc generated with doclint (no diagnostics).
+
+All 22 shipped XML files validated and sampled through the actual graphics renderer.
+Full five-part Fourier demo: 80 seconds, 2400 frames, 960x540/30 FPS,
+H.264 yuv420p + 48-kHz stereo AAC, 2,621,867-byte MP4.
+39.07 seconds measured full demo production in this environment.
+One continuous music region; narration explicitly omitted for this demonstration export.
+Real integration fixtures cover narration synthesis, offset mixing, timing overrun rejection,
+cache behavior, multipart MP4 encoding and cancellation workspace cleanup.
+Legacy music composition was compared byte-for-byte with one uninterrupted PCM music bed.
+
+Headless JavaFX: actual MainWindow, manifest loading, five chapter rows, global seek,
+Fit aspect/viewport checks at 1366x768, 1920x1080, 2560x1440 and 3840x2160,
+all percentage zoom selections and real two-chapter production displayed in the monitor.
+The JavaFX warning about unnamed-module classes is specific to this headless test harness.
+Screenshots in this folder are actual app captures, not design mockups.
+
+No paid/live OpenAI request was made. Synthetic local speech and mock HTTP responses are used in tests.
+No native Windows display/audio device or process-lock behavior could be tested here.
+Interactive preview remains visual-only and uses a bounded 1280-wide raster cache.
+Detailed limitations and class changes: docs/MULTIPART-UPGRADE.md.

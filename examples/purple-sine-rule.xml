@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<edu-video version="1.0" width="1600" height="900" fps="30">
+  <scene id="sine-rule" duration="20" theme="deep-purple">
+    <text id="kicker" x="80" y="65" text="03  /  TRIGONOMETRY" size="16" color="#CE86FF" bold="true" />
+    <text id="title" x="80" y="135" text="Finding a side with the sine rule" size="54" color="#F5F8FF" bold="true" />
+    <text id="subtitle" x="82" y="184" text="Use the known side and its opposite angle to find the missing length." size="23" color="#B7CADD" bold="false" />
+    <line id="divider" x="80" y="216" width="1440" height="0" color="#CE86FF" opacity=".22" strokeWidth="1" />
+    <text id="footer" x="80" y="864" text="JENGA-CODE   /   EDUVIDEO" size="14" color="#CE86FF" bold="true" />
+    <text id="footer2" x="1180" y="864" text="MATHEMATICS, MADE VISIBLE" size="13" color="#8493AC" bold="false" />
+    <triangle id="triangle" points="394.36125,262.93691 140.00000,670.00000 735.92773,670.00000" vertices="A,B,C" sides="c = 8,a = ?,b" sideMask="2" angleMask="4" />
+    <panel id="formula" x="80" y="735" width="700" height="82">
+      <equation id="sineRule" x="25" y="29" value="a / sin A = b / sin B = c / sin C" size="29" font="Serif" color="#DCC6FF" typeset="false" />
+    </panel>
+    <step id="third" number="1" title="Find the third angle" x="900" y="260" width="620" height="150" padding="24">
+      <equation id="thirdEq" x="26" y="81" value="C = 180° − 72° − 58° = 50°" size="32" font="Serif" color="#EDF6FF" typeset="false" />
+    </step>
+    <step id="rule" number="2" title="Match sides with opposite angles" x="900" y="430" width="620" height="190" padding="24">
+      <equation id="ruleEq" x="30" y="116" value="\frac{a}{sin 72°} = \frac{8}{sin 50°}" size="40" font="Serif" color="#EDF6FF" typeset="true" />
+    </step>
+    <step id="calculate" number="3" title="Rearrange and calculate" x="900" y="640" width="620" height="100" padding="24">
+      <equation id="calcEq" x="26" y="59" value="a = 8 × sin 72° / sin 50°" size="30" font="Serif" color="#EDF6FF" typeset="false" />
+    </step>
+    <result id="answer" x="900" y="757" width="620" height="66" text="a ≈ 9.93" size="38" style="answer" />
+    <effect target="third" name="fadeIn" start="2" duration="0.8" />
+    <effect target="rule" name="fadeIn" start="7" duration="0.8" />
+    <effect target="calculate" name="fadeIn" start="12" duration="0.8" />
+    <effect target="answer" name="fadeIn" start="16" duration="0.8" />
+    <effect target="triangle" name="drawOn" start="0.3" duration="2" />
+  </scene>
+</edu-video>

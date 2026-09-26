@@ -1,0 +1,30 @@
+<edu-video version="1.0" width="1280" height="720" fps="30">
+ <scene id="gallery" duration="6">
+  <text id="title" x="65" y="65" size="36" text="EduVideo object gallery"/>
+  <graph id="network" x="80" y="160">
+   <node id="A" label="A" x="50" y="40" color="#38BDF8"/>
+   <node id="B" label="B" x="220" y="40" color="#A78BFA"/>
+   <node id="C" label="C" x="135" y="185" color="#4ADE80"/>
+   <edge id="AB" from="A" to="B" weight="4" directed="true"/>
+   <edge id="BC" from="B" to="C" weight="7" directed="true"/>
+   <edge id="CA" from="C" to="A" weight="2" directed="true"/>
+  </graph>
+  <tree id="tree" x="460" y="165">
+   <node id="root" x="90" y="30" label="8" color="#38BDF8"/>
+   <node id="left" x="0" y="150" label="3" color="#A78BFA"/>
+   <node id="right" x="180" y="150" label="12" color="#A78BFA"/>
+   <edge id="rl" from="root" to="left"/>
+   <edge id="rr" from="root" to="right"/>
+  </tree>
+  <matrix id="matrix" x="800" y="155" values="1,0;0,1"/>
+  <angle id="angle" x="1070" y="290" radius="100" extent="60" color="#FBBF24"/>
+  <number-line id="axis" x="100" y="480" width="500" min="-3" max="3" step="1"/>
+  <polygon id="triangle" x="775" y="470" points="0,0 120,0 60,-90" color="#4ADE80"/>
+  <path id="route" x="100" y="590" points="0,0 140,-40 280,0 400,-40" color="#586582"/>
+  <point id="dot" x="100" y="590" width="14" height="14" color="#FBBF24"/>
+  <text id="footer" x="760" y="650" size="25" text="Geometry · Graphs · Data"/>
+  <animate target="AB" property="color" from="#EAF4FF" to="#FBBF24" start="0" duration="2"/>
+  <follow-path target="dot" points="100,590 240,550 380,590 500,550" start="0" duration="6" easing="easeInOut"/>
+  <animation target="triangle" property="rotation"><keyframe time="0" value="0"/><keyframe time="3" value="180" easing="easeInOut"/><keyframe time="6" value="360" easing="easeInOut"/></animation>
+ </scene>
+</edu-video>

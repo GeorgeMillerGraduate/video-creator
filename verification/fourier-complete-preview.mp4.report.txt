@@ -1,0 +1,23 @@
+Jenga-Code EduVideo production report
+Profile: PREVIEW
+Logical canvas: 1920x1080
+Output: 960x540 at 30 fps
+Frames: 2400
+Range: 0.000 to 80.000 seconds
+Scenes: 5
+Objects: 75
+Narration requests: 0
+Speech cache hits: 0
+Narration omitted: true
+Audio preparation: 0.40 s
+Visual render + encode: 36.98 s
+Render throughput: 64.90 fps
+Video: H.264 / yuv420p
+Audio: AAC stereo / 48 kHz / 192 kb/s
+Total elapsed: 39.07 s
+Property animation tracks: 17
+Original narration cues: 5
+Speech synthesis requests: 0
+Music tracks: 1
+Output: fourier-complete-preview.mp4
+Encoding overlaps rendering; separate encoder CPU time is not measured.

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2026 George Miller. All rights reserved. -->
+<edu-video version="1.0" width="1920" height="1080" fps="30">
+  <scene id="voice-check" duration="12" theme="midnight-blue">
+    <background grid="false" curves="true" dots="true" intensity="0.12"/>
+    <text id="brand" x="130" y="160" text="JENGA-CODE / EDUVIDEO STUDIO" size="28" color="#38BDF8"/>
+    <text id="title" x="130" y="410" text="Your lesson has a voice." size="76" color="#F3F6FC"/>
+    <text id="subtitle" x="135" y="510" text="OpenAI narration. XML animation. One production workflow." size="33" color="#9DAFC9"/>
+    <text id="disclosure" x="135" y="930" text="AI-GENERATED NARRATION" size="22" color="#4CF0B3"/>
+    <effect target="title" name="fadeIn" start="0" duration="0.8"/>
+    <effect target="subtitle" name="fadeIn" start="0.7" duration="0.8"/>
+    <speak id="hello" start="1" max-end="11">Welcome to Jenga Code EduVideo Studio. Let's bring your next lesson to life.</speak>
+  </scene>
+</edu-video>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edu-video version="1.0" width="1920" height="1080" fps="30">
+  <scene id="chapter" duration="16" theme="midnight-blue">
+    <background grid="false" curves="true" dots="true" vignette="true" intensity=".12"/>
+    <text id="brand" x="96" y="75" text="JENGA-CODE  /  FOURIER COURSE  /  03" size="18" color="#36D4FF" bold="true"/>
+    <text id="title" x="96" y="170" text="Heat smooths the temperature" size="62" color="#F3F6FC" bold="true"/>
+    <text id="subtitle" x="98" y="225" text="The curvature determines how quickly temperature changes." size="25" color="#A6B9D4" bold="false"/>
+    <line id="rule" x="96" y="262" width="1728" height="0" color="#36D4FF" opacity=".25"/>
+    <axes id="plot" x="120" y="320" width="1150" height="530" xmin="0" xmax="6.283185307" ymin="-1.8" ymax="1.8" step="1" xlabel="x" ylabel="u" tickSize="18" gridOpacity=".25">
+      <function id="fundamental" expression="sin(x)" strokeWidth="2" color="#368EC9" opacity=".45"/>
+      <function id="sum" expression="exp(-a)*sin(x)" a="0" strokeWidth="5" color="#4CF0B3" glow=".2" drawProgress="0"/>
+    </axes>
+    <animate target="sum" property="drawProgress" from="0" to="1" start=".5" duration="3" easing="smoothStep"/>
+    <animate target="sum" property="a" from="0" to="2" start="4" duration="10" easing="linear"/>
+    <text id="label" x="1330" y="390" text="THE IDEA" size="19" color="#36D4FF" bold="true"/>
+    <text id="note0" x="1330" y="470" text="Same shape." size="27" color="#DCE8F6" bold="false"/>
+    <text id="note1" x="1330" y="565" text="Smaller amplitude." size="27" color="#DCE8F6" bold="false"/>
+    <text id="note2" x="1330" y="660" text="Exponential decay." size="27" color="#DCE8F6" bold="false"/>
+    <text id="formula" x="120" y="920" text="∂u/∂t = κ ∂²u/∂x²" size="36" color="#4CF0B3" bold="false"/>
+    <text id="footer" x="96" y="1025" text="EDUVIDEO  /  HEAT EQUATION  /  AI-GENERATED NARRATION" size="15" color="#91A6C5" bold="false"/>
+    <line id="progress" x="96" y="980" width="1728" height="0" color="#36D4FF" drawProgress="0"/>
+    <animate target="progress" property="drawProgress" from="0" to="1" start="0" duration="16" easing="linear"/>
+    <effect target="title" name="fadeIn" start="0" duration=".7"/>
+    <speak id="explain" start=".8" max-end="15.3" text="The heat equation links temperature change to curvature. Each sine-shaped temperature mode keeps its shape while its amplitude decays."/>
+  </scene>
+</edu-video>

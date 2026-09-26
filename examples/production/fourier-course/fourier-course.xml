@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edu-production version="1.0" title="Fourier series and the heat equation"
+                width="1920" height="1080" fps="30"
+                output="output/fourier-complete.mp4">
+  <!-- One decoder, one continuous bed across all five XML parts. -->
+  <audio>
+    <music src="../../../assets/music/quiet-orbits.wav" volume="0.12"
+           loop="true" fade-in="1.5" fade-out="2"/>
+  </audio>
+  <parts>
+    <part src="01-introduction.xml" title="Introduction"/>
+    <part src="02-fourier-series.xml" title="Fourier series"/>
+    <part src="03-heat-equation.xml" title="Heat equation"/>
+    <part src="04-solution.xml" title="Worked solution"/>
+    <part src="05-summary.xml" title="Summary"/>
+  </parts>
+</edu-production>

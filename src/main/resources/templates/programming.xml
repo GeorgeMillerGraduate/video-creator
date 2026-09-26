@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edu-video version="1.0" width="${width}" height="${height}" fps="${fps}">
+ <theme name="midnight-blue"/>
+ <scene id="lesson" duration="${duration}" theme="midnight-blue">
+  <text id="title" x="96" y="120" text="${title}" size="50" bold="true"/>
+  <text id="subtitle" x="96" y="180" text="JENGA-CODE / EDUCATIONAL FILMS" size="20" color="#38BDF8"/>
+  <code id="code" x="150" y="280" width="1500" height="500" size="30">for (int i = 0; i &lt; 10; i++) {
+    System.out.println(i);
+}</code>
+ </scene>
+</edu-video>
